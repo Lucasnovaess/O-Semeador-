@@ -5,54 +5,33 @@ body {
 
 
 /* Estilos para a barra de navegação */
-nav {
+
+
+/* Estilos para a barra de navegação */
+header {
     background-color: #210348;
 }
 
-
-/* Estilos para o menu de navegação */
-.itens-nav {
+/* Estilos para a navbar */
+.navbar {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background-color: #210348;
     padding: 10px;
-    list-style: none;
-    margin: 0;
-    display: flex;
-    /* Alinha os itens da lista horizontalmente */
-    justify-content: space-between;
-    /* Espaça uniformemente os itens */
-    align-items: center;
-    /* Alinha verticalmente os itens */
 }
 
-/* Estilos para os links */
-.itens a {
+/* Estilos para os links da navbar */
+.navbar-nav .nav-link {
     color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-    /* Adiciona um pouco de espaço ao redor dos links */
     font-size: 16px;
-    background-color: transparent;
-    /* Defina a cor de fundo inicial */
+    padding: 10px 15px;
     transition: background-color 0.7s ease;
-    /* Transição suave de 1.5 segundos */
-    border-right: 1px solid #000000;
-    border-left: 1px solid #000000;
-    font-family: "M PLUS Rounded 1c", sans-serif;
+    text-decoration: none;
 }
 
 /* Estilos para as imagens no menu */
 nav img {
     width: 32px;
     height: 32px;
-}
-
-.itens a:hover {
-    background-color: #F57806;
-    border-radius: 2px;
-    border-bottom: 2px solid white;
-}
-
-.itens a:active {
-    background-color: hsl(29, 100%, 75%);
 }
 
 #banner {
@@ -100,6 +79,7 @@ nav img {
     width: 90%;
     margin-top: 30px;
     margin-left: 30px;
+    margin-bottom: 30px;
 }
 
 .margin-bottom {
@@ -118,6 +98,106 @@ nav img {
     font-weight: bold;
 }
 
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #24b12f;
+    color: #ffffff;
+  }
+
+  footer p{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+  }
+
+  footer{
+    background-color: #210348;
+}
 
 
 
