@@ -198,8 +198,13 @@ nav img {
   footer{
     background-color: #210348;
 }
+.mapa iframe{
+    border-radius: 30px;
+}
 
-
+.copyright p{
+    text-align: center;
+}
 
 
 
