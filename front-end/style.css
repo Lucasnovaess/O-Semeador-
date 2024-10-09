@@ -5,54 +5,33 @@ body {
 
 
 /* Estilos para a barra de navegação */
-nav {
+
+
+/* Estilos para a barra de navegação */
+header {
     background-color: #210348;
 }
 
-
-/* Estilos para o menu de navegação */
-.itens-nav {
+/* Estilos para a navbar */
+.navbar {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background-color: #210348;
     padding: 10px;
-    list-style: none;
-    margin: 0;
-    display: flex;
-    /* Alinha os itens da lista horizontalmente */
-    justify-content: space-between;
-    /* Espaça uniformemente os itens */
-    align-items: center;
-    /* Alinha verticalmente os itens */
 }
 
-/* Estilos para os links */
-.itens a {
+/* Estilos para os links da navbar */
+.navbar-nav .nav-link {
     color: #ffffff;
-    text-decoration: none;
-    padding: 10px 15px;
-    /* Adiciona um pouco de espaço ao redor dos links */
     font-size: 16px;
-    background-color: transparent;
-    /* Defina a cor de fundo inicial */
+    padding: 10px 15px;
     transition: background-color 0.7s ease;
-    /* Transição suave de 1.5 segundos */
-    border-right: 1px solid #000000;
-    border-left: 1px solid #000000;
-    font-family: "M PLUS Rounded 1c", sans-serif;
+    text-decoration: none;
 }
 
 /* Estilos para as imagens no menu */
 nav img {
     width: 32px;
     height: 32px;
-}
-
-.itens a:hover {
-    background-color: #F57806;
-    border-radius: 2px;
-    border-bottom: 2px solid white;
-}
-
-.itens a:active {
-    background-color: hsl(29, 100%, 75%);
 }
 
 #banner {
@@ -119,9 +98,7 @@ nav img {
     font-weight: bold;
 }
 
-footer{
-    background-color: #210348;
-}
+
 .wrapper {
     display: inline-flex;
     list-style: none;
@@ -217,6 +194,10 @@ footer{
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffffff;
   }
+
+  footer{
+    background-color: #210348;
+}
 
 
 
