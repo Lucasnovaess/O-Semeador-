@@ -198,12 +198,22 @@ nav img {
   footer{
     background-color: #210348;
 }
+
+
+
 .mapa iframe{
     border-radius: 30px;
 }
 
 .copyright p{
-    text-align: center;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 70px;
+}
+
+#mapa{
+    width: 50%;
+    height: auto;
 }
 
 
@@ -235,6 +245,17 @@ nav img {
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
         height: auto; /* Mantém a proporção da imagem */
     }
+    .copyright p{
+        text-align: center;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    .icones{
+        text-align: center;
+    }
+    .wrapper{
+        padding: 0;
+    }
 }
 
 @media(max-width: 768px){
@@ -243,6 +264,8 @@ nav img {
         text-align: center; /* Garante que o texto fique alinhado à esquerda */
         width: 100%;
     }
+    
+
 }
 
 @media(max-width: 430px){
