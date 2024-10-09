@@ -1,2 +1,6 @@
 # O Semeador
-* Primeira Linha *
+* Primeira Linha
+* Segunda linha
+
+*olá em itálico*
+**olá em negrito**
