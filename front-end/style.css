@@ -240,6 +240,18 @@ nav img {
     animation-fill-mode: forwards; /* Mantém a posição final */
 }
 
+#selecaoLogin{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+#login{
+    margin-left: 10px;
+}
+
 /* Animação do Google Maps */
 @keyframes slideRight {
     50% {
