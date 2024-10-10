@@ -229,14 +229,14 @@ nav img {
     height: auto;
 }
 
-/* Hover da imagem 1 */
+/* Hover do Google Maps */
 .mapa iframe:hover {
     animation-name: slideRight;
     animation-duration: 2s; /* Duração da animação */
     animation-fill-mode: forwards; /* Mantém a posição final */
 }
 
-/* Animação da imagem 1 */
+/* Animação do Google Maps */
 @keyframes slideRight {
     50% {
         transform: scale(1.2); /* Aumenta e move para a direita */
