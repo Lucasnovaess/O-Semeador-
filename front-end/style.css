@@ -76,7 +76,7 @@ nav img {
 }
 
 #principal{
-    width: 90%;
+    width: 100%;
     margin-top: 30px;
     margin-left: 30px;
     margin-bottom: 30px;
@@ -103,6 +103,8 @@ nav img {
     display: inline-flex;
     list-style: none;
     margin: 0;
+    flex-direction: column;
+    padding-top: 33px;
   }
 
   .wrapper .icon {
@@ -199,7 +201,9 @@ nav img {
     background-color: #210348;
 }
 
-
+.content-area p{
+    padding: 10px;
+}
 
 .mapa iframe{
     border-radius: 30px;
@@ -221,9 +225,7 @@ nav img {
 
 /* ------------------------- Medias Queries ------------------------- */
 
-/* @media (max-width: 768px) {
-    #im
-} */
+
 
 
 @media (max-width: 1400px) {
@@ -236,7 +238,11 @@ nav img {
     }
     
 }
-
+@media (min-width: 993px){
+    .content-area{
+        margin-right: 160px;
+    }
+}
 @media (max-width: 992px) {
     #imagem1 img { 
         display: block; 
@@ -250,11 +256,14 @@ nav img {
         margin-bottom: 0;
         margin-left: 0;
     }
-    .icones{
-        text-align: center;
-    }
     .wrapper{
         padding: 0;
+    }
+    .icones {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center
     }
 }
 

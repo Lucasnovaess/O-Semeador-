@@ -85,45 +85,48 @@
     </main>
 
     <footer class="py-4">
-            <div class="container text-center">
-                <p>Escola Metodista O Semeador</p>
-                <p>R. dos Meninos, 555 - Nova Gerti, São Caetano do Sul - SP, 09580-300</p>
-            </div>
-
-            <div class="container text-center mapa" id="mapa">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.880709093999!2d-46.57125402395184!3d-23.64444277874282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4333fd57a62f%3A0x137ec53786cba609!2sR.%20dos%20Meninos%2C%20555%20-%20Nova%20Gerti%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%2009580-300!5e0!3m2!1spt-BR!2sbr!4v1728506964564!5m2!1spt-BR!2sbr"
-                    style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-            <div class="icones text-left">
-                <ul class="wrapper">
-                    <li class="icon facebook">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Coluna de ícones -->
+                <div class="wrapper col-lg-1 col-sm-12 align-items-center icones">
+                    <div class="icon facebook">
                         <span class="tooltip">Facebook</span>
                         <span><i class="fab fa-facebook-f"></i></span>
-                    </li>
-
-                    <li class="icon twitter">
+                    </div>
+                    <div class="icon twitter">
                         <span class="tooltip">Twitter</span>
                         <span><i class="fab fa-twitter"></i></span>
-                    </li>
 
-                    <li class="icon instagram">
+                    </div>
+                    <div class="icon instagram">
                         <span class="tooltip">Instagram</span>
                         <span><i class="fab fa-instagram"></i></span>
-                    </li>
 
-                    <li class="icon whatsapp">
+                    </div>
+                    <div class="icon whatsapp">
                         <span class="tooltip">WhatsApp</span>
                         <span><i class="fab fa-whatsapp"></i></span>
-                    </li>
-                </ul>
 
+                    </div>
+                </div>
+
+                <!-- Coluna de conteúdo (texto e mapa) -->
+                <div class="col-lg-11 col-sm-12 d-flex flex-column align-items-center center-content">
+                    <div class="content-area text-center">
+                        <p><strong>Escola Metodista O Semeador</strong></p>
+                        <p>R. dos Meninos, 555 - Nova Gerti, São Caetano do Sul - SP, 09580-300</p>
+
+                        <!-- Mapa incorporado -->
+                        <div class="mapa">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.837615132745!2d-46.56677728453632!3d-23.55538328468306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce42191b1c23f7%3A0x2e03c18007f2b94d!2sR.%20dos%20Meninos%2C%20555%20-%20Nova%20Gerti%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%2009580-300!5e0!3m2!1spt-BR!2sbr!4v1696778952981!5m2!1spt-BR!2sbr"
+                                allowfullscreen=""></iframe>
+                        </div>
+                        <p>&copy; Todos direitos reservados - O Semeador</p>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2024 - O Semeador</p>
-            </div>
+        </div>
     </footer>
 
     <script src="frontend.js"></script>
