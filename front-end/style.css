@@ -105,6 +105,8 @@ nav img {
     margin: 0;
     flex-direction: column;
     padding-top: 33px;
+    text-align: left;
+    float: left;
   }
 
   .wrapper .icon {
@@ -240,7 +242,10 @@ nav img {
 }
 @media (min-width: 993px){
     .content-area{
-        margin-right: 160px;
+        margin-right: 200px;
+    }
+    #rodape{
+        flex-direction: row-reverse;
     }
 }
 @media (max-width: 992px) {
