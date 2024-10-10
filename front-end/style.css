@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 /* Remover margens do corpo */
 body {
     margin: 0;
@@ -45,12 +49,14 @@ nav img {
     /* Mantém a proporção da altura */
 }
 
-
 #imagem1 img {
     border: 3px solid blue;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+    box-shadow: 0px 0px 50px hsl(0, 0%, 40%);
+    margin: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .titulo{
@@ -58,32 +64,27 @@ nav img {
     font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #060031;
-    text-shadow: 0px 2px 3px rgba(69, 69, 70, 0.8);
-    /*text-shadow: 0px (eixo x) 5px (eixo y) 3px #060031;*/
+    text-shadow: 0px 0px 5px hsl(240, 1%, 40%);
+    margin: 16px;
 }
+
 .paragrafo{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
     text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
-    /*text-shadow: 0px (eixo x) 5px (eixo y) 3px #060031;*/
+    margin: 16px;
 }
 
 #textos {
-    padding-right: 0px;
-    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+    padding-right: 10px;
     width: 50%;
 }
 
 #principal{
     width: 100%;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-}
-
-.margin-bottom {
-    margin-bottom: 50px;
+    margin: 0px;
+    margin-top: 40px;
 }
 
 #imagem2 img {
@@ -91,13 +92,18 @@ nav img {
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sub-titulo {
     color: #F57806;
     font-weight: bold;
+    margin: 16px;
 }
 
+.margin {
+    margin: 16px;
 
 .wrapper {
     display: inline-flex;
@@ -227,18 +233,13 @@ nav img {
 
 /* ------------------------- Medias Queries ------------------------- */
 
-
-
-
 @media (max-width: 1400px) {
-    #imagem1 img { 
+    #imagem1 img, #imagem2 img { 
         display: block; 
         margin-left: auto; /* Centraliza a imagem */
         margin-right: auto; /* Centraliza a imagem */
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
     }
-    
 }
 @media (min-width: 993px){
     .content-area{
@@ -249,7 +250,7 @@ nav img {
     }
 }
 @media (max-width: 992px) {
-    #imagem1 img { 
+    #imagem1 img, #imagem2 img { 
         display: block; 
         margin-left: auto; /* Centraliza a imagem */
         margin-right: auto; /* Centraliza a imagem */
