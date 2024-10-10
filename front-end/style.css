@@ -8,6 +8,12 @@ body {
 }
 
 
+#marcador {
+    color: hsl(29, 95%, 60%);
+    font-weight: bold;
+}
+
+
 /* Estilos para a barra de navegação */
 
 
@@ -27,9 +33,13 @@ header {
 .navbar-nav .nav-link {
     color: #ffffff;
     font-size: 16px;
-    padding: 10px 15px;
+    padding: 10px;
     transition: background-color 0.7s ease;
     text-decoration: none;
+}
+
+.navbar li {
+    padding: 0px 20px 0px;
 }
 
 /* Estilos para as imagens no menu */
@@ -41,11 +51,18 @@ nav img {
 #banner {
     padding: 0px;
 }
+
 .nav-link:hover {
-    animation-name: slideRight;
+    animation-name: saltar;
     animation-duration: 0.8s; /* Duração da animação */
     animation-direction: normal;/* Mantém a posição final */
 }
+
+/* animação no nav-bar */
+@keyframes saltar {
+    50%{transform: scale(1.1);}
+}
+
 #banner img {
     width: 100%;
     /* Faz a imagem ocupar 100% da largura do contêiner */
@@ -68,7 +85,7 @@ nav img {
     font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #060031;
-    text-shadow: 0px 0px 5px hsl(240, 1%, 40%);
+    text-shadow: 0px 0px 10px hsl(0, 0%, 55%);
     margin: 16px;
 }
 
@@ -235,7 +252,7 @@ nav img {
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
-    animation-name: slideRight;
+    animation-name: scale;
     animation-duration: 2s; /* Duração da animação */
     animation-fill-mode: forwards; /* Mantém a posição final */
 }
@@ -253,13 +270,21 @@ nav img {
 }
 
 /* Animação do Google Maps */
-@keyframes slideRight {
+@keyframes scale {
     50% {
-        transform: scale(1.2); /* Aumenta e move para a direita */
+        transform: scale(1.1); /* Aumenta e move para a direita */
     }
 }
 
 /* ------------------------- Medias Queries ------------------------- */
+
+@media (max-width: 991px) {
+    #padding-navbar {
+        padding: 00px 0px 16px 0px;
+        margin: 0px;
+    }
+}
+
 
 @media (max-width: 1400px) {
     #imagem1 img, #imagem2 img { 
@@ -269,15 +294,17 @@ nav img {
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     }
 }
+
 @media (min-width: 993px){
     .content-area{
-        margin-right: 200px;
+        margin-right: 100px;
     }
     #rodape{
         flex-direction: row-reverse;
     }
 }
-@media (max-width: 992px) {
+
+@media (max-width: 991px) {
     #imagem1 img, #imagem2 img { 
         display: block; 
         margin-left: auto; /* Centraliza a imagem */
@@ -307,7 +334,6 @@ nav img {
         text-align: center; /* Garante que o texto fique alinhado à esquerda */
         width: 100%;
     }
-    
 
 }
 
