@@ -104,6 +104,7 @@ nav img {
 
 .margin {
     margin: 16px;
+}
 
 .wrapper {
     display: inline-flex;
@@ -223,13 +224,24 @@ nav img {
     margin-left: 70px;
 }
 
-#mapa{
+.mapa iframe{
     width: 50%;
     height: auto;
 }
 
+/* Hover da imagem 1 */
+.mapa iframe:hover {
+    animation-name: slideRight;
+    animation-duration: 2s; /* Duração da animação */
+    animation-fill-mode: forwards; /* Mantém a posição final */
+}
 
-
+/* Animação da imagem 1 */
+@keyframes slideRight {
+    50% {
+        transform: scale(1.2); /* Aumenta e move para a direita */
+    }
+}
 
 /* ------------------------- Medias Queries ------------------------- */
 
