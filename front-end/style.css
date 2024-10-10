@@ -41,7 +41,11 @@ nav img {
 #banner {
     padding: 0px;
 }
-
+.nav-link:hover {
+    animation-name: slideRight;
+    animation-duration: 0.8s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+}
 #banner img {
     width: 100%;
     /* Faz a imagem ocupar 100% da largura do contêiner */
