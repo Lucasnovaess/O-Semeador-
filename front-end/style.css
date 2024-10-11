@@ -35,12 +35,56 @@ header {
 /* Estilos para os links da navbar */
 .navbar-nav .nav-link {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 18.5px;
     padding: 10px;
     transition: background-color 0.7s ease;
     text-decoration: none;
-}
 
+}
+/* teste */
+
+  
+  .nav-link {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+
+  
+ .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #F57806;
+    transition: all 0.5s ease;
+    animation-name: aumentar-barra;
+    animation-duration: 0.5;
+  }
+
+  @keyframes aumentar-barra {
+    50%{transform: scale(1,1);}
+  }
+  
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+
+
+
+
+/* teste */
+#logo{
+    height: 85px;
+    width: 85px;
+}
+.nav-brand{
+    margin-left: 20px;
+}
 .navbar li {
     padding: 0px 20px 0px;
 }
