@@ -60,13 +60,9 @@ header {
     height: 3px;
     background-color: #F57806;
     transition: all 0.5s ease;
-    animation-name: aumentar-barra;
-    animation-duration: 0.5;
+
   }
 
-  @keyframes aumentar-barra {
-    50%{transform: scale(1,1);}
-  }
   
 .nav-link:hover::after {
     width: 100%;
@@ -101,7 +97,7 @@ nav img {
 
 .nav-link:hover {
     animation-name: saltar;
-    animation-duration: 0.8s; /* Duração da animação */
+    animation-duration: 0.5s; /* Duração da animação */
     animation-direction: normal;/* Mantém a posição final */
 }
 
