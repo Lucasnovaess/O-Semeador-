@@ -13,6 +13,9 @@ body {
     font-weight: bold;
 }
 
+.banner {
+    box-shadow: 0px 10px 20px hsl(0, 0%, 40%);
+}
 
 /* Estilos para a barra de navegação */
 
@@ -266,7 +269,7 @@ nav img {
 
 
 #login{
-    margin-left: 10px;
+    margin-left: 14.5px;
 }
 
 /* Animação do Google Maps */
