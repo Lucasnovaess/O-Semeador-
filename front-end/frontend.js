@@ -92,3 +92,37 @@ function ocultarModal(seletor, timeout) {
         modal.hide()
     }, timeout)
 }
+
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+let isSpeaking = false; // Variável para rastrear o estado da leitura
+let utterance; // Variável para armazenar a instância de SpeechSynthesisUtterance
+
+// Função para ler o site inteiro ou parar a leitura
+function lerSiteInteiro() {
+    const texto = document.body.innerText;
+
+    if (isSpeaking) {
+        // Se já estiver falando, para a leitura
+        window.speechSynthesis.cancel(); // Para a leitura
+        isSpeaking = false; // Atualiza o estado
+        document.getElementById('btn-leitura'); // Altera o texto do botão
+    } else {
+        // Se não estiver falando, inicia a leitura
+        utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; // Define o idioma como português
+        utterance.volume = 1; // Volume (0 a 1)
+        utterance.rate = 1; // Taxa de fala (0.1 a 10)
+        utterance.pitch = 1; // Tonalidade (0 a 2)
+
+        // A cada vez que a leitura parar, atualiza o estado
+        utterance.onend = () => {
+            isSpeaking = false; // Atualiza o estado
+            document.getElementById('btn-leitura'); // Altera o texto do botão
+        };
+
+        window.speechSynthesis.speak(utterance); // Inicia a leitura
+        isSpeaking = true; // Atualiza o estado
+        document.getElementById('btn-leitura'); // Altera o texto do botão
+    }
+}
