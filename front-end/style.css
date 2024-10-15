@@ -430,6 +430,18 @@ nav img {
 
 /* ------------------------- Medias Queries ------------------------- */
 
+@media(max-width: 768px){
+    #imagem2 img {
+        border: 3px solid #F57806;
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+}
+
 @media (max-width: 991px) {
     #padding-navbar {
         padding: 00px 0px 16px 0px;
