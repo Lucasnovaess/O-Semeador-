@@ -1,4 +1,31 @@
 
+/* carrosel */
+.carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+}
+
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.edicao{
+    margin: 10px;
+}
 
 #imagem1 img {
     border: 3px solid blue;
@@ -115,6 +142,14 @@
 .margin {
     margin: 16px;
 }
+
+#parceiros{
+    margin-top: 30px;
+    background-color:#F57806;
+    padding: 50px;
+    opacity: 50%;
+}
+
 
 .wrapper {
     display: inline-flex;
@@ -302,6 +337,7 @@
         padding: 00px 0px 16px 0px;
         margin: 0px;
     }
+    
 }
 
 

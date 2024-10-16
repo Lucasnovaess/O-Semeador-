@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 app.use(express.json())
 app.use(cors())
 app.use(bodyParser.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(bodyParser.json({ limit: '10mb' }));
 
 
 
@@ -37,6 +39,17 @@ const textoSchema = new mongoose.Schema({
 
 const Texto = mongoose.model('Texto', textoSchema);
 
+const imagemSchema = new mongoose.Schema({
+    src: {type:String, required:true}
+});
+
+const Imagem = mongoose.model('Imagem', imagemSchema);
+
+const parceiroSchema = new mongoose.Schema({
+    src: {type:String, required:true}
+});
+
+const Parceiro = mongoose.model('Parceiro', parceiroSchema);
 
 app.post('/signup', async (req, res) => {
     try {
@@ -118,6 +131,72 @@ app.put('/textos-atualizar', async (req, res) => {
     }
 });
 
+app.post('/imagens-adicionar', async (req, res) => {
+    try {
+        const novaImagem = new Imagem(req.body);
+        await novaImagem.save();
+        res.status(201).send(novaImagem);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
+// Rota para remover uma imagem
+app.delete('/imagens-remover/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const imagemRemovida = await Imagem.findByIdAndDelete(id);
+        if (!imagemRemovida) {
+            return res.status(404).send();
+        }
+        res.status(200).send(imagemRemovida);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+app.get('/imagens-puxar', async (req, res) => {
+    try {
+        const imagens = await Imagem.find();
+        res.status(200).send(imagens);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
+app.post('/parceiros-adicionar', async (req, res) => {
+    try {
+        const novoParceiro = new Parceiro(req.body);
+        await novoParceiro.save();
+        res.status(201).send(novoParceiro);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
+// Rota para remover uma imagem
+app.delete('/parceiros-remover/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const parceiroRemovido = await Parceiro.findByIdAndDelete(id);
+        if (!parceiroRemovido) {
+            return res.status(404).send();
+        }
+        res.status(200).send(parceiroRemovido);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+app.get('/parceiros-puxar', async (req, res) => {
+    try {
+        const parceiros = await Parceiro.find();
+        res.status(200).send(parceiros);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
 
 app.listen(3000, () => {
     try {
