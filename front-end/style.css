@@ -1,164 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-/* Remover margens do corpo */
-body {
-    margin: 0;
-}
-.carousel-inner img {
-    max-height: 500px;
-    object-fit: cover;
-}
-
-/* Estilo para o contêiner dos botões */
-#botao-container {
-    position: fixed; /* Fixa o container na tela */
-    bottom: 265px; /* Distância da parte inferior */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Usar flexbox para alinhar os botões */
-    flex-direction: column; /* Alinha os botões verticalmente */
-    gap: 10px; /* Espaçamento entre os botões */
-    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
-}
-
-/* Estilo para o botão de acessibilidade */
-#btn-leitura {
-    padding: 10px 15px; /* Espaçamento interno do botão */
-    background-color: #007BFF; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em forma de ponteiro */
-    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
-    width: 40px; /* Botão responsivo para ocupar 100% da largura do container */
-    height: 40px;
-    margin-bottom: 0; /* Remove margens extras */
-}
-
-#btn-leitura:hover {
-    background-color: #0056b3; /* Cor do botão ao passar o mouse */
-}
-
-#btn-leitura img {
-    width: 40px;
-    height: auto;
-    position: fixed; /* Fixa o container na tela */
-    bottom: 265px; /* Distância da parte inferior */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Usar flexbox para alinhar os botões */
-    flex-direction: column; /* Alinha os botões verticalmente */
-    gap: 10px; /* Espaçamento entre os botões */
-    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
-    border-radius: 5px;
-}
-
-/* CSS para posicionar o botão VLibras */
-[vw-access-button] {
-    width: 100%; /* Para que o botão VLibras também ocupe 100% da largura */
-}
-
-/* Para garantir que o plugin VLibras fique na parte superior do botão de leitura */
-[vw-plugin-wrapper] {
-    width: 100%; /* Garante que o plugin ocupe toda a largura do contêiner */
-    margin-bottom: 5px; /* Espaçamento reduzido abaixo do plugin */
-    display: flex; /* Usar flexbox para alinhar o conteúdo, se necessário */
-}
-
-#marcador {
-    color: hsl(29, 95%, 60%);
-    font-weight: bold;
-}
-
-.banner {
-    box-shadow: 0px 10px 20px hsl(0, 0%, 40%);
-}
-
-/* Estilos para a barra de navegação */
-
-
-/* Estilos para a barra de navegação */
-header {
-    background-color: #210348;
-}
-
-/* Estilos para a navbar */
-.navbar {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color: #210348;
-    padding: 10px;
-}
-
-/* Estilos para os links da navbar */
-.navbar-nav .nav-link {
-    color: #ffffff;
-    font-size: 18.5px;
-    padding: 10px;
-    transition: background-color 0.7s ease;
-    text-decoration: none;
-
-}
-/* teste */
-
-  
-    .nav-link {
-    position: relative;
-    margin-right: 20px;
-  }
-  
-
-  
- .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #F57806;
-    transition: all 0.5s ease;
-
-  }
-
-  
-.nav-link:hover::after {
-    width: 100%;
-    left: 0;
-  }
-
-
-/* teste */
-#logo{
-    height: 85px;
-    width: 85px;
-}
-.nav-brand{
-    margin-left: 20px;
-}
-.navbar li {
-    padding: 0px 20px 0px;
-}
-
-/* Estilos para as imagens no menu */
-nav img {
-    width: 32px;
-    height: 32px;
-}
-
-#banner {
-    padding: 0px;
-}
-
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-}
-
-/* animação no nav-bar */
-@keyframes saltar {
-    50%{transform: scale(1.1);}
-}
 
 /* carrosel */
 .carousel-item {
@@ -186,13 +25,6 @@ nav img {
 
 .edicao{
     margin: 10px;
-}
-
-#banner img {
-    width: 100%;
-    /* Faz a imagem ocupar 100% da largura do contêiner */
-    height: auto;
-    /* Mantém a proporção da altura */
 }
 
 #imagem1 img {
@@ -429,6 +261,8 @@ nav img {
 
 .mapa iframe{
     border-radius: 30px;
+    width: 50%;
+    height: auto;
 }
 
 .copyright p{
@@ -437,10 +271,6 @@ nav img {
     margin-left: 70px;
 }
 
-.mapa iframe{
-    width: 50%;
-    height: auto;
-}
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
@@ -459,6 +289,26 @@ nav img {
 
 #login{
     margin-left: 14.5px;
+}
+
+#voltar-ao-topo {
+    position: absolute;
+    right: 20px; /* Ajusta a distância do botão à direita do rodapé */
+    bottom: 20px; /* Ajusta a distância do botão ao fundo do rodapé */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    padding: 10px 15px; /* Ajuste de espaçamento */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+#voltar-ao-topo:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+#rodape {
+    position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
 }
 
 /* Animação do Google Maps */

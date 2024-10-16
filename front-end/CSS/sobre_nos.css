@@ -1,0 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Remover margens do corpo */
+body {
+    margin: 0;
+}
