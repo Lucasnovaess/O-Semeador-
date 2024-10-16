@@ -60,13 +60,14 @@ const fazerLogin = async () => {
                 document.querySelector('#cadastroButton')
             cadastrarButton.disabled = false
             const salvar = document.querySelector('#salvar-alteracoes');
-            const adicionarButton = document.querySelector('#adicionar-imagem');
-            const removerButton = document.querySelector('#remover-imagem');
+            document.querySelectorAll('.btn-adicionar-imagem, .btn-remover-imagem').forEach(botao => {
+                botao.classList.remove('d-none');
+            })
             const editarTexto = document.querySelector('#editar-texto');
-            adicionarButton.classList.remove('d-none');
-            removerButton.classList.remove('d-none');
             editarTexto.classList.remove('d-none');
             salvar.classList.remove('d-none');
+            document.getElementById('botoesEdicao').classList.remove('d-none');
+
 
             document.querySelector('#editar-texto').addEventListener('click', () => {
                 const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
@@ -76,7 +77,7 @@ const fazerLogin = async () => {
             });
         }
         catch (error) {
-    //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
+            //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
         }
     }
     else {
@@ -116,6 +117,30 @@ const buscarTextos = async () => {
         console.error('Erro ao buscar textos:', error);
     }
 };
+
+async function carregarImagens() {
+    const puxarImagemEndpoint = '/imagens-puxar'
+    const URLCompleta = `${protocolo}${baseURL}${puxarImagemEndpoint}`
+    try {
+        const response = await axios.get(URLCompleta);
+        const imagens = response.data;
+        
+        const carouselInner = document.querySelector('.carousel-inner');
+        carouselInner.innerHTML = '';
+        imagens.forEach((imagem, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.className = index === 0 ? 'carousel-item active' : 'carousel-item';
+            carouselItem.innerHTML = `
+            <img src="${imagem.src}" class="d-block w-100" alt="Imagem ${index + 1}">
+            <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem</button>
+            <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem(this)">Remover Imagem</button>`;
+            carouselInner.appendChild(carouselItem);
+            console.log(imagem.url)
+        });
+    } catch (error) {
+        console.error('Erro ao carregar imagens:', error);
+    }
+}
 
 
 

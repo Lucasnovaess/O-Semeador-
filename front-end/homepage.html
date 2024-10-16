@@ -24,7 +24,7 @@
 
 </head>
 
-<body onload="buscarTextos()">
+<body onload="buscarTextos(); carregarImagens();" >
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -70,7 +70,6 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
                     <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
-
                         Login
                     </button>
                 </div>
@@ -165,32 +164,38 @@
     </header>
     <main>
         <!-- Banner do Semeador -->
-        <div id="botoesEdicao">
-            <button id="editar-texto" class="btn btn-warning d-none">Editar Texto</button>
-            <button id="adicionar-imagem" class="btn btn-primary d-none">Adicionar Imagem</button>
-            <button class="btn btn-danger d-none" id="remover-imagem">Remover Imagem</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none">Salvar Alterações</button>
+        <div id="botoesEdicao" class="d-none">
+            <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
+            <!-- <button id="adicionar-imagem" class="btn btn-primary btn-adicionar-imagem d-none">Adicionar Imagem</button>
+            <button class="btn btn-danger btn-remover-imagem d-none" id="remover-imagem">Remover Imagem</button> -->
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
         </div>
 
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="../images/imagem1.svg" class="d-block w-100" alt="Imagem 1">
-              </div>
-              <div class="carousel-item">
-                <img src="../images/imagem2.svg" class="d-block w-100" alt="Imagem 2">
-              </div>
-              <div class="carousel-item">
-                <img src="../images/imagem3.svg" class="d-block w-100" alt="Imagem 3">
-              </div>
+                <div class="carousel-item active">
+                    <img src="../images/imagem1.svg" class="d-block w-100" alt="Imagem 1">
+                    <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem </button>
+                    <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem()">Remover Imagem </button>
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/imagem2.svg" class="d-block w-100" alt="Imagem 2">
+                    <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem </button>
+                    <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem()">Remover Imagem </button>
+                </div>
+                <div class="carousel-item">
+                    <img src="../images/imagem3.svg" class="d-block w-100" alt="Imagem 3">
+                    <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem </button>
+                    <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem()">Remover Imagem </button>
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
             </button>
         </div>
 
