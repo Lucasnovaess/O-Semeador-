@@ -30,13 +30,18 @@ usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model("Usuario", usuarioSchema)
 
 const textoSchema = new mongoose.Schema({
-    titulo:{type:String, required: true},
+    titulo:{type:String, required: false},
     subtitulo: { type: String, required: false },
-    conteudo: { type: String, required: true }
+    conteudo: { type: String, required: false }
 });
 
 const Texto = mongoose.model('Texto', textoSchema);
 
+const imagemSchema = new mongoose.Schema({
+    src: String
+});
+
+const Imagem = mongoose.model('Imagem', imagemSchema);
 
 app.post('/signup', async (req, res) => {
     try {
@@ -115,6 +120,39 @@ app.put('/textos-atualizar', async (req, res) => {
         res.status(200).json(textoAtualizado);
     } catch (error) {
         res.status(400).json({ message: 'Erro ao atualizar texto', error });
+    }
+});
+
+app.post('/imagens-adicionar', async (req, res) => {
+    try {
+        const novaImagem = new Imagem(req.body);
+        await novaImagem.save();
+        res.status(201).send(novaImagem);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
+// Rota para remover uma imagem
+app.delete('/imagens-remover/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const imagemRemovida = await Imagem.findByIdAndDelete(id);
+        if (!imagemRemovida) {
+            return res.status(404).send();
+        }
+        res.status(200).send(imagemRemovida);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+app.get('/imagens-puxar', async (req, res) => {
+    try {
+        const imagens = await Imagem.find();
+        res.status(200).send(imagens);
+    } catch (error) {
+        res.status(500).send(error);
     }
 });
 

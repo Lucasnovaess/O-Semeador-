@@ -60,13 +60,14 @@ const fazerLogin = async () => {
                 document.querySelector('#cadastroButton')
             cadastrarButton.disabled = false
             const salvar = document.querySelector('#salvar-alteracoes');
-            const adicionarButton = document.querySelector('#adicionar-imagem');
-            const removerButton = document.querySelector('#remover-imagem');
+            document.querySelectorAll('.btn-adicionar-imagem, .btn-remover-imagem').forEach(botao => {
+                botao.classList.remove('d-none');
+            })
             const editarTexto = document.querySelector('#editar-texto');
-            adicionarButton.classList.remove('d-none');
-            removerButton.classList.remove('d-none');
             editarTexto.classList.remove('d-none');
             salvar.classList.remove('d-none');
+            document.getElementById('botoesEdicao').classList.remove('d-none');
+
 
             document.querySelector('#editar-texto').addEventListener('click', () => {
                 const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
@@ -76,7 +77,7 @@ const fazerLogin = async () => {
             });
         }
         catch (error) {
-    //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
+            //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
         }
     }
     else {
@@ -95,18 +96,17 @@ const buscarTextos = async () => {
 
         textos.forEach((texto, index) => {
             const row = document.querySelector(`#texto-principal-${index + 1}`); // Supondo que você tenha rows com IDs como row1, row2, etc.
+            row.setAttribute('data-id', texto._id);
+            const tituloElement = row.querySelector('.titulo');
+            const subtituloElement = row.querySelector('.sub-titulo');
+            const paragrafoElement = row.querySelector('.paragrafo');
 
-            const tituloElement = row.querySelector('#titulo');
-            const subtituloElement = row.querySelector('#subtitulo');
-            const paragrafoElement = row.querySelector('#paragrafo');
-
-            if (tituloElement) {
-                tituloElement.setAttribute('data-id', texto._id); // Armazena o ID
+            if (tituloElement) { // Armazena o ID
                 tituloElement.innerText = texto.titulo;
             }
 
             if (subtituloElement) {
-                subtituloElement.innerText = texto.subtitulo || ''; // Se não houver subtítulo, exibe vazio
+                subtituloElement.innerText = texto.subtitulo;
             }
 
             if (paragrafoElement) {
@@ -118,13 +118,32 @@ const buscarTextos = async () => {
     }
 };
 
+async function carregarImagens() {
+    const puxarImagemEndpoint = '/imagens-puxar'
+    const URLCompleta = `${protocolo}${baseURL}${puxarImagemEndpoint}`
+    try {
+        const response = await axios.get(URLCompleta);
+        const imagens = response.data;
+        
+        const carouselInner = document.querySelector('.carousel-inner');
+        carouselInner.innerHTML = '';
+        imagens.forEach((imagem, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.className = index === 0 ? 'carousel-item active' : 'carousel-item';
+            carouselItem.innerHTML = `
+            <img src="${imagem.src}" class="d-block w-100" alt="Imagem ${index + 1}">
+            <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem</button>
+            <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem(this)">Remover Imagem</button>`;
+            carouselInner.appendChild(carouselItem);
+            console.log(imagem.url)
+        });
+    } catch (error) {
+        console.error('Erro ao carregar imagens:', error);
+    }
+}
 
-// Chame a função após o login ou na inicialização da página
 
 
-
-//fora de qualquer outra função, pode ser no final, depois de todas
-//fora de qualquer outra função, pode ser no final, depois de todas
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,
     timeout) {
     let alert = document.querySelector(seletor)
@@ -146,35 +165,6 @@ function ocultarModal(seletor, timeout) {
         modal.hide()
     }, timeout)
 }
-// const salvarAlteracoes = async () => {
-//     // if (alternarEdicao() == false) return; // Verifica se a edição está ativada
-
-//     const dadosParaSalvar = []; // Array para armazenar os dados
-
-//     // Percorre todos os textos
-//     for (let i = 0; i < textos.length; i++) {
-//         const titulo = document.querySelector(`#titulo${i + 1}`).innerText; // Título editado
-//         const subtitulo = document.querySelector(`#subtitulo${i + 1}`).innerText; // Subtítulo editado
-//         const conteudo = document.querySelector(`#paragrafo${i + 1}`).innerText; // Conteúdo editado
-
-//         // Adiciona os dados ao array
-//         dadosParaSalvar.push({ titulo, subtitulo, conteudo });
-//     }
-
-//     try {
-//         await axios.put('/textos-atualizar', dadosParaSalvar); // Envia os dados para o backend
-//         console.log('Textos salvos com sucesso');
-//     } catch (error) {
-//         console.error('Erro ao salvar textos:', error);
-//     } finally {
-//         // Desativa a edição
-//         textos.forEach(texto => {
-//             texto.contentEditable = false; // Desativa a edição
-//         });
-//         document.querySelector('#salvarAlteracoes').style.display = 'none'; // Esconde o botão de salvar
-//         edicaoAtivada = false; // Marca que a edição não está mais ativada
-//     }
-// };
 
 const salvarAlteracoes = async () => {
     const atualizarEndpoint = '/textos-atualizar'

@@ -160,6 +160,36 @@ nav img {
     50%{transform: scale(1.1);}
 }
 
+/* carrosel */
+.carousel-item {
+    position: relative;
+}
+
+.btn-adicionar-imagem, .btn-remover-imagem {
+    position: absolute;
+    bottom: 220px; /* Ajuste conforme necessário */
+    left: 800px; /* Ajuste conforme necessário */
+    z-index: 1; /* Para garantir que os botões apareçam sobre a imagem */
+}
+
+.btn-remover-imagem {
+    left: 600px; /* Ajuste conforme necessário */
+}
+
+
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.edicao{
+    margin: 10px;
+}
+
 #banner img {
     width: 100%;
     /* Faz a imagem ocupar 100% da largura do contêiner */
