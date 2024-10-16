@@ -1,6 +1,8 @@
 const protocolo = 'http://'
 const baseURL = 'localhost:3000'
 
+let edicaoAtivada = false
+
 async function cadastrarUsuario() {
     let usuarioCadastroInput = document.querySelector('#usuarioCadastroInput')
     let passwordCadastroInput = document.querySelector('#passwordCadastroInput')
@@ -57,6 +59,21 @@ const fazerLogin = async () => {
             const cadastrarButton =
                 document.querySelector('#cadastroButton')
             cadastrarButton.disabled = false
+            const salvar = document.querySelector('#salvar-alteracoes');
+            const adicionarButton = document.querySelector('#adicionar-imagem');
+            const removerButton = document.querySelector('#remover-imagem');
+            const editarTexto = document.querySelector('#editar-texto');
+            adicionarButton.classList.remove('d-none');
+            removerButton.classList.remove('d-none');
+            editarTexto.classList.remove('d-none');
+            salvar.classList.remove('d-none');
+
+            document.querySelector('#editar-texto').addEventListener('click', () => {
+                const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
+                textosEditaveis.forEach(texto => {
+                    texto.contentEditable = texto.isContentEditable ? false : true; // Alterna entre editável e não editável
+                });
+            });
         }
         catch (error) {
     //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
@@ -69,8 +86,39 @@ const fazerLogin = async () => {
 }
 
 
-//fora de qualquer outra função, pode ser no final, depois de todas
-//fora de qualquer outra função, pode ser no final, depois de todas
+const buscarTextos = async () => {
+    const cadastroEndpoint = '/textos-puxar'
+    const URLCompleta = `${protocolo}${baseURL}${cadastroEndpoint}`
+    try {
+        const response = await axios.get(URLCompleta);
+        const textos = response.data;
+
+        textos.forEach((texto, index) => {
+            const row = document.querySelector(`#texto-principal-${index + 1}`); // Supondo que você tenha rows com IDs como row1, row2, etc.
+            row.setAttribute('data-id', texto._id);
+            const tituloElement = row.querySelector('.titulo');
+            const subtituloElement = row.querySelector('.sub-titulo');
+            const paragrafoElement = row.querySelector('.paragrafo');
+
+            if (tituloElement) { // Armazena o ID
+                tituloElement.innerText = texto.titulo;
+            }
+
+            if (subtituloElement) {
+                subtituloElement.innerText = texto.subtitulo;
+            }
+
+            if (paragrafoElement) {
+                paragrafoElement.innerText = texto.conteudo;
+            }
+        });
+    } catch (error) {
+        console.error('Erro ao buscar textos:', error);
+    }
+};
+
+
+
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,
     timeout) {
     let alert = document.querySelector(seletor)
@@ -92,6 +140,34 @@ function ocultarModal(seletor, timeout) {
         modal.hide()
     }, timeout)
 }
+
+const salvarAlteracoes = async () => {
+    const atualizarEndpoint = '/textos-atualizar'
+    const URLCompleta = `${protocolo}${baseURL}${atualizarEndpoint}`
+    try {
+        const textos = Array.from(document.querySelectorAll('.row')).map((row) => {
+            const tituloElement = row.querySelector('.titulo');
+            const subtituloElement = row.querySelector('.sub-titulo');
+            const paragrafoElement = row.querySelector('.paragrafo');
+            const id = row.getAttribute('data-id');
+
+            return {
+                id,
+                titulo: tituloElement ? tituloElement.innerText : '',
+                subtitulo: subtituloElement ? subtituloElement.innerText : '',
+                conteudo: paragrafoElement ? paragrafoElement.innerText : '',
+            };
+        });
+
+        await Promise.all(textos.map(texto =>
+            axios.put(URLCompleta, texto) // Agora o id vai no corpo da requisição
+        ));
+
+        console.log('Textos atualizados com sucesso!');
+    } catch (error) {
+        console.error('Erro ao salvar textos:', error);
+    }
+};
 
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 

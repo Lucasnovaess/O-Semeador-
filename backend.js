@@ -7,9 +7,11 @@ const mongoose = require('mongoose')
 const uniqueValidator = require('mongoose-unique-validator')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const bodyParser = require('body-parser');
 
 app.use(express.json())
 app.use(cors())
+app.use(bodyParser.json());
 
 
 
@@ -26,6 +28,15 @@ const usuarioSchema = mongoose.Schema({
 })
 usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model("Usuario", usuarioSchema)
+
+const textoSchema = new mongoose.Schema({
+    titulo:{type:String, required: false},
+    subtitulo: { type: String, required: false },
+    conteudo: { type: String, required: false }
+});
+
+const Texto = mongoose.model('Texto', textoSchema);
+
 
 app.post('/signup', async (req, res) => {
     try {
@@ -73,6 +84,39 @@ app.post('/login', async (req, res) => {
     res.status(200).json({ token: token })
 
 })
+
+app.post('/new-text', async (req, res) => {
+    try {
+        const titulo = req.body.titulo
+        const subtitulo = req.body.subtitulo
+        const conteudo = req.body.conteudo
+
+        const novoTexto = new Texto({ titulo, subtitulo, conteudo })
+        await novoTexto.save();
+        res.status(201).json(novoTexto);
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao adicionar texto', error });
+    }
+});
+
+app.get('/textos-puxar', async (req, res) => {
+    try {
+        const textos = await Texto.find();
+        res.json(textos);
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao recuperar textos', error });
+    }
+});
+
+app.put('/textos-atualizar', async (req, res) => {
+    try {
+        const { id, titulo, subtitulo, conteudo } = req.body;
+        const textoAtualizado = await Texto.findByIdAndUpdate(id, { titulo, subtitulo, conteudo }, { new: true });
+        res.status(200).json(textoAtualizado);
+    } catch (error) {
+        res.status(400).json({ message: 'Erro ao atualizar texto', error });
+    }
+});
 
 
 app.listen(3000, () => {

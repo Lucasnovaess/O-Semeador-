@@ -6,6 +6,10 @@
 body {
     margin: 0;
 }
+.carousel-inner img {
+    max-height: 500px;
+    object-fit: cover;
+}
 
 /* Estilo para o contêiner dos botões */
 #botao-container {

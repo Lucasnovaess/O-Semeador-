@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body onload="buscarTextos()">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,8 +68,9 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()" type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
+                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+
                         Login
                     </button>
                 </div>
@@ -98,10 +99,10 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button onclick="cadastrarUsuario()" type="button" class="btn btn-primary">
+                    <button onclick="cadastrarUsuario()" type="button" class="btn btn-warning">
                         Cadastrar
                     </button>
 
@@ -120,12 +121,12 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-primary btn-lg"
-                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
-                                disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
+                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+
                         </div>
                         <div class="mb-3" id="login">
-                            <button id="loginButton" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                            <button id="loginButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
                                 data-bs-target="#modalLogin" href="#">
                                 Login
                             </button>
@@ -164,52 +165,56 @@
     </header>
     <main>
         <!-- Banner do Semeador -->
-        <div class="container-fluid pd-0 m-0" id="banner">
-            <div class="col-12 p-0">
-                <img src="../images/banner.svg" alt="Banner" class="banner img-fluid">
+        <div id="botoesEdicao">
+            <button id="editar-texto" class="btn btn-warning d-none">Editar Texto</button>
+            <button id="adicionar-imagem" class="btn btn-primary d-none">Adicionar Imagem</button>
+            <button class="btn btn-danger d-none" id="remover-imagem">Remover Imagem</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none">Salvar Alterações</button>
+        </div>
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../images/imagem1.svg" class="d-block w-100" alt="Imagem 1">
+              </div>
+              <div class="carousel-item">
+                <img src="../images/imagem2.svg" class="d-block w-100" alt="Imagem 2">
+              </div>
+              <div class="carousel-item">
+                <img src="../images/imagem3.svg" class="d-block w-100" alt="Imagem 3">
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
         <!-- Imagem e textos -->
         <div class="container-fluid" id="principal">
-            <div class="row mb-5">
+            <div class="row mb-5" id="texto-principal-1">
                 <!-- Primeira imagem -->
                 <div class="col-md col-lg-6 col-xxl-6" id="imagem1">
                     <img src="../images/imagem1.svg" alt="#" class="img-fluid">
                 </div>
                 <!-- Primeiro texto -->
                 <div class="col-md col-lg-6 col-xxl-6 " id="textos">
-                    <h2 class="titulo">
-                        Faça parte dessa história, ajude-nos a mudar vidas, seja um doador!
-                    </h2>
-                    <p class="paragrafo">
-                        Desde 1974, a Escola Metodista "O Semeador" é uma instituição beneficente, sem fins lucrativos
-                        que atende crianças e adolescentes com deficiência intelectual, múltiplas deficiências e autismo
-                        a partir dos 06 anos de idade. Atualmente a escola é referência no atendimento de alunos com TEA
-                        (Transtorno do Espectro Autista). Nosso trabalho se baseia nas diversas formas de linguagem,
-                        usando educação, arte, tecnologia, cultura e o lúdico como estratégias para prover o
-                        aprendizado, desenvolvimento e formação dos alunos.
-                    </p>
+                    <h2 class="titulo"></h2>
+                    <h3 class="sub-titulo"></h3>
+                    <p class="paragrafo"></p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="texto-principal-2">
                 <!-- Segundo texto -->
                 <div class="col-md col-lg-6 col-xxl-6" id="textos">
 
-                    <h2 class="titulo">Ajude-nos a transformar vidas, multiplique nossas ações e fortaleça nosso
-                        objetivo.</h2>
-                    <h3 class="sub-titulo">Seja um Semeador Voluntário!</h3>
-                    <p class="paragrafo">
-                        Ajude-nos a transformar vidas, multiplique nossas ações e fortaleça nosso objetivo. Seja um
-                        Semeador Voluntário! Nossas ações são financiadas na sua grande maioria por verbas públicas e
-                        parcerias que estabelecemos com aqueles que acreditam em nossos trabalhos. Atualmente estamos
-                        passando por uma situação muito difícil, pois corremos o risco de fecharmos nossas portas, pois
-                        recebemos uma de nossas verbas com a redução de 50%. Nossos educandos precisam muito da ajuda de
-                        todos, pois a grande maioria é de vulnerabilidade social. Para continuarmos a fornecer aos
-                        alunos instalações de amparo, educação de qualidade, e inclusão ativa na sociedade civil,
-                        precisamos que você junte-se a nós nessa causa, e seja um Semeador Voluntário.
-
-                    </p>
+                    <h2 class="titulo"></h2>
+                    <h3 class="sub-titulo"></h3>
+                    <p class="paragrafo"></p>
                 </div>
                 <!-- Segunda imagem -->
                 <div class="col-md col-lg-6 col-xxl-6" id="imagem2">
