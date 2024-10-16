@@ -101,7 +101,7 @@ header {
 /* teste */
 
   
-  .nav-link {
+    .nav-link {
     position: relative;
     margin-right: 20px;
   }
@@ -162,18 +162,16 @@ nav img {
 
 /* carrosel */
 .carousel-item {
-    position: relative;
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
 }
 
-.btn-adicionar-imagem, .btn-remover-imagem {
+.btn-container {
     position: absolute;
-    bottom: 220px; /* Ajuste conforme necessário */
-    left: 800px; /* Ajuste conforme necessário */
-    z-index: 1; /* Para garantir que os botões apareçam sobre a imagem */
-}
-
-.btn-remover-imagem {
-    left: 600px; /* Ajuste conforme necessário */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
 }
 
 
@@ -312,6 +310,14 @@ nav img {
 .margin {
     margin: 16px;
 }
+
+#parceiros{
+    margin-top: 30px;
+    background-color:#F57806;
+    padding: 50px;
+    opacity: 50%;
+}
+
 
 .wrapper {
     display: inline-flex;
@@ -481,6 +487,7 @@ nav img {
         padding: 00px 0px 16px 0px;
         margin: 0px;
     }
+    
 }
 
 

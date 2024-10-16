@@ -117,31 +117,235 @@ const buscarTextos = async () => {
         console.error('Erro ao buscar textos:', error);
     }
 };
-
 async function carregarImagens() {
     const puxarImagemEndpoint = '/imagens-puxar'
     const URLCompleta = `${protocolo}${baseURL}${puxarImagemEndpoint}`
     try {
+
         const response = await axios.get(URLCompleta);
         const imagens = response.data;
-        
-        const carouselInner = document.querySelector('.carousel-inner');
-        carouselInner.innerHTML = '';
+        const carouselInner = document.querySelector('.imagens');
+        carouselInner.innerHTML = ''; // Limpa o conteúdo existente
+
         imagens.forEach((imagem, index) => {
-            const carouselItem = document.createElement('div');
-            carouselItem.className = index === 0 ? 'carousel-item active' : 'carousel-item';
-            carouselItem.innerHTML = `
-            <img src="${imagem.src}" class="d-block w-100" alt="Imagem ${index + 1}">
-            <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagem()">Adicionar Imagem</button>
-            <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem(this)">Remover Imagem</button>`;
-            carouselInner.appendChild(carouselItem);
-            console.log(imagem.url)
+            const isActive = index === 0 ? 'active' : '';
+            const carouselItem = `
+                        <div class="carousel-item ${isActive} imagem" data-id="${imagem._id}">
+                            <img src="${imagem.src}" class="d-block w-100" alt="Imagem">
+                            <div class="btn-container">
+                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#imagemModal">Adicionar Imagem</button>
+                                <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem('${imagem._id}')">Remover Imagem</button>
+                            </div>
+                        </div>`;
+            carouselInner.innerHTML += carouselItem;
+            console.log(imagem._id)
         });
-    } catch (error) {
-        console.error('Erro ao carregar imagens:', error);
+    }
+
+    catch {
+        (error => console.error('Erro ao carregar imagens:', error));
     }
 }
 
+
+let imagemIndex = 4; // Índice inicial para novas imagens
+
+
+
+function adicionarImagemPorArquivo() {
+    const fileInput = document.getElementById('imagemFile');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Por favor, selecione uma imagem.');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async function (e) {
+        const imagemURL = e.target.result;
+
+        const carouselInner = document.querySelector('.imagens');
+        const novaImagemDiv = document.createElement('div');
+        novaImagemDiv.className = 'carousel-item imagem';
+
+        novaImagemDiv.innerHTML = `
+            <img src="${imagemURL}" class="d-block w-100" alt="Imagem ${imagemIndex + 1}">
+            <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+            <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem()">Remover Imagem</button>
+        `;
+
+        carouselInner.appendChild(novaImagemDiv);
+        imagemIndex++;
+        
+        // Enviar a nova imagem para o banco de dados
+        try {
+            await fetch('http://localhost:3000/imagens-adicionar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ src: imagemURL })
+            });
+        } catch (error) {
+            alert('arquivo muito pesado');
+            console.error('Erro ao salvar a imagem no banco de dados:', error);
+        }
+
+        // Limpa o input e fecha o modal
+        fileInput.value = '';
+        const modal = bootstrap.Modal.getInstance(document.getElementById('imagemModal'));
+        modal.hide();
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function removerImagem(idImagem) {
+    const carouselItem = document.querySelector(`.imagem[data-id='${idImagem}']`);
+
+    if (carouselItem) {
+        // Fazer a requisição para remover a imagem no back-end
+        fetch(`http://localhost:3000/imagens-remover/${idImagem}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao remover a imagem');
+                }
+                return response.json();
+            })
+            .then(() => {
+                const parent = carouselItem.parentElement;
+                parent.removeChild(carouselItem);
+
+                // Se a imagem removida for a ativa, tornar a próxima ativa
+                if (carouselItem.classList.contains('active')) {
+                    const nextItem = parent.querySelector('.imagem');
+                    if (nextItem) {
+                        nextItem.classList.add('active');
+                    }
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    } else {
+        console.error("Imagem não encontrada ou já removida");
+    }
+}
+
+async function carregarParceiros() {
+    const puxarImagemEndpoint = '/parceiros-puxar'
+    const URLCompleta = `${protocolo}${baseURL}${puxarImagemEndpoint}`
+    try {
+
+        const response = await axios.get(URLCompleta);
+        const parceiros = response.data;
+        const carouselInner = document.querySelector('.parceiros');
+        carouselInner.innerHTML = ''; // Limpa o conteúdo existente
+
+        parceiros.forEach((parceiro, index) => {
+            const isActive = index === 0 ? 'active' : '';
+            const carouselItem = `
+                        <div class="carousel-item ${isActive} parceiro" data-id="${parceiro._id}">
+                            <img src="${parceiro.src}" class="d-block w-100">
+                            <div class="btn-container">
+                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#parceiroModal">Parceiro Imagem</button>
+                                <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerParceiro('${parceiro._id}')">Parceiro Imagem</button>
+                            </div>
+                        </div>`;
+            carouselInner.innerHTML += carouselItem;
+            console.log(parceiro._id)
+        });
+    }
+
+    catch {
+        (error => console.error('Erro ao carregar imagens:', error));
+    }
+}
+const parceiroIndex = 3;
+function adicionarParceiroporArquivo() {
+    const fileInput = document.getElementById('parceiroFile');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Por favor, selecione uma imagem.');
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async function (e) {
+        const parceiroURL = e.target.result;
+
+        const carouselInner = document.querySelector('.parceiros');
+        const novaParceiroDiv = document.createElement('div');
+        novoParceiroDiv.className = 'parceiro';
+
+        novoParceiroDiv.innerHTML = `
+            <img src="${imagemURL}" class="d-block w-100" alt="Imagem ${parceiroIndex + 1}">
+            <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro</button>
+            <button class="btn btn-danger d-none btn-remover-parceiro" onclick="removerParceiro()">Remover Parceiro</button>
+        `;
+
+        carouselInner.appendChild(novoParceiroDiv);
+        parceiroIndex++;
+
+        // Enviar a nova imagem para o banco de dados
+        try {
+            await fetch('http://localhost:3000/parceiros-adicionar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ src: imagemURL })
+            });
+        } catch (error) {
+            console.error('Erro ao salvar a imagem no banco de dados:', error);
+        }
+
+        // Limpa o input e fecha o modal
+        fileInput.value = '';
+        const modal = bootstrap.Modal.getInstance(document.getElementById('parceiroModal'));
+        modal.hide();
+    };
+
+    reader.readAsDataURL(file);
+}
+
+function removerParceiro(idParceiro) {
+    const carouselItem = document.querySelector(`.parceiro[data-id='${idParceiro}']`);
+
+    if (carouselItem) {
+        // Fazer a requisição para remover a imagem no back-end
+        fetch(`http://localhost:3000/parceiros-remover/${idParceiro}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao remover a imagem');
+                }
+                return response.json();
+            })
+            .then(() => {
+                const parent = carouselItem.parentElement;
+                parent.removeChild(carouselItem);
+
+                // Se a imagem removida for a ativa, tornar a próxima ativa
+                if (carouselItem.classList.contains('active')) {
+                    const nextItem = parent.querySelector('.parceiro');
+                    if (nextItem) {
+                        nextItem.classList.add('active');
+                    }
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    } else {
+        console.error("Parceiro não encontrado ou já removida");
+    }
+}
 
 
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,
