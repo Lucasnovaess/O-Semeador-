@@ -30,9 +30,9 @@ usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model("Usuario", usuarioSchema)
 
 const textoSchema = new mongoose.Schema({
-    titulo:{type:String, required: true},
+    titulo:{type:String, required: false},
     subtitulo: { type: String, required: false },
-    conteudo: { type: String, required: true }
+    conteudo: { type: String, required: false }
 });
 
 const Texto = mongoose.model('Texto', textoSchema);

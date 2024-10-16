@@ -95,18 +95,17 @@ const buscarTextos = async () => {
 
         textos.forEach((texto, index) => {
             const row = document.querySelector(`#texto-principal-${index + 1}`); // Supondo que você tenha rows com IDs como row1, row2, etc.
+            row.setAttribute('data-id', texto._id);
+            const tituloElement = row.querySelector('.titulo');
+            const subtituloElement = row.querySelector('.sub-titulo');
+            const paragrafoElement = row.querySelector('.paragrafo');
 
-            const tituloElement = row.querySelector('#titulo');
-            const subtituloElement = row.querySelector('#subtitulo');
-            const paragrafoElement = row.querySelector('#paragrafo');
-
-            if (tituloElement) {
-                tituloElement.setAttribute('data-id', texto._id); // Armazena o ID
+            if (tituloElement) { // Armazena o ID
                 tituloElement.innerText = texto.titulo;
             }
 
             if (subtituloElement) {
-                subtituloElement.innerText = texto.subtitulo || ''; // Se não houver subtítulo, exibe vazio
+                subtituloElement.innerText = texto.subtitulo;
             }
 
             if (paragrafoElement) {
@@ -119,12 +118,7 @@ const buscarTextos = async () => {
 };
 
 
-// Chame a função após o login ou na inicialização da página
 
-
-
-//fora de qualquer outra função, pode ser no final, depois de todas
-//fora de qualquer outra função, pode ser no final, depois de todas
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,
     timeout) {
     let alert = document.querySelector(seletor)
@@ -146,35 +140,6 @@ function ocultarModal(seletor, timeout) {
         modal.hide()
     }, timeout)
 }
-// const salvarAlteracoes = async () => {
-//     // if (alternarEdicao() == false) return; // Verifica se a edição está ativada
-
-//     const dadosParaSalvar = []; // Array para armazenar os dados
-
-//     // Percorre todos os textos
-//     for (let i = 0; i < textos.length; i++) {
-//         const titulo = document.querySelector(`#titulo${i + 1}`).innerText; // Título editado
-//         const subtitulo = document.querySelector(`#subtitulo${i + 1}`).innerText; // Subtítulo editado
-//         const conteudo = document.querySelector(`#paragrafo${i + 1}`).innerText; // Conteúdo editado
-
-//         // Adiciona os dados ao array
-//         dadosParaSalvar.push({ titulo, subtitulo, conteudo });
-//     }
-
-//     try {
-//         await axios.put('/textos-atualizar', dadosParaSalvar); // Envia os dados para o backend
-//         console.log('Textos salvos com sucesso');
-//     } catch (error) {
-//         console.error('Erro ao salvar textos:', error);
-//     } finally {
-//         // Desativa a edição
-//         textos.forEach(texto => {
-//             texto.contentEditable = false; // Desativa a edição
-//         });
-//         document.querySelector('#salvarAlteracoes').style.display = 'none'; // Esconde o botão de salvar
-//         edicaoAtivada = false; // Marca que a edição não está mais ativada
-//     }
-// };
 
 const salvarAlteracoes = async () => {
     const atualizarEndpoint = '/textos-atualizar'
