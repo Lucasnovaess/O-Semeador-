@@ -393,6 +393,8 @@ nav img {
 
 .mapa iframe{
     border-radius: 30px;
+    width: 50%;
+    height: auto;
 }
 
 .copyright p{
@@ -401,10 +403,6 @@ nav img {
     margin-left: 70px;
 }
 
-.mapa iframe{
-    width: 50%;
-    height: auto;
-}
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
@@ -423,6 +421,26 @@ nav img {
 
 #login{
     margin-left: 14.5px;
+}
+
+#voltar-ao-topo {
+    position: absolute;
+    right: 20px; /* Ajusta a distância do botão à direita do rodapé */
+    bottom: 20px; /* Ajusta a distância do botão ao fundo do rodapé */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    padding: 10px 15px; /* Ajuste de espaçamento */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+#voltar-ao-topo:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+#rodape {
+    position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
 }
 
 /* Animação do Google Maps */
