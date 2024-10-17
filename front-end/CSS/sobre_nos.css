@@ -6,3 +6,396 @@
 body {
     margin: 0;
 }
+
+/* Estilo para o contêiner dos botões */
+#botao-container {
+    position: fixed; /* Fixa o container na tela */
+    bottom: 265px; /* Distância da parte inferior */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Usar flexbox para alinhar os botões */
+    flex-direction: column; /* Alinha os botões verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+}
+
+/* Estilo para o botão de acessibilidade */
+#btn-leitura {
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em forma de ponteiro */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+    width: 40px; /* Botão responsivo para ocupar 100% da largura do container */
+    height: 40px;
+    margin-bottom: 0; /* Remove margens extras */
+}
+
+#btn-leitura:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+#btn-leitura img {
+    width: 40px;
+    height: auto;
+    position: fixed; /* Fixa o container na tela */
+    bottom: 265px; /* Distância da parte inferior */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Usar flexbox para alinhar os botões */
+    flex-direction: column; /* Alinha os botões verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+    border-radius: 5px;
+}
+
+/* CSS para posicionar o botão VLibras */
+[vw-access-button] {
+    width: 100%; /* Para que o botão VLibras também ocupe 100% da largura */
+}
+
+/* Para garantir que o plugin VLibras fique na parte superior do botão de leitura */
+[vw-plugin-wrapper] {
+    width: 100%; /* Garante que o plugin ocupe toda a largura do contêiner */
+    margin-bottom: 5px; /* Espaçamento reduzido abaixo do plugin */
+    display: flex; /* Usar flexbox para alinhar o conteúdo, se necessário */
+}
+
+#marcador {
+    color: hsl(29, 95%, 60%);
+    font-weight: bold;
+}
+
+.banner {
+    box-shadow: 0px 10px 20px hsl(0, 0%, 40%);
+}
+
+/* Estilos para a barra de navegação */
+header {
+    background-color: #210348;
+}
+
+/* Estilos para a navbar */
+.navbar {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background-color: #210348;
+    padding: 10px;
+}
+
+/* Estilos para os links da navbar */
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18.5px;
+    padding: 10px;
+    transition: background-color 0.7s ease;
+    text-decoration: none;
+}
+/* teste */
+
+  
+  .nav-link {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+
+  
+ .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #F57806;
+    transition: all 0.5s ease;
+
+  }
+
+  
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+#logo{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 75%;
+    box-shadow: 0px 0px 50px hsl(266, 92%, 20%);
+}
+
+.nav-brand{
+    margin-left: 20px;
+}
+.navbar li {
+    padding: 0px 20px 0px;
+}
+
+/* Estilos para as imagens no menu */
+nav img {
+    width: 32px;
+    height: 32px;
+}
+
+#banner {
+    padding: 0px;
+}
+
+.nav-link:hover {
+    animation-name: saltar;
+    animation-duration: 0.5s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+}
+
+/* animação no nav-bar */
+@keyframes saltar {
+    50%{transform: scale(1.1);}
+}
+
+.titulo-pag3{
+    font-weight: bold;
+    font-size: 36px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #060031;
+    text-shadow: 0px 0px 10px hsl(0, 0%, 55%);
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+/* sobre_nos */
+.paragrafo-pag3{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
+    margin: 30px;
+    text-align: center;
+}
+/* sobre_nos */
+.paragrafo-2-pag3{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
+    margin: 0px;
+    width: 100%;
+}
+/* sobre_nos */
+#textos-pag3 {
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    width: 50%;
+}
+/* sobre_nos */
+#textos-2-pag3 {
+    margin-right: 50px;
+    margin-left: 20px;
+    padding-bottom: 40px;
+    width: 50%;
+}
+/* Não sei */
+#principal-pag3{
+    width: 100%;
+    margin: 0px;
+    margin-top: 40px;
+}
+/* sobre_nos */
+#imagem3 img {
+    border: 3px solid #F57806;
+    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+    margin-left: 40px;
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    flex-direction: column;
+    padding-top: 33px;
+    text-align: left;
+    float: left;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #24b12f;
+    color: #ffffff;
+  }
+
+footer p{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+}
+
+footer{
+    background-color: #210348;
+}
+
+.content-area p{
+    padding: 10px;
+}
+
+.mapa iframe{
+    border-radius: 30px;
+    width: 50%;
+    height: auto;
+}
+
+.copyright p{
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 70px;
+}
+
+
+/* Hover do Google Maps */
+.mapa iframe:hover {
+    animation-name: scale;
+    animation-duration: 2s; /* Duração da animação */
+    animation-fill-mode: forwards; /* Mantém a posição final */
+}
+
+/* Animação do Google Maps */
+@keyframes scale {
+    50% {
+        transform: scale(1.1); /* Aumenta e move para a direita */
+    }
+}
+
+/* Seção de login*/
+#selecaoLogin{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+#login{
+    margin-left: 14.5px;
+}
+
+/* Botão de voltar ao topo */
+#voltar-ao-topo {
+    position: absolute;
+    right: 20px; /* Ajusta a distância do botão à direita do rodapé */
+    bottom: 20px; /* Ajusta a distância do botão ao fundo do rodapé */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    padding: 10px 15px; /* Ajuste de espaçamento */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+#voltar-ao-topo:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+#rodape {
+    position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
+}
+
+/* ------------------------- Medias Queries ------------------------- */
+
+@media (max-width: 991px) {
+    #padding-navbar {
+        padding: 00px 0px 16px 0px;
+        margin: 0px;
+    }
+}
+
+@media (min-width: 993px){
+    .content-area{
+        margin-right: 100px;
+    }
+    #rodape{
+        flex-direction: row-reverse;
+    }
+}
