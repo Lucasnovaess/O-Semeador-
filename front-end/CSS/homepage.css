@@ -170,7 +170,7 @@ header {
     width: 100px;
     height: 100px;
     border: 2px solid black;
-    border-radius: 75%;
+    border-radius: 50%;
     box-shadow: 0px 0px 50px hsl(266, 92%, 20%);
 }
 
