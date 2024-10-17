@@ -1,30 +1,44 @@
+/* IMPORTANTE */
+/* carrosel */
+.carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+}
+
+/* IMPORTANTE */
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
 /* Não sei */
 .margin {
     margin: 16px;
 }
 
-/* ------------------------- Medias Queries ------------------------- */
-
-@media (max-width: 991px) {
-    #imagem1 img, #imagem2 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-    }
-    .copyright p{
-        text-align: center;
-        margin-bottom: 0;
-        margin-left: 0;
-    }
-    .wrapper{
-        padding: 0;
-    }
-    .icones {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-align: center
-    }
+/* IMPORTANTE */
+#parceiros{
+    margin-top: 30px;
+    background-color:#F57806;
+    padding: 50px;
+    opacity: 50%;
 }
+
