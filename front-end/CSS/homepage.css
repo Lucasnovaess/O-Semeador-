@@ -94,6 +94,7 @@ body {
     gap: 10px; /* Espaçamento entre os botões */
     z-index: 9999; /* Garantir que o container fique acima de outros elementos */
     border-radius: 5px;
+    background-color: #2975E1;
 }
 
 /* CSS para posicionar o botão VLibras */
