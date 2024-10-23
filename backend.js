@@ -1,4 +1,4 @@
-// mongodb+srv://antonionapoli394:antonionapoli394@o-semeador-site.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador-site
+// mongodb+srv://antonionapoli394:<password>@o-semeador-site.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador-site
 
 const express = require('express')
 const app = express()

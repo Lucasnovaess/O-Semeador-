@@ -101,7 +101,7 @@ const buscarTextos = async () => {
             const subtituloElement = row.querySelector('.sub-titulo');
             const paragrafoElement = row.querySelector('.paragrafo');
 
-            if (tituloElement) { // Armazena o ID
+            if (tituloElement) { 
                 tituloElement.innerText = texto.titulo;
             }
 
@@ -131,7 +131,7 @@ async function carregarImagens() {
             const isActive = index === 0 ? 'active' : '';
             const carouselItem = `
                         <div class="carousel-item ${isActive} imagem" data-id="${imagem._id}">
-                            <img src="${imagem.src}" class="d-block w-100" alt="Imagem">
+                            <img src="${imagem.src}" class="img d-block w-100" alt="Imagem">
                             <div class="btn-container">
                                 <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#imagemModal">Adicionar Imagem</button>
                                 <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem('${imagem._id}')">Remover Imagem</button>
