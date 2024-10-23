@@ -315,9 +315,19 @@ nav img {
     
 }
 
+#parceiros img {
+    height: 200px;
+    width: auto;
+    margin: auto; /* Centraliza a imagem dentro do slide */
+    object-fit: contain; /* Ajusta a imagem sem cortar ou distorcer */
+}
 #parcerias{
     color: #ffffff;
     font-weight: bold;
+}
+#parceiros{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #convite-parcerias{
