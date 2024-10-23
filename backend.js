@@ -1,4 +1,4 @@
-// mongodb+srv://antonionapoli394:antonionapoli394@o-semeador-site.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador-site
+// mongodb+srv://antonionapoli394:<password>@o-semeador-site.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador-site
 
 const express = require('express')
 const app = express()
@@ -20,7 +20,7 @@ app.use(bodyParser.json({ limit: '10mb' }));
 
 async function conectarAoMongoDB() {
     await
-        mongoose.connect(`mongodb+srv://antonionapoli394:w9cgye9u3jI0VGbc@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`)
+        mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`)
 }
 
 

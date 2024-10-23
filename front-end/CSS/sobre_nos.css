@@ -62,7 +62,7 @@ body {
 }
 
 #marcador {
-    color: hsl(29, 95%, 60%);
+    color: hsl(29, 95%, 60%) !important;
     font-weight: bold;
 }
 
@@ -71,26 +71,38 @@ body {
 }
 
 /* Estilos para a barra de navegação */
-header {
-    background-color: #210348;
+.cabecalho {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: #ffffff;
 }
-
 /* Estilos para a navbar */
 .navbar {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color: #210348;
+    background-color: #ffffff;
     padding: 10px;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 /* Estilos para os links da navbar */
 .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #210348;
     font-size: 18.5px;
     padding: 10px;
     transition: background-color 0.7s ease;
     text-decoration: none;
 }
-/* teste */
+
+#loginLink{
+    color: #210348 !important;
+  }
 
   
   .nav-link {
@@ -116,19 +128,17 @@ header {
 .nav-link:hover::after {
     width: 100%;
     left: 0;
+    color: #210348;
   }
 
 #logo{
-    width: 100px;
+    width: auto;
     height: 100px;
-    border: 2px solid black;
-    border-radius: 75%;
-    box-shadow: 0px 0px 50px hsl(266, 92%, 20%);
 }
 
-.nav-brand{
+/* .nav-brand{
     margin-left: 20px;
-}
+} */
 .navbar li {
     padding: 0px 20px 0px;
 }
@@ -147,6 +157,7 @@ nav img {
     animation-name: saltar;
     animation-duration: 0.5s; /* Duração da animação */
     animation-direction: normal;/* Mantém a posição final */
+    color: #210348 !important;
 }
 
 /* animação no nav-bar */
@@ -154,7 +165,7 @@ nav img {
     50%{transform: scale(1.1);}
 }
 
-.titulo-pag3{
+.titulo{
     font-weight: bold;
     font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -166,8 +177,8 @@ nav img {
     margin-bottom: 40px;
     text-align: center;
 }
-/* sobre_nos */
-.paragrafo-pag3{
+
+#paragrafo-1{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
@@ -175,8 +186,8 @@ nav img {
     margin: 30px;
     text-align: center;
 }
-/* sobre_nos */
-.paragrafo-2-pag3{
+
+#paragrafo-2{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
@@ -184,27 +195,27 @@ nav img {
     margin: 0px;
     width: 100%;
 }
-/* sobre_nos */
-#textos-pag3 {
+
+#textos {
     padding-right: 24px;
     padding-left: 24px;
     padding-bottom: 24px;
     width: 50%;
 }
-/* sobre_nos */
-#textos-2-pag3 {
+
+#textos-2 {
     margin-right: 50px;
     margin-left: 20px;
     padding-bottom: 40px;
     width: 50%;
 }
-/* Não sei */
-#principal-pag3{
+
+#principal{
     width: 100%;
     margin: 0px;
     margin-top: 40px;
 }
-/* sobre_nos */
+
 #imagem3 img {
     border: 3px solid #F57806;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
