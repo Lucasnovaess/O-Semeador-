@@ -165,8 +165,6 @@ body {
     margin-right: 20px;
   }
   
-
-  
  .nav-link::after {
     content: '';
     position: absolute;
@@ -176,9 +174,7 @@ body {
     height: 3px;
     background-color: #F57806;
     transition: all 0.5s ease;
-
   }
-
   
 .nav-link:hover::after {
     width: 100%;
@@ -445,6 +441,12 @@ footer{
 }
 
 /* ------------------------- Medias Queries ------------------------- */
+
+@media (max-width: 991px) {
+    .nav-link:hover::after {
+      width: 100%;
+    }
+}
 
 @media(max-width: 768px){
     #imagem2 img {
