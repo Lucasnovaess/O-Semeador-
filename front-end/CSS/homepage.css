@@ -127,10 +127,7 @@ body {
 
 /* Estilos para a barra de navegação */
 .teste {
-    position: fixed;
-    top: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
     width: 100%;
     background-color: #ffffff;
 }
