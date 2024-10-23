@@ -125,7 +125,7 @@ async function carregarImagens() {
         const response = await axios.get(URLCompleta);
         const imagens = response.data;
         const carouselInner = document.querySelector('.imagens');
-        carouselInner.innerHTML = ''; // Limpa o conteúdo existente
+        carouselInner.innerHTML = ''; 
 
         imagens.forEach((imagem, index) => {
             const isActive = index === 0 ? 'active' : '';
@@ -218,6 +218,7 @@ function removerImagem(idImagem) {
             .then(() => {
                 const parent = carouselItem.parentElement;
                 parent.removeChild(carouselItem);
+                imagemIndex--;
 
                 // Se a imagem removida for a ativa, tornar a próxima ativa
                 if (carouselItem.classList.contains('active')) {
