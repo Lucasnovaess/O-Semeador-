@@ -239,7 +239,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
+                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroporArquivo()">Adicionar Parceiro</button>
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
         <div class="parceiro-container container-fluid">
             <h2 class="text-center" id="parcerias">Parceiros</h2>       
             <div class="row" id="parceiros">
-                <div id="parceiros-carousel" class="carousel slide" data-ride="carousel">
+                <div id="parceiros-carousel" class="carousel slide" data-ride="carousel" data-bs-interval="3000">
                     <div class="carousel-inner parceiros" id="parceiros"></div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -318,6 +318,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="frontend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

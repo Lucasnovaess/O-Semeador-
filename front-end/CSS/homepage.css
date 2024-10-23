@@ -20,8 +20,8 @@ body {
 }
 
 .carousel-item img {
-    width: 100%;
-    height: auto;
+    height: 800px;
+    width: auto;
     object-fit: contain; /* Ajusta a imagem ao container sem distorção */
     max-height: 100%; /* Limita a altura máxima para não exceder o container */
 }
@@ -213,6 +213,13 @@ body {
     background-color: #F57806;
     transition: all 0.5s ease;
   }
+
+.nav-link:hover {
+    animation-name: saltar;
+    animation-duration: 0.5s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+    color: #210348 !important;
+}
   
 .nav-link:hover::after {
     width: 100%;
@@ -243,12 +250,6 @@ nav img {
     padding: 0px;
 }
 
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
 
 /* animação no nav-bar */
 @keyframes saltar {
@@ -316,7 +317,7 @@ nav img {
 }
 
 #parceiros img {
-    height: 200px;
+    height: 150px;
     width: auto;
     margin: auto; /* Centraliza a imagem dentro do slide */
     object-fit: contain; /* Ajusta a imagem sem cortar ou distorcer */
@@ -329,6 +330,8 @@ nav img {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+
 
 #convite-parcerias{
     color:#ffffff
@@ -471,6 +474,7 @@ footer{
     }
 }
 
+
 /* Seção de login*/
 #selecaoLogin{
     display:flex;
@@ -511,6 +515,9 @@ footer{
     .nav-link:hover::after {
       width: 100%;
     }
+    .content-area{
+        margin-right: 70px;
+    }
 }
 
 @media(max-width: 768px){
@@ -523,6 +530,9 @@ footer{
         margin-right: auto;
         margin-bottom: 24px;
     }
+    .content-area{
+        margin-right: 100px;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -532,18 +542,32 @@ footer{
         margin-right: auto; /* Centraliza a imagem */
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     }
+    .content-area{
+        margin-right: 110px;
+    }
+    
+}
+@media (min-width: 1400px){
+    .content-area{
+        margin-right: 140px;
+    }
 }
 
+
 @media (min-width: 993px){
-    .content-area{
-        margin-right: 100px;
-    }
     #rodape{
         flex-direction: row-reverse;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
+    .content-area{
+        margin-right: 0px;
+    }
+    .nav-link::after {
+        content: none; /* Remove a marcação embaixo para telas menores */
+    }
+
     #padding-navbar {
         padding: 00px 0px 16px 0px;
         margin: 0px;

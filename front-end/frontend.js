@@ -265,7 +265,7 @@ async function carregarParceiros() {
         (error => console.error('Erro ao carregar imagens:', error));
     }
 }
-const parceiroIndex = 3;
+let parceiroIndex = 5;
 function adicionarParceiroporArquivo() {
     const fileInput = document.getElementById('parceiroFile');
     const file = fileInput.files[0];
@@ -280,11 +280,11 @@ function adicionarParceiroporArquivo() {
         const parceiroURL = e.target.result;
 
         const carouselInner = document.querySelector('.parceiros');
-        const novaParceiroDiv = document.createElement('div');
-        novoParceiroDiv.className = 'parceiro';
+        const novoParceiroDiv = document.createElement('div');
+        novoParceiroDiv.className = 'carousel-item parceiro';
 
         novoParceiroDiv.innerHTML = `
-            <img src="${imagemURL}" class="d-block w-100" alt="Imagem ${parceiroIndex + 1}">
+            <img src="${parceiroURL}" class="d-block w-100" alt="parceiro${parceiroIndex + 1}">
             <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro</button>
             <button class="btn btn-danger d-none btn-remover-parceiro" onclick="removerParceiro()">Remover Parceiro</button>
         `;
@@ -299,7 +299,7 @@ function adicionarParceiroporArquivo() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ src: imagemURL })
+                body: JSON.stringify({ src: parceiroURL })
             });
         } catch (error) {
             console.error('Erro ao salvar a imagem no banco de dados:', error);
@@ -331,6 +331,7 @@ function removerParceiro(idParceiro) {
             .then(() => {
                 const parent = carouselItem.parentElement;
                 parent.removeChild(carouselItem);
+                parceiroIndex--;
 
                 // Se a imagem removida for a ativa, tornar a próxima ativa
                 if (carouselItem.classList.contains('active')) {
@@ -347,7 +348,11 @@ function removerParceiro(idParceiro) {
         console.error("Parceiro não encontrado ou já removida");
     }
 }
-
+const carousel = document.getElementById('parceiros-carousel');
+const bootstrapCarousel = new bootstrap.Carousel(carousel, {
+    interval: 3000,  // Intervalo de 3 segundos
+    ride: 'carousel'
+});
 
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,
     timeout) {
