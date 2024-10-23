@@ -54,6 +54,49 @@ body {
     border-radius: 5px;
 }
 
+/* IMPORTANTE */
+/* carrosel */
+.carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+}
+
+/* IMPORTANTE */
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
+#parceiros{
+    margin-top: 30px;
+    background-color:#F57806;
+    padding: 50px;
+    opacity: 50%;
+}
 /* CSS para posicionar o botão VLibras */
 [vw-access-button] {
     width: 100%; /* Para que o botão VLibras também ocupe 100% da largura */
