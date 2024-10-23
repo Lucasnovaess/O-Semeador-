@@ -126,7 +126,7 @@ body {
 }
 
 /* Estilos para a barra de navegação */
-.teste {
+.cabecalho {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     background-color: #ffffff;
@@ -139,7 +139,13 @@ body {
     padding: 10px;
 }
 
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+}
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
 
 /* Estilos para os links da navbar */
 .navbar-nav .nav-link {
@@ -149,7 +155,7 @@ body {
     transition: background-color 0.7s ease;
     text-decoration: none;
 }
-/* teste */
+
 
   #loginLink{
     color: #210348 !important;
@@ -186,9 +192,9 @@ body {
 
 }
 
-.nav-brand{
+/* .nav-brand{
     margin-left: 20px;
-}
+} */
 .navbar li {
     padding: 0px 20px 0px;
 }
@@ -471,6 +477,10 @@ footer{
 }
 
 @media (max-width: 991px) {
+    #padding-navbar {
+        padding: 00px 0px 16px 0px;
+        margin: 0px;
+    }
     #imagem1 img, #imagem2 img { 
         display: block; 
         margin-left: auto; /* Centraliza a imagem */
