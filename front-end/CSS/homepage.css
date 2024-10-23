@@ -7,18 +7,24 @@ body {
     margin: 0;
 }
 
-.carousel-inner img {
+.carousel-inner .img {
     max-height: 400px;
     width: auto;
 }
 
 .carousel-item {
-    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
-/* .carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(0%) brightness(0); 
-} */
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ajusta a imagem ao container sem distorção */
+    max-height: 100%; /* Limita a altura máxima para não exceder o container */
+}
 #carouselExample{
     background-color: #210348;
     padding: 20px;
@@ -54,12 +60,6 @@ body {
 }
 
 /* IMPORTANTE */
-#parceiros{
-    margin-top: 30px;
-    background-color:#060031;
-    padding: 50px;
-    opacity: 50%;
-}
 
 /* Estilo para o contêiner dos botões */
 #botao-container {
@@ -103,6 +103,44 @@ body {
     border-radius: 5px;
     background-color: #2975E1;
 }
+
+/* IMPORTANTE */
+/* carrosel */
+.carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+}
+
+/* IMPORTANTE */
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
 
 /* CSS para posicionar o botão VLibras */
 [vw-access-button] {
@@ -271,6 +309,23 @@ nav img {
     margin: 16px;
 }
 
+.parceiro-container{
+    background-color:#585670;
+    padding: 30px 0;
+    
+}
+
+#parcerias{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#convite-parcerias{
+    color:#ffffff
+}
+#contato-parcerias{
+    color:#ffffff;
+}
 .wrapper {
     display: inline-flex;
     list-style: none;
