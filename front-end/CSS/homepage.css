@@ -40,16 +40,6 @@ body {
 }
 
 /* IMPORTANTE */
-#botoesEdicao{
-    background-color: lightslategrey;
-    justify-content: center;
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-    padding: 30px;
-}
-
-/* IMPORTANTE */
 .edicao{
     margin: 10px;
 }
@@ -60,48 +50,51 @@ body {
 }
 
 /* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
 
 /* Estilo para o contêiner dos botões */
 #botao-container {
-    position: fixed; /* Fixa o container na tela */
-    bottom: 265px; /* Distância da parte inferior */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Usar flexbox para alinhar os botões */
-    flex-direction: column; /* Alinha os botões verticalmente */
-    gap: 10px; /* Espaçamento entre os botões */
-    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+    position: fixed;
+    bottom: 50%; /* Centraliza o container verticalmente */
+    right: 10px; /* Fixa à direita */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Espaçamento entre os botões */
+    z-index: 9999;
 }
 
-/* Estilo para o botão de acessibilidade */
+/* Ajuste para o botão de leitura */
 #btn-leitura {
-    padding: 10px 15px; /* Espaçamento interno do botão */
-    background-color: #007BFF; /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor em forma de ponteiro */
-    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
-    width: 40px; /* Botão responsivo para ocupar 100% da largura do container */
-    height: 40px;
-    margin-bottom: 0; /* Remove margens extras */
-}
-
-#btn-leitura:hover {
-    background-color: #0056b3; /* Cor do botão ao passar o mouse */
-}
-
-#btn-leitura img {
-    width: 40px;
-    height: auto;
-    position: fixed; /* Fixa o container na tela */
-    bottom: 265px; /* Distância da parte inferior */
-    right: 10px; /* Distância da direita */
-    display: flex; /* Usar flexbox para alinhar os botões */
-    flex-direction: column; /* Alinha os botões verticalmente */
-    gap: 10px; /* Espaçamento entre os botões */
-    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+    transform: translateY(50%); /* Faz o ajuste fino para garantir que ele se centralize conforme a tela */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
     border-radius: 5px;
-    background-color: #2975E1;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+/* Ajuste para o ícone dentro do botão de leitura */
+#btn-leitura img {
+    position: fixed;
+    width: 100%;  /* A imagem ocupará toda a largura do botão */
+    height: auto; /* A imagem ocupará toda a altura do botão */
+    border-radius: 5px; /* Mantenha a borda arredondada */
+    bottom: 0%; /* Centraliza o container verticalmente */
+    right: 0px; /* Fixa à direita */
 }
 
 /* IMPORTANTE */
@@ -510,6 +503,34 @@ footer{
 }
 
 /* ------------------------- Medias Queries ------------------------- */
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 600px) {
+    #botao-container {
+        bottom: 41%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 500px) {
+    #botao-container {
+        bottom: 31%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 250px) {
+    #botao-container {
+        bottom: 21%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajustes adicionais para monitores maiores */
+@media (min-height: 601px) {
+    #botao-container {
+        bottom: 41%; /* Mantém uma distância adequada da parte inferior */
+    }
+}
 
 @media (max-width: 991px) {
     .nav-link:hover::after {
