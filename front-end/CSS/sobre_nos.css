@@ -7,9 +7,62 @@ body {
     margin: 0;
 }
 
+/* Estilo para o contêiner dos botões */
+#botao-container {
+    position: fixed; /* Fixa o container na tela */
+    bottom: 265px; /* Distância da parte inferior */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Usar flexbox para alinhar os botões */
+    flex-direction: column; /* Alinha os botões verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+}
+
+/* Estilo para o botão de acessibilidade */
+#btn-leitura {
+    padding: 10px 15px; /* Espaçamento interno do botão */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor em forma de ponteiro */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+    width: 40px; /* Botão responsivo para ocupar 100% da largura do container */
+    height: 40px;
+    margin-bottom: 0; /* Remove margens extras */
+}
+
+#btn-leitura:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+}
+
+#btn-leitura img {
+    width: 40px;
+    height: auto;
+    position: fixed; /* Fixa o container na tela */
+    bottom: 265px; /* Distância da parte inferior */
+    right: 10px; /* Distância da direita */
+    display: flex; /* Usar flexbox para alinhar os botões */
+    flex-direction: column; /* Alinha os botões verticalmente */
+    gap: 10px; /* Espaçamento entre os botões */
+    z-index: 9999; /* Garantir que o container fique acima de outros elementos */
+    border-radius: 5px;
+}
+
+/* CSS para posicionar o botão VLibras */
+[vw-access-button] {
+    width: 100%; /* Para que o botão VLibras também ocupe 100% da largura */
+}
+
+/* Para garantir que o plugin VLibras fique na parte superior do botão de leitura */
+[vw-plugin-wrapper] {
+    width: 100%; /* Garante que o plugin ocupe toda a largura do contêiner */
+    margin-bottom: 5px; /* Espaçamento reduzido abaixo do plugin */
+    display: flex; /* Usar flexbox para alinhar o conteúdo, se necessário */
+}
 
 #marcador {
-    color: hsl(29, 95%, 60%);
+    color: hsl(29, 95%, 60%) !important;
     font-weight: bold;
 }
 
@@ -18,30 +71,38 @@ body {
 }
 
 /* Estilos para a barra de navegação */
-
-
-/* Estilos para a barra de navegação */
-header {
-    background-color: #210348;
+.cabecalho {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: #ffffff;
 }
-
 /* Estilos para a navbar */
 .navbar {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color: #210348;
+    background-color: #ffffff;
     padding: 10px;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
 /* Estilos para os links da navbar */
 .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #210348;
     font-size: 18.5px;
     padding: 10px;
     transition: background-color 0.7s ease;
     text-decoration: none;
-
 }
-/* teste */
+
+#loginLink{
+    color: #210348 !important;
+  }
 
   
   .nav-link {
@@ -60,31 +121,24 @@ header {
     height: 3px;
     background-color: #F57806;
     transition: all 0.5s ease;
-    animation-name: aumentar-barra;
-    animation-duration: 0.5;
+
   }
 
-  @keyframes aumentar-barra {
-    50%{transform: scale(1,1);}
-  }
   
 .nav-link:hover::after {
     width: 100%;
     left: 0;
+    color: #210348;
   }
 
-
-
-
-
-/* teste */
 #logo{
-    height: 85px;
-    width: 85px;
+    width: auto;
+    height: 100px;
 }
-.nav-brand{
+
+/* .nav-brand{
     margin-left: 20px;
-}
+} */
 .navbar li {
     padding: 0px 20px 0px;
 }
@@ -101,30 +155,14 @@ nav img {
 
 .nav-link:hover {
     animation-name: saltar;
-    animation-duration: 0.8s; /* Duração da animação */
+    animation-duration: 0.5s; /* Duração da animação */
     animation-direction: normal;/* Mantém a posição final */
+    color: #210348 !important;
 }
 
 /* animação no nav-bar */
 @keyframes saltar {
     50%{transform: scale(1.1);}
-}
-
-#banner img {
-    width: 100%;
-    /* Faz a imagem ocupar 100% da largura do contêiner */
-    height: auto;
-    /* Mantém a proporção da altura */
-}
-
-#imagem1 img {
-    border: 3px solid blue;
-    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 50px hsl(0, 0%, 40%);
-    margin: 16px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .titulo{
@@ -133,19 +171,42 @@ nav img {
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #060031;
     text-shadow: 0px 0px 10px hsl(0, 0%, 55%);
-    margin: 16px;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
-.paragrafo{
+#paragrafo-1{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
     text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
-    margin: 16px;
+    margin: 30px;
+    text-align: center;
+}
+
+#paragrafo-2{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
+    margin: 0px;
+    width: 100%;
 }
 
 #textos {
-    padding-right: 10px;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    width: 50%;
+}
+
+#textos-2 {
+    margin-right: 50px;
+    margin-left: 20px;
+    padding-bottom: 40px;
     width: 50%;
 }
 
@@ -155,31 +216,21 @@ nav img {
     margin-top: 40px;
 }
 
-#imagem2 img {
+#imagem3 img {
     border: 3px solid #F57806;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 40px;
 }
-
-.sub-titulo {
-    color: #F57806;
-    font-weight: bold;
-    margin: 16px;
+.icones{
+    flex-direction: row;
 }
-
-.margin {
-    margin: 16px;
-}
-
 .wrapper {
     display: inline-flex;
     list-style: none;
     margin: 0;
     flex-direction: column;
-    padding-top: 33px;
     text-align: left;
     float: left;
   }
@@ -268,13 +319,13 @@ nav img {
     color: #ffffff;
   }
 
-  footer p{
+footer p{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffffff;
-  }
+}
 
-  footer{
+footer{
     background-color: #210348;
 }
 
@@ -284,6 +335,8 @@ nav img {
 
 .mapa iframe{
     border-radius: 30px;
+    width: 50%;
+    height: auto;
 }
 
 .copyright p{
@@ -292,10 +345,6 @@ nav img {
     margin-left: 70px;
 }
 
-.mapa iframe{
-    width: 50%;
-    height: auto;
-}
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
@@ -304,6 +353,14 @@ nav img {
     animation-fill-mode: forwards; /* Mantém a posição final */
 }
 
+/* Animação do Google Maps */
+@keyframes scale {
+    50% {
+        transform: scale(1.1); /* Aumenta e move para a direita */
+    }
+}
+
+/* Seção de login*/
 #selecaoLogin{
     display:flex;
     justify-content: center;
@@ -316,11 +373,25 @@ nav img {
     margin-left: 14.5px;
 }
 
-/* Animação do Google Maps */
-@keyframes scale {
-    50% {
-        transform: scale(1.1); /* Aumenta e move para a direita */
-    }
+/* Botão de voltar ao topo */
+#voltar-ao-topo {
+    position: absolute;
+    right: 20px; /* Ajusta a distância do botão à direita do rodapé */
+    bottom: 20px; /* Ajusta a distância do botão ao fundo do rodapé */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    padding: 10px 15px; /* Ajuste de espaçamento */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+#voltar-ao-topo:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+#rodape {
+    position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
 }
 
 /* ------------------------- Medias Queries ------------------------- */
@@ -332,70 +403,11 @@ nav img {
     }
 }
 
-
-@media (max-width: 1400px) {
-    #imagem1 img, #imagem2 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    }
-}
-
 @media (min-width: 993px){
     .content-area{
         margin-right: 100px;
     }
     #rodape{
         flex-direction: row-reverse;
-    }
-}
-
-@media (max-width: 991px) {
-    #imagem1 img, #imagem2 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-    }
-    .copyright p{
-        text-align: center;
-        margin-bottom: 0;
-        margin-left: 0;
-    }
-    .wrapper{
-        padding: 0;
-    }
-    .icones {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        text-align: center
-    }
-}
-
-@media(max-width: 768px){
-    #textos {
-        padding-right: 0px;
-        text-align: center; /* Garante que o texto fique alinhado à esquerda */
-        width: 100%;
-    }
-
-}
-
-@media(max-width: 430px){
-    #textos {
-        padding-right: 0px;
-        text-align: left; /* Garante que o texto fique alinhado à esquerda */
-        width: 100%;
-    }
-}
-
-@media (max-width: 360px) {
-    #textos {
-        padding-right: 0px;
-        text-align: left; /* Garante que o texto fique alinhado à esquerda */
-        width: 100%;
     }
 }
