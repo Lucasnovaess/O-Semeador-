@@ -164,7 +164,7 @@ nav img {
     font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #060031;
-    text-shadow: 0px 0px 10px hsl(0, 0%, 55%);
+    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
     margin-top: 30px;
     margin-right: 30px;
     margin-left: 30px;
@@ -250,6 +250,7 @@ nav img {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 .icones{
     flex-direction: row;
@@ -346,6 +347,13 @@ nav img {
 .wrapper .whatsapp:hover .tooltip::before {
     background: #24b12f;
     color: #ffffff;
+}
+
+.icones{
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 footer p{
@@ -453,17 +461,21 @@ footer{
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
     #padding-navbar {
         padding: 00px 0px 16px 0px;
         margin: 0px;
     }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link::after {
+        content: none;
+      }
+
 }
 
 @media (min-width: 993px){
-    .content-area{
-        margin-right: 100px;
-    }
     #rodape{
         flex-direction: row-reverse;
     }
