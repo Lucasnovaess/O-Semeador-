@@ -249,11 +249,20 @@ nav img {
     
 }
 
+#imagem1 {
+    display: flex; /* Mantém o comportamento flexível */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
+    padding: 0; /* Remove padding extra que possa afetar o layout */
+    margin: 0 auto; /* Garante centralização no container */
+}
+
 #imagem1 img {
     border: 3px solid blue;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 50px hsl(0, 0%, 40%);
+    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
     margin: 16px;
     margin-left: auto;
     margin-right: auto;
@@ -287,11 +296,21 @@ nav img {
     margin-top: 40px;
 }
 
+#imagem2 {
+    display: flex; /* Mantém o comportamento flexível */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
+    padding: 0; /* Remove padding extra que possa afetar o layout */
+    margin: 0 auto; /* Garante centralização no container */
+}
+
 #imagem2 img {
     border: 3px solid #F57806;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+    margin: 16px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -542,7 +561,14 @@ footer{
       }
 }
 
-@media(max-width: 768px){
+@media(max-width: 1199px) {
+    #texto-principal-2 {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media(max-width: 1199px){
     #imagem2 img {
         border: 3px solid #F57806;
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
@@ -581,7 +607,6 @@ footer{
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
         height: auto; /* Mantém a proporção da imagem */
     }
-    /* Não sei se coloco as 3 classes abaixo no sobre_nos também */
     .copyright p{
         text-align: center;
         margin-bottom: 0;
@@ -592,13 +617,12 @@ footer{
     }
 }
 
-@media(max-width: 768px){
+@media(max-width: 1199px){
     #textos {
         padding-right: 0px;
         text-align: center; /* Garante que o texto fique alinhado à esquerda */
         width: 100%;
     }
-
 }
 
 @media(max-width: 430px){
