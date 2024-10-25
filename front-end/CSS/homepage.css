@@ -188,30 +188,15 @@ body {
 }
 
 
-  #loginLink{
+#loginLink{
     color: #210348 !important;
-  }
-  .nav-link {
+}
+
+.nav-link {
     position: relative;
     margin-right: 20px;
-  }
-  
- .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #F57806;
-    transition: all 0.5s ease;
-  }
-  
-.nav-link:hover::after {
-    width: 100%;
-    left: 0;
-    color: #210348;
-  }
+    color: #210348 !important;
+}
 
 #logo{
     width: auto;
@@ -234,19 +219,6 @@ nav img {
 
 #banner {
     padding: 0px;
-}
-
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
-
-/* animação no nav-bar */
-@keyframes saltar {
-    50%{transform: scale(1.1);}
-    
 }
 
 #imagem1 {
