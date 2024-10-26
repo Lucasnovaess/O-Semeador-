@@ -188,35 +188,47 @@ body {
 }
 
 
-  #loginLink{
+#loginLink{
     color: #210348 !important;
-  }
-  .nav-link {
+}
+
+.nav-link {
     position: relative;
     margin-right: 20px;
-  }
-  
- .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #F57806;
-    transition: all 0.5s ease;
-  }
-  
-.nav-link:hover::after {
-    width: 100%;
-    left: 0;
-    color: #210348;
-  }
+    color: #210348 !important;
+}
+
+/* Efeito de hover nas links da Navbar */
+.nav-link:hover {
+    background-color: hsl(0, 0%, 90%); /* Sombra ao passar o mouse */
+}
+
+.nav-link:active {
+    background-color: hsl(0, 0%, 82%); /* Sombra ao passar o mouse */
+}
+
+/* Estilo dos itens do dropdown */
+.dropdown-item {
+    color: #210348 !important; /* Cor do texto dos itens do dropdown */
+    padding: 10px 15px; /* Espaçamento interno dos itens */
+    text-decoration: none; /* Remove o sublinhado */
+    background-color: #f8f9fa; /* Cor de fundo padrão (exemplo claro) */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+/* Efeito de hover nos itens do dropdown */
+.dropdown-item:hover {
+    background-color: hsla(0, 0%, 90%) !important; /* Cor de fundo ao passar o mouse */
+}
+
+/* Efeito de hover nos itens do dropdown */
+.dropdown-item:active {
+    background-color: hsla(0, 0%, 82%) !important; /* Cor de fundo ao passar o mouse */
+}
 
 #logo{
     width: auto;
     height: 100px;
-
 }
 
 /* .nav-brand{
@@ -234,19 +246,6 @@ nav img {
 
 #banner {
     padding: 0px;
-}
-
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
-
-/* animação no nav-bar */
-@keyframes saltar {
-    50%{transform: scale(1.1);}
-    
 }
 
 #imagem1 {
