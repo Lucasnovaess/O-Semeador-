@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/homepage.css">
+    <link rel="stylesheet" href="../CSS/nossa_historia.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -168,7 +168,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Seja Doador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
                         <li class="nav-item dropdown"> 
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -199,72 +199,24 @@
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
             <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
         </div>
-
+        <div class="text-center" id="nome-pagina"><h1>Nossa história</h1></div>
         <!-- Imagem e textos -->
-        <div class="container-fluid" id="principal">
-            <div class="row mb-5" id="texto-principal-1">
-                <!-- Primeira imagem -->
-                <div class="col-xl col-xxl-6" id="imagem1">
-                    <img src="../../images/imagem1.svg" alt="#" class="img-fluid">
-                </div>
-                <!-- Primeiro texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-            </div>
-            <div class="row mb-5" id="texto-principal-2">
-                <!-- Segundo texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-                <!-- Segunda imagem -->
-                <div class="col-xl col-xxl-6" id="imagem2">
-                    <img src="../../images/imagem2.svg" alt="" class="img-fluid">
+        <div class="container col-7 principal">
+            <div class="row">
+                <div class="texto-principal-3">
+                    <p>A Escola Metodista de Educação Especial “O Semeador” nasceu nos anos 70 com a necessidade eminente de uma das irmãs, mãe e mulher de fé, que enfrentava dificuldades no cuidado de seus dois filhos adolescentes e que tinham deficiência intelectual. Eles já não poderiam ser assistidos pelas instituições escolares especializadas da época, porque estas desligavam seus alunos aos quinze anos.
+                    </p>
+                    <p>Movidos por um profundo senso de solidariedade e com a firme convicção de que o amor de Deus abrange todas as pessoas, independente de suas condições físicas ou mentais, pois foram criadas à Sua imagem e semelhança, seus irmãos e irmãs na fé, decidiram unir forças e concentrar todos os esforços disponíveis para melhorar a qualidade de vida e o bem-estar não apenas dos filhos dela, mas também de todas as pessoas que enfrentavam desafios de deficiência e que pudessem ser alcançadas.
+                    </p>
+                    <p>Em 15 de novembro de 1974, a AMAS - Associação Metodista de Ação Social de São Caetano, organização beneficente, sem fins lucrativos, decidiu, colocando em prática seu compromisso missionário, dedicar-se, exclusivamente, ao trabalho com pessoas atípicas atuando nas áreas de educação e assistência social primando pela garantia e defesa dos direitos das pessoas com deficiência e suas famílias.
+                    </p>
+                    <p>Durante muitos anos, a Escola “O Semeador” funcionou nas dependências da Igreja Metodista. Em 1980, a Prefeitura Municipal de São Caetano do Sul cedeu, em regime de comodato, um terreno de 2.066 m2 à Rua dos Meninos, 555, Bairro Mauá, para construção da sede própria da escola que, com muito esforço, trabalho e dedicação em campanhas e com recursos advindos da Igreja Metodista em outros países, construiu o atual complexo tendo sido inaugurado em 1987.
+                    </p>
+                    <p>Atualmente, a escola oferece Atendimento Educacional Especializado para crianças de 4 e 5 anos na Educação Infantil, e de 6 a 18 anos no Ensino Fundamental (1º ao 5º ano). Oferece também um programa socioassistencial para pessoas a partir de 18 anos, denominado Projeto Semear que objetiva a convivência, fortalecimento de vínculos e autonomia. O atendimento é realizado a pessoas com deficiência intelectual, múltiplas deficiências e transtorno do espectro autista.
+                    </p>
+                    
                 </div>
             </div>
-        </div>
-
-        <div class="modal fade" id="parceiroModal" tabindex="-1" aria-labelledby="parceiroModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="parceiroModalLabel">Adicionar Parceiro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="file" id="parceiroFile" accept="image/*" class="form-control">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="parceiro-container container-fluid">
-            <h2 class="text-center" id="parcerias">Parceiros</h2>       
-            <div class="row" id="parceiros">
-                <div id="parceiros-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                    <div class="carousel-inner parceiros" id="parceiros"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <p class="text-center" id="convite-parcerias">Estamos sempre abertos a novas parcerias co-criando bases comuns, interesses conjuntos e agregando valores para ambos.</p>
-
-            <p class="text-center" id="contato-parcerias">Caso queira se tornar um Parceiro Semeador, entre em contato conosco pelos telefones:<strong><br>(11)4238-3100 <br> (11)97366-8766</p></strong>
         </div>
 
     </main>
