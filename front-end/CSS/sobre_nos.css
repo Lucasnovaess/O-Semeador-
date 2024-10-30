@@ -87,7 +87,7 @@ body {
 
 /* Estilos para os links da navbar */
 .navbar-nav .nav-link {
-    color: #210348;
+    color: #000000;
     font-size: 18.5px;
     padding: 10px;
     transition: background-color 0.7s ease;
@@ -95,7 +95,7 @@ body {
 }
 
 #loginLink{
-    color: #210348 !important;
+    color: #000000 !important;
   }
 
   
@@ -122,8 +122,14 @@ body {
 .nav-link:hover::after {
     width: 100%;
     left: 0;
-    color: #210348;
-  }
+    color: #000000;
+}
+.nav-link:hover {
+    animation-name: saltar;
+    animation-duration: 0.5s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+    color: #000000 !important;
+}
 
 #logo{
     width: auto;
@@ -147,12 +153,6 @@ nav img {
     padding: 0px;
 }
 
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
 
 /* animação no nav-bar */
 @keyframes saltar {
@@ -176,7 +176,6 @@ nav img {
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
-    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
     margin: 30px;
     text-align: center;
 }
@@ -185,7 +184,6 @@ nav img {
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
-    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
     margin: 0px;
     width: 100%;
 }

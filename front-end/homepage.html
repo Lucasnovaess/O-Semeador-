@@ -156,26 +156,38 @@
     <header class="cabecalho">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="nav-brand" id="padding-navbar" href="homepage.html"><img src="../images/logo-branco.png" alt="" id="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="nav-brand" id="padding-navbar" href="homepage.html">
+                    <img src="../images/logo-branco.png" alt="" id="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-
                         <li class="nav-item"><a class="nav-link" href="homepage.html" id="marcador">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Seja Doador</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sobre_nos.html">Sobre nós</a></li>
+    
+                        <!-- Dropdown para 'Sobre nós' -->
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-link dropdown-toggle" id="sobreNosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sobre nós</a>
+                            <ul class="dropdown-menu" aria-labelledby="sobreNosDropdown">
+                                <li><a class="dropdown-item" href="missao.html">Nossa Missão</a></li>
+                                <li><a class="dropdown-item" href="equipe.html">Equipe</a></li>
+                                <li><a class="dropdown-item" href="historia.html">História</a></li>
+                            </ul>
+                        </li>
+    
                         <li class="nav-item"><a class="nav-link" href="#">Contate-nos</a></li>
-                        <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
-
+                        <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page" data-bs-toggle="modal" 
+                                data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
+    
+
     <main>
 
         <!-- Carousel de imagens -->
