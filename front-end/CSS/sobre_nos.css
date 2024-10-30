@@ -119,6 +119,11 @@ body {
 #loginLink{
     color: #210348 !important;
 }
+@keyframes saltar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
 
 #logo{
     width: auto;
@@ -149,10 +154,6 @@ nav img {
     color: #210348 !important;
 }
 
-/* animação no nav-bar */
-@keyframes saltar {
-    50%{transform: scale(1.1);}
-}
 
 .titulo{
     font-weight: bold;
