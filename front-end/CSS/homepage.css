@@ -278,6 +278,17 @@ nav img {
     margin-right: auto;
 }
 
+.imagem-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px; /* Espaçamento entre blocos */
+}
+
+.btn-atualizar {
+    margin-top: 10px; /* Espaçamento entre a imagem e o botão */
+}
+
 .titulo{
     font-weight: bold;
     font-size: 36px;

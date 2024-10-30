@@ -68,7 +68,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
                     <button onclick="fazerLogin()" type="button" class="btn btn-primary">
                         Login
                     </button>
@@ -100,7 +100,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
-                    <button onclick="cadastrarUsuario()" type="button" class="btn btn-primary">
+                    <button onclick="cadastrarUsuario()" type="button" class="btn btn-warning">
                         Cadastrar
                     </button>
 
@@ -119,12 +119,12 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-primary btn-lg"
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
                                 data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
                                 disabled>Cadastro</button>
                         </div>
                         <div class="mb-3" id="login">
-                            <button id="loginButton" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal"
+                            <button id="loginButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
                                 data-bs-target="#modalLogin" href="#">
                                 Login
                             </button>
@@ -185,46 +185,25 @@
     </header>
 
     <main>
+        <!-- EDIÇÃO DE TEXTO -->
+        <div id="botoesEdicao" class="d-none">
+            <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
+        </div>
         <!-- Imagem e textos -->
         <div class="container-fluid" id="principal">
-            <div class="row" id="texto-principal-3">
+            <div class="row" id="texto-principal-3" data-id="3">
                 <!-- Textos 1 -->
                 <div class="col-xl col-xxl-4" id="textos">
                     <h2 class="titulo">
-                        Seja um Semeador voluntário e ajude a tornar o futuro mais humano!
                     </h2>
-                    <h3 class="sub-titulo"></h3>
+                    <!-- <h3 class="sub-titulo"></h3> -->
                     <p class="paragrafo" id="paragrafo-1">
-                        O voluntariado permite que você se conecte com sua comunidade, construa amizades significativas,
-                        adquira novas habilidades e desenvolva um profundo senso de propósito. Doar seu tempo,
-                        seu sorriso, seu amor, seu carinho, sua disposição, seu trabalho e seus recursos para
-                        alegrar o outro, para fazer feliz, para ser útil, não tem preço. Cada ato de voluntariado,
-                        por menor que seja, contribui para um mundo melhor.
 
                     </p>
                 </div>
             </div>
-            <!-- <div class="row mb-5" id="texto-principal-4">
-
-                <div class="col-xl col-xxl-6" id="imagem3">
-                    <img src="../images/imagem3.svg" alt="" class="img-fluid">
-                </div>
-
-                <div class="col-xl col-xxl-6" id="textos-2">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo" id="paragrafo-2">
-                        Ajude-nos a transformar vidas, multiplique nossas ações e fortaleça nosso objetivo. Seja um
-                        Semeador Voluntário! Nossas ações são financiadas na sua grande maioria por verbas públicas e
-                        parcerias que estabelecemos com aqueles que acreditam em nossos trabalhos. Atualmente estamos
-                        passando por uma situação muito difícil, pois corremos o risco de fecharmos nossas portas, pois
-                        recebemos uma de nossas verbas com a redução de 50%. Nossos educandos precisam muito da ajuda de
-                        todos, pois a grande maioria é de vulnerabilidade social. Para continuarmos a fornecer aos
-                        alunos instalações de amparo, educação de qualidade, e inclusão ativa na sociedade civil,
-                        precisamos que você junte-se a nós nessa causa, e seja um Semeador Voluntário.
-                    </p>
-                </div>
-            </div> -->
 
             <!-- Seção de doação -->
             <div class="container" id="caixa-doações">

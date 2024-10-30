@@ -67,6 +67,8 @@ const fazerLogin = async () => {
             editarTexto.classList.remove('d-none');
             salvar.classList.remove('d-none');
             document.getElementById('botoesEdicao').classList.remove('d-none');
+            const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
+            botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
 
 
             document.querySelector('#editar-texto').addEventListener('click', () => {
@@ -77,9 +79,6 @@ const fazerLogin = async () => {
             });
         }
         catch (error) {
-            exibirAlerta('.alert-modal-login', "Login e/ou senha incorretos",
-            ['show', 'alert-danger'], ['d-none', 'alert-success'], 2000)
-            //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
         }
     }
     else {
@@ -90,33 +89,66 @@ const fazerLogin = async () => {
 
 
 const buscarTextos = async () => {
-    const cadastroEndpoint = '/textos-puxar'
-    const URLCompleta = `${protocolo}${baseURL}${cadastroEndpoint}`
+    const cadastroEndpoint = '/textos-puxar';
+    const URLCompleta = `${protocolo}${baseURL}${cadastroEndpoint}`;
     try {
         const response = await axios.get(URLCompleta);
         const textos = response.data;
 
-        textos.forEach((texto, index) => {
-            const row = document.querySelector(`#texto-principal-${index + 1}`); // Supondo que você tenha rows com IDs como row1, row2, etc.
-            row.setAttribute('data-id', texto._id);
-            const tituloElement = row.querySelector('.titulo');
-            const subtituloElement = row.querySelector('.sub-titulo');
-            const paragrafoElement = row.querySelector('.paragrafo');
+        textos.forEach((texto) => {
+            // Seleciona a row usando o idTexto
+            const row = document.querySelector(`[data-id='${texto.idTexto}']`); // Seleciona a linha com o data-id correspondente
 
-            if (tituloElement) { 
-                tituloElement.innerText = texto.titulo;
-            }
+            if (row) {
+                const tituloElement = row.querySelector('.titulo');
+                const subtituloElement = row.querySelector('.sub-titulo');
+                const paragrafoElement = row.querySelector('.paragrafo');
 
-            if (subtituloElement) {
-                subtituloElement.innerText = texto.subtitulo;
-            }
+                if (tituloElement) {
+                    tituloElement.innerText = texto.titulo;
+                }
 
-            if (paragrafoElement) {
-                paragrafoElement.innerText = texto.conteudo;
+                if (subtituloElement) {
+                    subtituloElement.innerText = texto.subtitulo;
+                }
+
+                if (paragrafoElement) {
+                    paragrafoElement.innerText = texto.conteudo;
+                }
+            } else {
+                console.warn(`Row com idTexto ${texto.idTexto} não encontrada.`);
             }
         });
     } catch (error) {
         console.error('Erro ao buscar textos:', error);
+    }
+};
+
+const salvarAlteracoes = async () => {
+    const atualizarEndpoint = '/textos-atualizar';
+    const URLCompleta = `${protocolo}${baseURL}${atualizarEndpoint}`;
+    try {
+        const textos = Array.from(document.querySelectorAll('.row')).map((row) => {
+            const tituloElement = row.querySelector('.titulo');
+            const subtituloElement = row.querySelector('.sub-titulo');
+            const paragrafoElement = row.querySelector('.paragrafo');
+            const idTexto = row.getAttribute('data-id'); // Renomeia para idTexto
+
+            return {
+                idTexto, // Usa idTexto no corpo da requisição
+                titulo: tituloElement && tituloElement.innerText.trim() !== '' ? tituloElement.innerText : '', // Verifica se o título não está vazio
+                subtitulo: subtituloElement && subtituloElement.innerText.trim() !== '' ? subtituloElement.innerText : '', // Verifica se o subtítulo não está vazio
+                conteudo: paragrafoElement && paragrafoElement.innerText.trim() !== '' ? paragrafoElement.innerText : '', // Verifica se o conteúdo não está vazio
+            };
+        });
+
+        await Promise.all(textos.map(texto =>
+            axios.put(URLCompleta, texto) // Envia o texto com idTexto
+        ));
+
+        console.log('Textos atualizados com sucesso!');
+    } catch (error) {
+        console.error('Erro ao salvar textos:', error);
     }
 };
 async function carregarImagens() {
@@ -127,7 +159,7 @@ async function carregarImagens() {
         const response = await axios.get(URLCompleta);
         const imagens = response.data;
         const carouselInner = document.querySelector('.imagens');
-        carouselInner.innerHTML = ''; 
+        carouselInner.innerHTML = '';
 
         imagens.forEach((imagem, index) => {
             const isActive = index === 0 ? 'active' : '';
@@ -179,7 +211,7 @@ function adicionarImagemPorArquivo() {
 
         carouselInner.appendChild(novaImagemDiv);
         imagemIndex++;
-        
+
         // Enviar a nova imagem para o banco de dados
         try {
             await fetch('http://localhost:3000/imagens-adicionar', {
@@ -316,6 +348,41 @@ function adicionarParceiroporArquivo() {
     reader.readAsDataURL(file);
 }
 
+async function carregarImagensEstaticas() {
+    const response = await fetch('http://localhost:3000/imagem-estatica-puxar');
+    const imagens = await response.json();
+    imagens.forEach(imagem => {
+        const div = document.getElementById(imagem.divId);
+        if (div) {
+            div.innerHTML = `
+            <img src="${imagem.src}" class="img-fluid" alt="${imagem.divId}">
+            <input type="file" id="uploadImagem${imagem.divId}" class="d-none" accept="image/*" onchange="atualizarImagemEstatica('${imagem.divId}')">
+            <button id="btnAtualizarImagem${imagem.divId}" class="btn btn-atualizar btn-primary mt-2 d-none" onclick="document.getElementById('uploadImagem${imagem.divId}').click()">Atualizar Imagem</button>`;
+        }
+    });
+}
+
+async function atualizarImagemEstatica(divId) {
+    const fileInput = document.getElementById(`uploadImagem${divId}`);
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async function (e) {
+        const src = e.target.result;
+
+        await fetch('http://localhost:3000/imagem-estatica-atualizar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ divId, src })
+        });
+
+        document.getElementById(divId).querySelector('img').src = src;
+    };
+    reader.readAsDataURL(file);
+}
+
+
 function removerParceiro(idParceiro) {
     const carouselItem = document.querySelector(`.parceiro[data-id='${idParceiro}']`);
 
@@ -373,33 +440,7 @@ function ocultarModal(seletor, timeout) {
     }, timeout)
 }
 
-const salvarAlteracoes = async () => {
-    const atualizarEndpoint = '/textos-atualizar'
-    const URLCompleta = `${protocolo}${baseURL}${atualizarEndpoint}`
-    try {
-        const textos = Array.from(document.querySelectorAll('.row')).map((row) => {
-            const tituloElement = row.querySelector('.titulo');
-            const subtituloElement = row.querySelector('.sub-titulo');
-            const paragrafoElement = row.querySelector('.paragrafo');
-            const id = row.getAttribute('data-id');
 
-            return {
-                id,
-                titulo: tituloElement ? tituloElement.innerText : '',
-                subtitulo: subtituloElement ? subtituloElement.innerText : '',
-                conteudo: paragrafoElement ? paragrafoElement.innerText : '',
-            };
-        });
-
-        await Promise.all(textos.map(texto =>
-            axios.put(URLCompleta, texto) // Agora o id vai no corpo da requisição
-        ));
-
-        console.log('Textos atualizados com sucesso!');
-    } catch (error) {
-        console.error('Erro ao salvar textos:', error);
-    }
-};
 
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 

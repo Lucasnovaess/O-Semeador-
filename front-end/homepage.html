@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros(); carregarImagensEstaticas();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -67,7 +67,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -118,8 +118,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -147,7 +148,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -170,22 +172,28 @@
                         <li class="nav-item"><a class="nav-link" href="homepage.html" id="marcador">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="sobre_nos/nossa_historia.html">Nossa História</a></li>
-                                <li><a class="dropdown-item" href="sobre_nos/nossa_infra.html">Nossa Infraestrutura</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_historia.html">Nossa História</a>
+                                </li>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_infra.html">Nossa Infraestrutura</a>
+                                </li>
                                 <li><a class="dropdown-item" href="sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="sobre_nos/fazer_pedago.html">Fazer Pedagógico</a></li>
-                                <li><a class="dropdown-item" href="sobre_nos/segm_educa.html">Segmentos Educacionais</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/fazer_pedago.html">Fazer Pedagógico</a>
+                                </li>
+                                <li><a class="dropdown-item" href="sobre_nos/segm_educa.html">Segmentos Educacionais</a>
+                                </li>
                                 <li><a class="dropdown-item" href="sobre_nos/matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -193,12 +201,12 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <!-- Carousel de imagens -->
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner imagens">
-                
+
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -209,19 +217,21 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-
+        <!-- EDIÇÃO DE TEXTO -->
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
 
         <!-- Imagem e textos -->
         <div class="container-fluid" id="principal">
-            <div class="row mb-5" id="texto-principal-1">
+            <div class="row mb-5" id="texto-principal-1" data-id="1">
                 <!-- Primeira imagem -->
-                <div class="col-xl col-xxl-6" id="imagem1">
-                    <img src="../images/imagem1.svg" alt="#" class="img-fluid">
+                <div class="imagem-container col-xl col-xxl-6" id="imagem1">
+
                 </div>
+
                 <!-- Primeiro texto -->
                 <div class="col-xl col-xxl-6" id="textos">
                     <h2 class="titulo"></h2>
@@ -229,7 +239,7 @@
                     <p class="paragrafo"></p>
                 </div>
             </div>
-            <div class="row mb-5" id="texto-principal-2">
+            <div class="row mb-5" id="texto-principal-2" data-id="2">
                 <!-- Segundo texto -->
                 <div class="col-xl col-xxl-6" id="textos">
                     <h2 class="titulo"></h2>
@@ -237,12 +247,14 @@
                     <p class="paragrafo"></p>
                 </div>
                 <!-- Segunda imagem -->
-                <div class="col-xl col-xxl-6" id="imagem2">
-                    <img src="../images/imagem2.svg" alt="" class="img-fluid">
+                <div class="imagem-container col-xl col-xxl-6" id="imagem2">
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="parceiroModal" tabindex="-1" aria-labelledby="parceiroModalLabel" aria-hidden="true">
+
+
+        <div class="modal fade" id="parceiroModal" tabindex="-1" aria-labelledby="parceiroModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -254,7 +266,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
+                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar
+                            Parceiro</button>
                     </div>
                 </div>
             </div>
@@ -262,23 +275,27 @@
 
 
         <div class="parceiro-container container-fluid">
-            <h2 class="text-center" id="parcerias">Parceiros</h2>       
+            <h2 class="text-center" id="parcerias">Parceiros</h2>
             <div class="row" id="parceiros">
                 <div id="parceiros-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                     <div class="carousel-inner parceiros" id="parceiros"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#parceiros-carousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
-            <p class="text-center" id="convite-parcerias">Estamos sempre abertos a novas parcerias co-criando bases comuns, interesses conjuntos e agregando valores para ambos.</p>
+            <p class="text-center" id="convite-parcerias">Estamos sempre abertos a novas parcerias co-criando bases
+                comuns, interesses conjuntos e agregando valores para ambos.</p>
 
-            <p class="text-center" id="contato-parcerias">Caso queira se tornar um Parceiro Semeador, entre em contato conosco pelos telefones:<strong><br>(11)4238-3100 <br> (11)97366-8766</p></strong>
+            <p class="text-center" id="contato-parcerias">Caso queira se tornar um Parceiro Semeador, entre em contato
+                conosco pelos telefones:<strong><br>(11)4238-3100 <br> (11)97366-8766</p></strong>
         </div>
 
     </main>
