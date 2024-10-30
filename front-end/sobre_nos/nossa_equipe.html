@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/homepage.css">
+    <link rel="stylesheet" href="../CSS/nossa_historia.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,8 +119,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -148,7 +149,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -168,16 +170,18 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Seja Doador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="nossa_historia.html">Nossa História</a></li>
+                                <li><a class="dropdown-item" href="nossa_historia.html" id="marcador">Nossa História</a>
+                                </li>
                                 <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
-                                <li><a class="dropdown-item" href="nossa_equipe.html" id="marcador">Nossa Equipe</a></li>
+                                <li><a class="dropdown-item" href="nossa_equipe.html">Nossa Equipe</a></li>
                                 <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
                                 <li><a class="dropdown-item" href="segm_educa.html">Segmentos Educacionais</a></li>
                                 <li><a class="dropdown-item" href="matricula.html">Matrícula</a></li>
@@ -185,7 +189,8 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -193,79 +198,43 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
-
+        <div class="text-center" id="nome-pagina">
+            <h1>Nossa Equipe</h1>
+        </div>
         <!-- Imagem e textos -->
-        <div class="container-fluid" id="principal">
-            <div class="row mb-5" id="texto-principal-1">
-                <!-- Primeira imagem -->
-                <div class="col-xl col-xxl-6" id="imagem1">
-                    <img src="../../images/imagem1.svg" alt="#" class="img-fluid">
-                </div>
-                <!-- Primeiro texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-            </div>
-            <div class="row mb-5" id="texto-principal-2">
-                <!-- Segundo texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-                <!-- Segunda imagem -->
-                <div class="col-xl col-xxl-6" id="imagem2">
-                    <img src="../../images/imagem2.svg" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
+        <div class="container col-lg-7 col-md-10 principal">
+            <div class="row">
+                <div class="texto-principal-3">
+                    <p>A equipe é composta por profissionais qualificados e aptos para receber diariamente os alunos e
+                        assistidos da instituição.
+                    </p>
+                    <p>É organizada nas áreas:
+                    </p>
+                    <p>- Administativa: direção e secretaria</p>
+                    <p>- Pedagógica: coordenação e docentes </p>
+                    <p>- Multiprofissional: assistente social, fonoaudióloga, psicólogo e terapeuta ocupacional</p>
+                    <p>- Oficineira: facilitadores de oficinas (arte, atividades da vida diária e prática, atividades
+                        físicas, cinoterapia, circo, construindo valores, dança e karatê)</p>
+                    <p>- Apoio: auxiliares de sala, limpeza, cozinha e zeladoria </p>
+                    <p>- Voluntários: todos(as) que dispõem de seu tempo e carinho para contribuir para o bem do outro.
+                    </p>
+                    <p><strong>A escola possui também uma Diretoria Executiva que acompanha diariamente sua
+                            caminhada.</strong></p>
+                        <div style="background-color: #210348; padding: top 10px;" ##210348 class="alinhar">
+                            <p style="text-align: center;"><img src="../../images/ImagemEQ1.jpg" alt=""width="300" height="200"><img src="../../images/ImagemEQ2.jpg" alt=""width="300" height="200"></p>
+                            <p style="text-align: center;"><img src="../../images/ImagemEQ3.jpg" alt=""width="300" height="200"><img src="../../images/ImagemEQ4.jpg" alt=""width="300" height="200"></p>
+                            <p style="text-align: center;"><img src="../../images/ImagemEQ5.jpg" alt=""width="300" height="200"><img src="../../images/ImagemEQ6.jpg" alt=""width="300" height="200"></p>
 
-        <div class="modal fade" id="parceiroModal" tabindex="-1" aria-labelledby="parceiroModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="parceiroModalLabel">Adicionar Parceiro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="file" id="parceiroFile" accept="image/*" class="form-control">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div>
 
 
-        <div class="parceiro-container container-fluid">
-            <h2 class="text-center" id="parcerias">Parceiros</h2>       
-            <div class="row" id="parceiros">
-                <div id="parceiros-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                    <div class="carousel-inner parceiros" id="parceiros"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
-            <p class="text-center" id="convite-parcerias">Estamos sempre abertos a novas parcerias co-criando bases comuns, interesses conjuntos e agregando valores para ambos.</p>
-
-            <p class="text-center" id="contato-parcerias">Caso queira se tornar um Parceiro Semeador, entre em contato conosco pelos telefones:<strong><br>(11)4238-3100 <br> (11)97366-8766</p></strong>
-        </div>
 
     </main>
 
