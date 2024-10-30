@@ -156,6 +156,12 @@ body {
     box-shadow: 0px 10px 20px hsl(0, 0%, 40%);
 }
 
+@keyframes saltar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
 /* Estilos para a barra de navegação */
 .cabecalho {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -177,7 +183,7 @@ body {
 
 /* Estilos do botão hamburguer */
 .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-toggler-icon {
@@ -185,86 +191,47 @@ body {
 }
 
 /* Estilos para os links da navbar */
-.navbar-nav .nav-link {
-    color: #000000;
+.navbar-nav .nav-link, .dropdown-item {
+    color: #210348;
     font-size: 18.5px;
     padding: 10px;
-    transition: background-color 0.7s ease;
-    position: relative;
-    margin-right: 20px;
-}
-.nav-link:focus {
-    color: #000000 !important; /* Texto laranja quando o foco está no link */
-    background-color: transparent !important; /* Fundo transparente */
-}
-#loginLink {
-    color: #000000 !important;
-}
-
-/* Animação de linha inferior */
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #F57806;
-    transition: all 0.5s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-.nav-link:hover {
-    animation: saltar 0.5s ease;
-    color: #000000 !important;
-}
-.nav-link.active {
-    color: #000000 !important;
-}
-.dropdown-link {
-    color: #000000;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave */
     text-decoration: none;
-    padding: 10px;
-    font-size: 18.5px;
-    transition: color 0.5s ease; /* Apenas para suavizar mudança de cor */
 }
 
-.dropdown-link:hover {
-    color: #F57806; /* Mesma cor de hover usada nos outros links */
+/* Efeito de hover nos links da navbar */
+.navbar-nav .nav-link:hover, .dropdown-item:hover, #loginLink:hover {
+    color: #F57806 !important; 
+    animation: saltar 0.5s ease; 
 }
 
-/* Adiciona o efeito de dropdown */
-.navbar-nav .dropdown-menu {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+/* Efeito ativo para manter consistência visual */
+.navbar-nav .nav-link:active, .dropdown-item:active {
+    color: #F57806 !important;
 }
-
-.navbar-nav .dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.navbar-nav .dropdown-toggle:focus, .navbar-nav .dropdown-toggle:active {
+    color: #210348 !important; 
 }
-
-/* Mesma fonte, padding e espaçamento */
-.dropdown-link {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #000000;
-    padding: 10px;
-    font-size: 18.5px;
+/* Estado hover e ativo para links principais */
+.navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
+    color:#210348 !important;
+}
+.dropdown-item:focus, .dropdown-item:active {
+    background-color: transparent !important;
+    color: #210348 !important; 
+}
+/* Ajustes para o link "Área Restrita" */
+#loginLink:active {
+    color: #210348 !important;
+    animation: saltar 0.3s ease;
+} 
+#loginLink{
+    color: #210348 !important;
 }
 
 #logo{
     width: auto;
     height: 100px;
-
 }
 
 /* .nav-brand{
@@ -284,12 +251,13 @@ nav img {
     padding: 0px;
 }
 
-
-/* animação no nav-bar */
-@keyframes saltar {
-    50%{transform: scale(1.1);}
-    
+.nav-link:hover {
+    animation-name: saltar;
+    animation-duration: 0.5s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+    color: #210348 !important;
 }
+
 
 #imagem1 {
     display: flex; /* Mantém o comportamento flexível */
@@ -594,14 +562,6 @@ footer{
     }
 }
 
-@media (max-width: 992px) {
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .nav-link::after {
-        content: none;
-      }
-}
 
 @media(max-width: 1199px) {
     #texto-principal-2 {

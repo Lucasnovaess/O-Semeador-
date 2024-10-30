@@ -77,6 +77,8 @@ const fazerLogin = async () => {
             });
         }
         catch (error) {
+            exibirAlerta('.alert-modal-login', "Login e/ou senha incorretos",
+            ['show', 'alert-danger'], ['d-none', 'alert-success'], 2000)
             //daqui a pouco fazemos o tratamento de coisas ruins, ou seja, especificamos o fluxo alternativo de execução
         }
     }
