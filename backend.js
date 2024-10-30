@@ -31,13 +31,14 @@ const usuarioSchema = mongoose.Schema({
 usuarioSchema.plugin(uniqueValidator)
 const Usuario = mongoose.model("Usuario", usuarioSchema)
 
-const textoSchema = new mongoose.Schema({
+const textosSchema = new mongoose.Schema({
+    idTexto:{type: String, required:true, unique:true},
     titulo:{type:String, required: false},
     subtitulo: { type: String, required: false },
     conteudo: { type: String, required: false }
 });
 
-const Texto = mongoose.model('Texto', textoSchema);
+const Texto = mongoose.model('Texto', textosSchema);
 
 const imagemSchema = new mongoose.Schema({
     src: {type:String, required:true}
@@ -50,6 +51,15 @@ const parceiroSchema = new mongoose.Schema({
 });
 
 const Parceiro = mongoose.model('Parceiro', parceiroSchema);
+
+const imagemEstaticaSchema = new mongoose.Schema({
+    divId: String,
+    src: String
+});
+
+const imagemEstatica = mongoose.model('ImagemEstatica', imagemEstaticaSchema)
+
+module.exports = mongoose.model('Parceiro', parceiroSchema);
 
 app.post('/signup', async (req, res) => {
     try {
@@ -100,11 +110,18 @@ app.post('/login', async (req, res) => {
 
 app.post('/new-text', async (req, res) => {
     try {
-        const titulo = req.body.titulo
-        const subtitulo = req.body.subtitulo
-        const conteudo = req.body.conteudo
+        const idTexto = req.body.idTexto; // Usa o campo idTexto enviado
+        const titulo = req.body.titulo;
+        const subtitulo = req.body.subtitulo;
+        const conteudo = req.body.conteudo;
 
-        const novoTexto = new Texto({ titulo, subtitulo, conteudo })
+        // Verifica se idTexto já existe no banco de dados
+        const existingTexto = await Texto.findOne({ idTexto });
+        if (existingTexto) {
+            return res.status(400).json({ message: 'ID já existe. Escolha um ID diferente.' });
+        }
+
+        const novoTexto = new Texto({ idTexto, titulo, subtitulo, conteudo });
         await novoTexto.save();
         res.status(201).json(novoTexto);
     } catch (error) {
@@ -123,8 +140,11 @@ app.get('/textos-puxar', async (req, res) => {
 
 app.put('/textos-atualizar', async (req, res) => {
     try {
-        const { id, titulo, subtitulo, conteudo } = req.body;
-        const textoAtualizado = await Texto.findByIdAndUpdate(id, { titulo, subtitulo, conteudo }, { new: true });
+        const { idTexto, titulo, subtitulo, conteudo } = req.body;
+        const textoAtualizado = await Texto.findOneAndUpdate({ idTexto }, { titulo, subtitulo, conteudo }, { new: true });
+        if (!textoAtualizado) {
+            return res.status(404).json({ message: 'Texto não encontrado' });
+        }
         res.status(200).json(textoAtualizado);
     } catch (error) {
         res.status(400).json({ message: 'Erro ao atualizar texto', error });
@@ -198,6 +218,46 @@ app.get('/parceiros-puxar', async (req, res) => {
     }
 });
 
+app.get('/imagem-estatica-puxar', async (req, res) => {
+    try {
+        const imagem = await imagemEstatica.find();
+        res.status(200).send(imagem);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao puxar imagens' });
+    }
+});
+
+// Adicionar imagem
+app.post('/imagem-estatica-atualizar', async (req, res) => {
+    const { divId, src } = req.body;
+    try {
+        // Atualizar ou inserir nova imagem para a divId
+        await imagemEstatica.findOneAndUpdate({ divId }, { src });
+        res.status(201).json({ message: 'Imagem atualizada com sucesso!' });
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao adicionar imagem' });
+    }
+});
+
+
+app.post('/imagem-estatica-adicionar', async (req, res) => {
+    try {
+        const novaImagem = new imagemEstatica(req.body);
+        await novaImagem.save();
+        res.status(201).send(novaImagem);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+app.delete('/imagem-estatica-remover/:divId', async (req, res) => {
+    const { divId } = req.params;
+    try {
+        await imagemEstatica.findOneAndDelete({ divId });
+        res.status(200).json({ message: 'Imagem removida com sucesso!' });
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao remover imagem' });
+    }
+});
 app.listen(3000, () => {
     try {
         conectarAoMongoDB()

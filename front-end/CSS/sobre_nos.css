@@ -150,7 +150,25 @@ nav img {
     padding: 0px;
 }
 
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
 
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
 
 .titulo{
     font-weight: bold;
