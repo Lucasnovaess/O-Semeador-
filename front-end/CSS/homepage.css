@@ -172,18 +172,25 @@ body {
 /* Estilos para a navbar */
 .navbar {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color:#ffffff;
+    background-color: #ffffff;
     padding: 10px;
 }
 
+/* Estilos do dropdown */
+
+
+
+
+/* Estilos do botão hamburguer */
 .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+/* Estilos para os links da navbar */
 .navbar-nav .nav-link, .dropdown-item {
     color: #210348;
     font-size: 18.5px;
@@ -209,7 +216,10 @@ body {
 .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
     color:#210348 !important;
 }
-
+.dropdown-item:focus, .dropdown-item:active {
+    background-color: transparent !important;
+    color: #210348 !important; 
+}
 /* Ajustes para o link "Área Restrita" */
 #loginLink:active {
     color: #210348 !important;
@@ -218,7 +228,6 @@ body {
 #loginLink{
     color: #210348 !important;
 }
-
 
 #logo{
     width: auto;
@@ -241,6 +250,14 @@ nav img {
 #banner {
     padding: 0px;
 }
+
+.nav-link:hover {
+    animation-name: saltar;
+    animation-duration: 0.5s; /* Duração da animação */
+    animation-direction: normal;/* Mantém a posição final */
+    color: #210348 !important;
+}
+
 
 #imagem1 {
     display: flex; /* Mantém o comportamento flexível */
@@ -274,7 +291,6 @@ nav img {
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
-    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
     margin: 16px;
 }
 
@@ -312,6 +328,7 @@ nav img {
     color: #F57806;
     font-weight: bold;
     margin: 16px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .parceiro-container{
@@ -545,14 +562,6 @@ footer{
     }
 }
 
-@media (max-width: 992px) {
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .nav-link::after {
-        content: none;
-      }
-}
 
 @media(max-width: 1199px) {
     #texto-principal-2 {

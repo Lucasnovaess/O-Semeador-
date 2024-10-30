@@ -85,6 +85,7 @@ body {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
+
 .navbar-nav .nav-link, .dropdown-item {
     color: #210348;
     font-size: 18.5px;
@@ -110,7 +111,10 @@ body {
 .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
     color:#210348 !important;
 }
-
+.dropdown-item:focus, .dropdown-item:active {
+    background-color: transparent !important;
+    color: #210348 !important; /* Mantém a cor original */
+}
 /* Ajustes para o link "Área Restrita" */
 #loginLink:active {
     color: #210348 !important;
@@ -124,7 +128,6 @@ body {
     50% { transform: translateY(-5px); }
     100% { transform: translateY(0); }
 }
-
 #logo{
     width: auto;
     height: 100px;
@@ -147,12 +150,6 @@ nav img {
     padding: 0px;
 }
 
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
 
 
 .titulo{
@@ -167,24 +164,30 @@ nav img {
     margin-bottom: 40px;
     text-align: center;
 }
+#caixa-doações p, #caixa-doações li, #caixa-doações h1{
+    font-size: 15px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
 
+.qrcode{
+    text-align: center;
+    justify-content: center;
+}
+
+.qrcode img{
+    height: 200px;
+}
+.qrcode h2{
+    font-size: 25px;
+}
 #paragrafo-1{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
-    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
     margin: 30px;
     text-align: center;
 }
 
-#paragrafo-2{
-    font-size: 20px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #000000;
-    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
-    margin: 0px;
-    width: 100%;
-}
 
 #textos {
     padding-right: 24px;
@@ -256,7 +259,7 @@ nav img {
 }
 .accordion{
     margin: 25px;
-    background-color: gray;
+    background-color:rgba(109, 102, 102, 0.451);
     padding: 30px;
     border-radius: 18px;
 }
@@ -471,19 +474,6 @@ footer{
     }
 }
 
-@media (max-width: 992px) {
-    #padding-navbar {
-        padding: 00px 0px 16px 0px;
-        margin: 0px;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .nav-link::after {
-        content: none;
-      }
-
-}
 
 @media (min-width: 993px){
     #rodape{
