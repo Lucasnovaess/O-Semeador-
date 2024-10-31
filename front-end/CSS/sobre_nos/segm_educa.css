@@ -7,28 +7,7 @@ body {
     margin: 0;
 }
 
-.carousel-inner .img {
-    max-height: 400px;
-    width: auto;
-}
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 400px;
-    object-fit: contain; /* Ajusta a imagem ao container sem distorção */
-    max-height: 100%; /* Limita a altura máxima para não exceder o container */
-}
-#carouselExample{
-    background-color: #210348;
-    padding: 20px;
-}
 /* IMPORTANTE */
 .btn-container {
     position: absolute;
@@ -72,6 +51,25 @@ body {
     gap: 15px; /* Espaçamento entre os botões */
     z-index: 9999;
 }
+
+#nome-pagina{
+    background-color: #F57806;
+    opacity: 60%;
+    padding: 20px;
+    /* margin-top: 20px; */
+
+}
+#nome-pagina h1{
+    color: #ffffff;
+    opacity: 100% !important;
+}
+
+.principal{
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
 
 /* Ajuste para o botão de leitura */
 #btn-leitura {
@@ -172,25 +170,18 @@ body {
 /* Estilos para a navbar */
 .navbar {
     font-family: "M PLUS Rounded 1c", sans-serif;
-    background-color: #ffffff;
+    background-color:#ffffff;
     padding: 10px;
 }
 
-/* Estilos do dropdown */
-
-
-
-
-/* Estilos do botão hamburguer */
 .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
-/* Estilos para os links da navbar */
 .navbar-nav .nav-link, .dropdown-item {
     color: #210348;
     font-size: 18.5px;
@@ -216,10 +207,7 @@ body {
 .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
     color:#210348 !important;
 }
-.dropdown-item:focus, .dropdown-item:active {
-    background-color: transparent !important;
-    color: #210348 !important; 
-}
+
 /* Ajustes para o link "Área Restrita" */
 #loginLink:active {
     color: #210348 !important;
@@ -228,6 +216,7 @@ body {
 #loginLink{
     color: #210348 !important;
 }
+
 
 #logo{
     width: auto;
@@ -251,42 +240,21 @@ nav img {
     padding: 0px;
 }
 
-.nav-link:hover {
-    animation-name: saltar;
-    animation-duration: 0.5s; /* Duração da animação */
-    animation-direction: normal;/* Mantém a posição final */
-    color: #210348 !important;
-}
-
-
 #imagem1 {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
 }
 
 #imagem1 img {
-    border: 3px solid blue;
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
     margin: 16px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.imagem-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px; /* Espaçamento entre blocos */
-}
-
-.btn-atualizar {
-    margin-top: 10px; /* Espaçamento entre a imagem e o botão */
 }
 
 .titulo{
@@ -298,22 +266,34 @@ nav img {
     margin: 16px;
 }
 
-.paragrafo{
-    font-size: 20px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #000000;
-    margin: 16px;
-}
-
-#textos {
-    padding-right: 10px;
-    width: 50%;
-}
-
 #principal{
     width: 100%;
     margin: 0px;
     margin-top: 40px;
+}
+
+.titulo_h3 {
+    font-style: italic;
+    text-decoration: underline;
+    color: #060031;   
+    width: 50%;
+    margin-left: 50px;
+}
+
+.paragrafo{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
+    margin: 16px;
+}
+
+.textos p {
+    margin-left: 40px;
+}
+
+.textos h3 {
+    margin-left: 40px;
 }
 
 #imagem2 {
@@ -339,7 +319,6 @@ nav img {
     color: #F57806;
     font-weight: bold;
     margin: 16px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 .parceiro-container{
@@ -573,13 +552,15 @@ footer{
     }
 }
 
-
-@media(max-width: 1199px) {
-    #texto-principal-2 {
-        display: flex;
-        flex-direction: column-reverse;
+@media (max-width: 992px) {
+    .nav-link:hover::after {
+      width: 100%;
     }
+    .nav-link::after {
+        content: none;
+      }
 }
+
 
 @media(max-width: 1199px){
     #imagem2 img {

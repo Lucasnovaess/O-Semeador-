@@ -286,8 +286,8 @@ async function carregarParceiros() {
                         <div class="carousel-item ${isActive} parceiro" data-id="${parceiro._id}">
                             <img src="${parceiro.src}" class="d-block w-100">
                             <div class="btn-container">
-                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#parceiroModal">Parceiro Imagem</button>
-                                <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerParceiro('${parceiro._id}')">Parceiro Imagem</button>
+                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#parceiroModal">Adicionar parceiro/button>
+                                <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerParceiro('${parceiro._id}')">Remover Parceiro</button>
                             </div>
                         </div>`;
             carouselInner.innerHTML += carouselItem;
@@ -299,8 +299,8 @@ async function carregarParceiros() {
         (error => console.error('Erro ao carregar imagens:', error));
     }
 }
-const parceiroIndex = 3;
-function adicionarParceiroporArquivo() {
+
+function adicionarParceiroPorArquivo() {
     const fileInput = document.getElementById('parceiroFile');
     const file = fileInput.files[0];
 
@@ -314,17 +314,19 @@ function adicionarParceiroporArquivo() {
         const parceiroURL = e.target.result;
 
         const carouselInner = document.querySelector('.parceiros');
-        const novaParceiroDiv = document.createElement('div');
+        const novoParceiroDiv = document.createElement('div');
         novoParceiroDiv.className = 'parceiro';
+        novoParceiroDiv.className = 'carousel-item'; 
 
         novoParceiroDiv.innerHTML = `
-            <img src="${imagemURL}" class="d-block w-100" alt="Imagem ${parceiroIndex + 1}">
-            <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro</button>
-            <button class="btn btn-danger d-none btn-remover-parceiro" onclick="removerParceiro()">Remover Parceiro</button>
+            <img src="${parceiroURL}" class="d-block w-100"">
+            <div class="btn-container">
+                <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro</button>
+                <button class="btn btn-danger d-none btn-remover-parceiro" onclick="removerParceiro()">Remover Parceiro</button>
+            </div>
         `;
 
         carouselInner.appendChild(novoParceiroDiv);
-        parceiroIndex++;
 
         // Enviar a nova imagem para o banco de dados
         try {
@@ -333,7 +335,7 @@ function adicionarParceiroporArquivo() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ src: imagemURL })
+                body: JSON.stringify({ src: parceiroURL })
             });
         } catch (error) {
             console.error('Erro ao salvar a imagem no banco de dados:', error);

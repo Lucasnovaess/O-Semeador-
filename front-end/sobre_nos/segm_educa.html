@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/homepage.css">
+    <link rel="stylesheet" href="../CSS/sobre_nos/segm_educa.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,8 +119,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -148,7 +149,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -168,14 +170,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Seja Doador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="nossa_historia.html">Nossa História</a></li>
+                                <li><a class="dropdown-item" href="nossa_historia.html" id="marcador">Nossa História</a>
+                                </li>
                                 <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
                                 <li><a class="dropdown-item" href="nossa_equipe.html">Nossa Equipe</a></li>
                                 <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
@@ -185,7 +189,8 @@
                         </li>
                         <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -193,78 +198,94 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
-
+        <div class="text-center" id="nome-pagina">
+            <h1>Segmentos Educacionais</h1>
+        </div>
         <!-- Imagem e textos -->
         <div class="container-fluid" id="principal">
-            <div class="row mb-5" id="texto-principal-1">
-                <!-- Primeira imagem -->
-                <div class="col-xl col-xxl-6" id="imagem1">
-                    <img src="../../images/imagem1.svg" alt="#" class="img-fluid">
+            <div class="row">
+                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
+                    <h3 class="titulo_h3">Educação Infantil</h3>
+                    <p>
+                        O atendimento à Educação Infantil é ofertado a crianças de 4 e 5 anos.
+                    </p>
+                    <p>
+                        O currículo que rege a prática da Educação Infantil tem como base a BNCC - Base Nacional
+                        Comum Curricular cuja concepção vincula educar e cuidar, entendendo o cuidado como algo
+                        indissociável do processo educativo. A escola acolhe as vivências e os conhecimentos
+                        construídos pelas crianças no ambiente da família e no contexto de sua comunidade
+                        articulando-os à prática pedagógica, ampliando assim o universo de experiências,
+                        conhecimentos e habilidades dessas crianças, diversificando e consolidando novas
+                        aprendizagens, atuando de maneira complementar à educação familiar.
+                    </p>
+                    <p>
+                        Os direitos de aprendizagem e desenvolvimento garantidos na BNCC por meio do conviver,
+                        brincar, participar, explorar, expressar e conhecer-se são respeitados e incentivados no dia
+                        a dia da prática escolar.
+                    </p>
                 </div>
-                <!-- Primeiro texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-            </div>
-            <div class="row mb-5" id="texto-principal-2">
-                <!-- Segundo texto -->
-                <div class="col-xl col-xxl-6" id="textos">
-                    <h2 class="titulo"></h2>
-                    <h3 class="sub-titulo"></h3>
-                    <p class="paragrafo"></p>
-                </div>
-                <!-- Segunda imagem -->
-                <div class="col-xl col-xxl-6" id="imagem2">
-                    <img src="../../images/imagem2.svg" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="parceiroModal" tabindex="-1" aria-labelledby="parceiroModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="parceiroModalLabel">Adicionar Parceiro</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <input type="file" id="parceiroFile" accept="image/*" class="form-control">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
-                    </div>
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                    <img src="../../images/segm_educa-1.png" alt="#">
                 </div>
-            </div>
-        </div>
 
-
-        <div class="parceiro-container container-fluid">
-            <h2 class="text-center" id="parcerias">Parceiros</h2>       
-            <div class="row" id="parceiros">
-                <div id="parceiros-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                    <div class="carousel-inner parceiros" id="parceiros"></div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#parceiros-carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
+                    <h3 class="titulo_h3">Ensino Fundamental</h3>
+                    <p>
+                        Os anos iniciais do Ensino Fundamental são destinados a educandos em idade escolar. Constituem
+                        objetivos dessa modalidade de ensino, os específicos da Lei Federal nº 9394/96 que estabelece as
+                        Diretrizes e Bases da Educação Nacional para o Ensino Fundamental Brasileiro, bem como os
+                        descritos na BNCC. Objetiva ainda proporcionar ao educando a formação necessária ao
+                        desenvolvimento de suas potencialidades como elemento de autorrealização integrando-o à vida
+                        escolar e social.
+                    </p>
+                    <p>
+                        Todo o Projeto Pedagógico para o Ensino Fundamental tem no aluno o centro do processo educativo.
+                        A reflexão, a criatividade, a análise crítica, as leituras, os debates bem como as atividades
+                        extracurriculares têm como ponto de partida o contexto onde o aluno está inserido, aquilo que
+                        ele conhece e sabe, suas experiências e necessidades. Na busca pelo conhecimento e crescimento
+                        integral, o educando é encorajado a assumir responsabilidades, a ter autonomia, a dialogar, a
+                        trabalhar em equipe e a ser, sobretudo, solidário.
+                    </p>
                 </div>
-            </div>
-            <p class="text-center" id="convite-parcerias">Estamos sempre abertos a novas parcerias co-criando bases comuns, interesses conjuntos e agregando valores para ambos.</p>
 
-            <p class="text-center" id="contato-parcerias">Caso queira se tornar um Parceiro Semeador, entre em contato conosco pelos telefones:<strong><br>(11)4238-3100 <br> (11)97366-8766</p></strong>
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                    <img src="../../images/segm_educa-2.png" alt="#">
+                </div>
+
+                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
+                    <h3 class="titulo_h3">Projeto Semear</h3>
+                    <p>
+                        O Projeto Semear é um programa socioassistencial que atende pessoas a partir de 18 anos,
+                        oferecendo-lhes recursos e estratégias que visam à convivência, fortalecimento de vínculos,
+                        cuidados pessoais, aquisição e a manutenção de habilidades funcionais para a vida, além de
+                        atender às necessidades de apoio contínuos estimulando-os, de acordo com os seus interesses e
+                        potencialidades, assegurando-lhes aquisição de autonomia e independência nas habilidades básicas
+                        de maneira funcional, desenvolvimento de competências sociais e promoção de sua inclusão na
+                        comunidade.
+                    </p>
+                    <p>
+                        O Projeto Semear traz como base os dois pilares que estabelecem os objetivos, princípios e
+                        diretrizes da legislação específica da assistência social brasileira, a Constituição Federal de
+                        1988 e a Lei Orgânica da Assistência Social. Atende os princípios legais de Proteção Social
+                        Básica por destinar os seus serviços, programas e proteções sociais de acolhimento, convivência
+                        e socialização aos adultos com deficiência intelectual, múltiplas deficiências, transtorno do
+                        espectro autista e suas respectivas famílias.
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                    <img src="../../images/segm_educa-3.png" alt="#">
+                </div>
+
+            </div>
         </div>
 
     </main>
