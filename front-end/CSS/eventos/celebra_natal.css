@@ -1,4 +1,4 @@
-* {
+*  {
     box-sizing: border-box;
 }
 
@@ -182,7 +182,6 @@ body {
     background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 
-
 .navbar-nav .nav-link, .dropdown-item {
     color: #210348;
     font-size: 18.5px;
@@ -201,17 +200,21 @@ body {
 .navbar-nav .nav-link:active, .dropdown-item:active {
     color: #F57806 !important;
 }
+
 .navbar-nav .dropdown-toggle:focus, .navbar-nav .dropdown-toggle:active {
     color: #210348 !important; 
 }
+
 /* Estado hover e ativo para links principais */
 .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
     color:#210348 !important;
 }
+
 .dropdown-item:focus, .dropdown-item:active {
     background-color: transparent !important;
     color: #210348 !important; /* Mantém a cor original */
 }
+
 /* Ajustes para o link "Área Restrita" */
 #loginLink:active {
     color: #210348 !important;
@@ -221,11 +224,6 @@ body {
     color: #210348 !important;
 }
 
-@keyframes saltar {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
 
 #logo{
     width: auto;
@@ -249,24 +247,23 @@ nav img {
     padding: 0px;
 }
 
-/* IMPORTANTE */
-.edicao{
-    margin: 10px;
+#imagem1 {
+    display: flex; /* Mantém o comportamento flexível */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    padding: 0; /* Remove padding extra que possa afetar o layout */
+    margin: 0 auto; /* Garante centralização no container */
 }
 
-/* Não sei */
-.margin {
+#imagem1 img {
+    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
     margin: 16px;
-}
-
-/* IMPORTANTE */
-#botoesEdicao{
-    background-color: lightslategrey;
-    justify-content: center;
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px black;
 }
 
 .titulo{
@@ -275,72 +272,7 @@ nav img {
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #060031;
     /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
-    margin-top: 30px;
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-#caixa-doações p, #caixa-doações li, #caixa-doações h1{
-    font-size: 15px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-}
-
-.qrcode{
-    text-align: center;
-    justify-content: center;
-}
-
-.qrcode img{
-    height: 200px;
-}
-.qrcode h2{
-    font-size: 25px;
-}
-#paragrafo-1{
-    font-size: 20px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #000000;
-    margin: 30px;
-    text-align: center;
-}
-
-
-#textos {
-    padding-right: 24px;
-    padding-left: 24px;
-    padding-bottom: 24px;
-    width: 100%;
-}
-
-/* medias queries para centralizar imagem e texto */
-@media(max-width: 1199px){
-    #imagem3 img {
-        border: 3px solid #F57806;
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
-    }
-}
-
-@media (max-width: 1400px) {
-    #imagem3 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    }
-}
-
-@media(max-width: 1199px){
-    #textos-2 {
-        padding-right: 0px;
-        text-align: center; /* Garante que o texto fique alinhado à esquerda */
-        width: 100%;
-    }
+    margin: 16px;
 }
 
 #principal{
@@ -349,32 +281,12 @@ nav img {
     margin-top: 40px;
 }
 
-#imagem3 {
-    display: flex; /* Mantém o comportamento flexível */
-    justify-content: center; /* Garante que a imagem permaneça centralizada */
-    align-items: center; /* Centraliza verticalmente, se necessário */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
-    padding: 0; /* Remove padding extra que possa afetar o layout */
-    margin: 0 auto; /* Garante centralização no container */
-}
-
-#imagem1 img {
-    border: 3px solid blue;
-    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
-    margin: 16px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.titulo{
-    font-weight: bold;
-    font-size: 36px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #060031;
-    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
-    margin: 16px;
+.titulo_h3 {
+    font-style: italic;
+    text-decoration: underline;
+    color: #060031;   
+    width: 50%;
+    margin-left: 50px;
 }
 
 .paragrafo{
@@ -384,12 +296,13 @@ nav img {
     margin: 16px;
 }
 
-#textos {
-    padding-right: 10px;
-    width: 50%;
+.textos p {
+    margin-left: 40px;
 }
 
-
+.textos h3 {
+    margin-left: 40px;
+}
 
 #imagem2 {
     display: flex; /* Mantém o comportamento flexível */
@@ -408,23 +321,6 @@ nav img {
     margin: 16px;
     margin-left: auto;
     margin-right: auto;
-}
-
-#caixa-doações{
-    justify-content: center;
-    display: flex;
-}
-
-#titulo-doações{
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.accordion{
-    margin: 25px;
-    background-color:rgba(109, 102, 102, 0.451);
-    padding: 30px;
-    border-radius: 18px;
 }
 
 .sub-titulo {
@@ -694,7 +590,6 @@ footer{
         max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     }
 }
-
 
 @media (min-width: 993px){
     #rodape{

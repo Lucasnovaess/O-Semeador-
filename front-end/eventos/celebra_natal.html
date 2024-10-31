@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,8 +119,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -148,7 +149,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -170,22 +172,27 @@
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa Infraestrutura</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa
+                                        Infraestrutura</a></li>
                                 <li><a class="dropdown-item" href="../sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos Educacionais</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos
+                                        Educacionais</a></li>
                                 <li><a class="dropdown-item" href="../sobre_nos/matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
@@ -199,11 +206,13 @@
                                 <li><a class="dropdown-item" href="festa_primavera.html">Festa da Primavera</a>
                                 </li>
                                 <li><a class="dropdown-item" href="acao_gracas.html">Dia de Ação de Graças</a></li>
-                                <li><a class="dropdown-item" href="celebra_natal.html" id="marcador">Celebração de Natal</a></li>
+                                <li><a class="dropdown-item" href="celebra_natal.html" id="marcador">Celebração de
+                                        Natal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -211,35 +220,54 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
-        <div class="text-center" id="nome-pagina"><h1>Celebração de Natal</h1></div>
+        <div class="text-center" id="nome-pagina">
+            <h1>Celebração de Natal</h1>
+        </div>
 
         <!-- Imagem e textos -->
         <div class="container col-lg-7 col-md-10 principal">
             <div class="row">
                 <div class="texto-principal-3">
                     <p class="paragrafo">“E a luz se fez criança...
-                        Aquele bebê era diferente, porque nunca deixou de ser criança. Mesmo depois de crescido, adorava estórias sobre ovelhas e desertos; sementes e semeadores; pardais e lírios silvestres; pombas e serpentes; castelos de areia, vento, chuva e inundações; raposas, arados e funerais; caçadores de tesouros e de pérolas preciosas…
-                        Desenvolveu olhos e ouvidos capazes de escutar, não só o sol, a lua e as estrelas, mas também outros elementos do céu e da terra, que anunciam que o verão está próximo e o novo mundo de Deus, às portas. Esse menino lavrava nossa terra com seu arado amarrado nas estrelas.” (Luiz Carlos Ramos)
-                        O Natal é celebrado em todo o mundo. Há valores que devemos resgatar e transmitir às próximas gerações para a celebração de um Natal cristão.
-                        O espírito de Natal vai muito além da decoração, de presentes e de comidas gostosas, é um tempo para revermos a nossa vida interior, para sermos mais solidários, abrirmos o nosso coração à reconciliação e estendermos as mãos, desejando aos outros a paz e também recebendo a paz, desejando bênçãos e também sendo bênção.
-                        É o momento de lembrarmos, de maneira muito especial, que Jesus é o “Maravilhoso Conselheiro, Deus Forte, Pai da Eternidade e Príncipe da Paz.”
+                        Aquele bebê era diferente, porque nunca deixou de ser criança. Mesmo depois de crescido, adorava
+                        estórias sobre ovelhas e desertos; sementes e semeadores; pardais e lírios silvestres; pombas e
+                        serpentes; castelos de areia, vento, chuva e inundações; raposas, arados e funerais; caçadores
+                        de tesouros e de pérolas preciosas…
+                        Desenvolveu olhos e ouvidos capazes de escutar, não só o sol, a lua e as estrelas, mas também
+                        outros elementos do céu e da terra, que anunciam que o verão está próximo e o novo mundo de
+                        Deus, às portas. Esse menino lavrava nossa terra com seu arado amarrado nas estrelas.” (Luiz
+                        Carlos Ramos)
+                        O Natal é celebrado em todo o mundo. Há valores que devemos resgatar e transmitir às próximas
+                        gerações para a celebração de um Natal cristão.
+                        O espírito de Natal vai muito além da decoração, de presentes e de comidas gostosas, é um tempo
+                        para revermos a nossa vida interior, para sermos mais solidários, abrirmos o nosso coração à
+                        reconciliação e estendermos as mãos, desejando aos outros a paz e também recebendo a paz,
+                        desejando bênçãos e também sendo bênção.
+                        É o momento de lembrarmos, de maneira muito especial, que Jesus é o “Maravilhoso Conselheiro,
+                        Deus Forte, Pai da Eternidade e Príncipe da Paz.”
                     </p>
-                    
+
+                    <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                        <img src="../../images/eventos/imagem natal 1.jpg" alt="#">
+                    </div>
+
                 </div>
-            
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/eventos/imagem natal 1.jpg" alt="#">
-                </div>
-            
+
                 <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
                     <img src="../../images/eventos/imagem natal 2.jpg" alt="#">
-                </div>           </div>
+                </div>
+
+
+
+            </div>
+
         </div>
 
     </main>
