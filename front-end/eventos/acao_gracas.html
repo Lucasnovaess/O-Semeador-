@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,8 +119,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -148,7 +149,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -170,22 +172,27 @@
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa Infraestrutura</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa
+                                        Infraestrutura</a></li>
                                 <li><a class="dropdown-item" href="../sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos Educacionais</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos
+                                        Educacionais</a></li>
                                 <li><a class="dropdown-item" href="../sobre_nos/matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
@@ -198,12 +205,14 @@
                                 </li>
                                 <li><a class="dropdown-item" href="festa_primavera.html">Festa da Primavera</a>
                                 </li>
-                                <li><a class="dropdown-item" href="acao_gracas.html" id="marcador">Dia de Ação de Graças</a></li>
+                                <li><a class="dropdown-item" href="acao_gracas.html" id="marcador">Dia de Ação de
+                                        Graças</a></li>
                                 <li><a class="dropdown-item" href="celebra_natal.html">Celebração de Natal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -211,28 +220,49 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
-        <div class="text-center" id="nome-pagina"><h1>Dia Nacional de Ação de Graças - Aniversário da Escola</h1></div>
+        <div class="text-center" id="nome-pagina">
+            <h1>Dia Nacional de Ação de Graças - Aniversário da Escola</h1>
+        </div>
 
         <!-- Imagem e textos -->
         <div class="container col-lg-7 col-md-10 principal">
             <div class="row">
                 <div class="texto-principal-3">
-                    <p class="paragrafo">A Escola Metodista de Educação Especial "O Semeador" é uma instituição beneficente, sem fins lucrativos, que se dedica, desde 1974, a oferecer suporte educacional e social a crianças, adolescentes, jovens e adultos com deficiência intelectual, múltiplas deficiências e Transtorno do Espectro Autista (TEA). Com um compromisso sólido com a inclusão e a valorização da diversidade, a escola atende alunos a partir dos 4 anos de idade, proporcionando um ambiente acolhedor e estimulante que respeita as individualidades de cada estudante.
+                    <p class="paragrafo">O Dia Nacional de Ação de Graças teve início em 1621, quando os ingleses
+                        chegaram à América do Norte e, em meio à grande fome, os indígenas da região ensinaram a eles a
+                        cultivar o milho. Na primeira colheita fizeram uma grande festa para agradecer a Deus e, a
+                        partir daí, esse dia passou a ser celebrado todos os anos se expandindo pelo mundo. No Brasil, a
+                        celebração é feita na quarta quinta-feira de novembro.
+                        As datas de Ação de Graças e Aniversário da Escola são muito próximas o que propicia uma única
+                        celebração. Comemorar o aniversário é uma forma de celebrar a vida. É um momento para expressar
+                        gratidão a Deus pela existência e pela oportunidade de  compartilhar momentos especiais com
+                        pessoas queridas.
+                        A AMAS - O SEMEADOR, desde 1974, está em São Caetano do Sul trabalhando para acolhimento e
+                        atendimento de qualidade a crianças, adolescentes, jovens e adultos com deficiência.
+                        Sua missão é promover e articular ações de defesa de direitos, prevenção, orientação e apoio à
+                        família de cidadãos que requerem cuidados educativos especiais, promovendo uma educação pautada
+                        em valores éticos e cristãos, de respeito à diversidade e comprometimento com o exercício da
+                        cidadania.
                     </p>
-                    <p class="paragrafo">Como uma organização da sociedade civil, a Escola "O Semeador" busca atender à população por meio de um contrato particular de prestação de serviço educacional especializado. A instituição se destaca por sua abordagem personalizada e centrada nas necessidades dos alunos, oferecendo adaptações curriculares e recursos que visam promover o desenvolvimento integral de cada um. Além disso, a escola tem a capacidade de conceder descontos financeiros, com base em um levantamento socioassistencial, garantindo que o acesso à educação de qualidade seja viável para famílias em situação de vulnerabilidade.    
-                    </p>
-                    <p class="paragrafo">A escola mantém ainda Termos de Colaboração com a Prefeitura Municipal de São Caetano do Sul e com a Secretaria de Educação do Estado de São Paulo. Essas parcerias fortalecem o compromisso da instituição com a comunidade e asseguram que os alunos tenham acesso a recursos e serviços adicionais, contribuindo para uma educação mais abrangente e inclusiva. Essas colaborações são fundamentais para promover um ambiente de aprendizado que respeita e valoriza as especificidades de cada aluno, além de facilitar a integração com outras políticas públicas.
-                    </p>
-                    <p class="paragrafo">As matrículas na Escola "O Semeador" são realizadas presencialmente, mediante a apresentação da documentação necessária. Para garantir que as famílias conheçam melhor a proposta da instituição, o espaço, e a equipe pedagógica, visitas podem ser agendadas. Essas visitas são uma excelente oportunidade para os pais e responsáveis se familiarizarem com a abordagem educacional, as atividades desenvolvidas e a infraestrutura da escola, além de promover um diálogo aberto sobre as necessidades e expectativas de cada aluno.
-                    </p>
-                    
+
                 </div>
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                    <img src="../../images/eventos/imagem acao de graca 1.png" alt="#">
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
+                    <img src="../../images/eventos/imagem acao de graca 2.png" alt="#">
+                </div>
+
+
+
             </div>
         </div>
 
