@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/sobre_nos/segm_educa.css">
+    <link rel="stylesheet" href="CSS/seja_doador.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -21,9 +21,10 @@
 
     <title>O Semeador</title>
 
+
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
+<body onload="buscarTextos(); carregarImagens();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -37,11 +38,11 @@
 
         <!-- Botão para ler o site inteiro -->
         <button id="btn-leitura" onclick="lerSiteInteiro();">
-            <img src="../../images/audicao_acessibilidade.png" alt="">
+            <img src="../images/audicao_acessibilidade.png" alt="">
         </button>
     </div>
 
-
+    <!-- Login e Cadastro -->
     <div class="modal fade" id="modalLogin" aria-labelledby="modalLogin" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -67,8 +68,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                    <button onclick="fazerLogin()" type="button" class="btn btn-primary">
                         Login
                     </button>
                 </div>
@@ -94,10 +95,9 @@
                             <input type="password" id="passwordCadastroInput" class="form-control">
                         </div>
                     </form>
-
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                         Cancelar
                     </button>
                     <button onclick="cadastrarUsuario()" type="button" class="btn btn-warning">
@@ -112,7 +112,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5">Área Restrita</h1>
+                    <h1 class="modal-title fs-5">Seleção de login</h1>
                 </div>
                 <div class="modal-body" id="selecaoLogin">
                     <div class="d-none alert alert-dismissible fade alert-modal-login" role="alert">
@@ -122,7 +122,6 @@
                             <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
                                 data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
                                 disabled>Cadastro</button>
-
                         </div>
                         <div class="mb-3" id="login">
                             <button id="loginButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
@@ -137,31 +136,14 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="imagemModal" tabindex="-1" aria-labelledby="imagemModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imagemModalLabel">Adicionar Imagem</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <input type="file" id="imagemFile" accept="image/*" class="form-control">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
-                        Imagem</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Inicio Header -->
+
+    <!-- Site -->
     <header class="cabecalho">
         <div class="container-fluid">
             <!-- Inicio Nav -->
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="nav-brand" id="padding-navbar" href="../homepage.html">
-                    <img src="../../images/logo-branco.png" alt="" id="logo">
+                <a class="nav-brand" id="padding-navbar" href="homepage.html">
+                    <img src="../images/logo-branco.png" alt="" id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,43 +151,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
-                        <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Sobre nós
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="nossa_historia.html">Nossa História</a>
-                                </li>
-                                <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
-                                <li><a class="dropdown-item" href="nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
-                                <li><a class="dropdown-item" href="segm_educa.html" id="marcador">Segmentos Educacionais</a></li>
-                                <li><a class="dropdown-item" href="matricula.html">Matrícula</a></li>
-                            </ul>
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="seja_doador.html" id="marcador">Seja Doador</a>
                         </li>
+                        <!-- Adiciona a classe 'dropdown' -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Eventos
+                                Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../eventos/celebra_pascoa.html">Celebração de Páscoa </a>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_historia.html">Nossa História</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_familia.html">Festa da Família</a>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_infra.html">Nossa Infraestrutura</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_caipira.html">Festa Caipira</a></li>
-                                <li><a class="dropdown-item" href="../eventos/semana_aprendiz.html">Semana do Aprendiz </a>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/fazer_pedago.html">Fazer Pedagógico</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_primavera.html">Festa da Primavera</a>
+                                <li><a class="dropdown-item" href="sobre_nos/segm_educa.html">Segmentos Educacionais</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/acao_gracas.html">Dia de Ação de Graças</a></li>
-                                <li><a class="dropdown-item" href="../eventos/celebra_natal.html">Celebração de Natal </a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
                                 data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
                         </li>
@@ -215,97 +183,119 @@
             <!-- Fim Nav -->
         </div>
     </header>
-    <!-- Fim Header -->
-    <!-- Inicio Main -->
+
     <main>
+        <!-- EDIÇÃO DE TEXTO -->
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
             <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
                 Alterações</button>
         </div>
-        <div class="text-center" id="nome-pagina">
-            <h1>Segmentos Educacionais</h1>
-        </div>
         <!-- Imagem e textos -->
         <div class="container-fluid" id="principal">
-            <div class="row">
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Educação Infantil</h3>
-                    <p class="paragrafo">
-                        O atendimento à Educação Infantil é ofertado a crianças de 4 e 5 anos.
-                    </p>
-                    <p class="paragrafo">
-                        O currículo que rege a prática da Educação Infantil tem como base a BNCC - Base Nacional
-                        Comum Curricular cuja concepção vincula educar e cuidar, entendendo o cuidado como algo
-                        indissociável do processo educativo. A escola acolhe as vivências e os conhecimentos
-                        construídos pelas crianças no ambiente da família e no contexto de sua comunidade
-                        articulando-os à prática pedagógica, ampliando assim o universo de experiências,
-                        conhecimentos e habilidades dessas crianças, diversificando e consolidando novas
-                        aprendizagens, atuando de maneira complementar à educação familiar.
-                    </p>
-                    <p class="paragrafo">
-                        Os direitos de aprendizagem e desenvolvimento garantidos na BNCC por meio do conviver,
-                        brincar, participar, explorar, expressar e conhecer-se são respeitados e incentivados no dia
-                        a dia da prática escolar.
+            <div class="row" id="texto-principal-3" data-id="3">
+                <!-- Textos 1 -->
+                <div class="col-xl col-xxl-4" id="textos">
+                    <h2 class="titulo">
+                    </h2>
+                    <!-- <h3 class="sub-titulo"></h3> -->
+                    <p class="paragrafo" id="paragrafo-1">
+
                     </p>
                 </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-1.png" alt="#">
-                </div>
-
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Ensino Fundamental</h3>
-                    <p class="paragrafo">
-                        Os anos iniciais do Ensino Fundamental são destinados a educandos em idade escolar. Constituem
-                        objetivos dessa modalidade de ensino, os específicos da Lei Federal nº 9394/96 que estabelece as
-                        Diretrizes e Bases da Educação Nacional para o Ensino Fundamental Brasileiro, bem como os
-                        descritos na BNCC. Objetiva ainda proporcionar ao educando a formação necessária ao
-                        desenvolvimento de suas potencialidades como elemento de autorrealização integrando-o à vida
-                        escolar e social.
-                    </p>
-                    <p class="paragrafo">
-                        Todo o Projeto Pedagógico para o Ensino Fundamental tem no aluno o centro do processo educativo.
-                        A reflexão, a criatividade, a análise crítica, as leituras, os debates bem como as atividades
-                        extracurriculares têm como ponto de partida o contexto onde o aluno está inserido, aquilo que
-                        ele conhece e sabe, suas experiências e necessidades. Na busca pelo conhecimento e crescimento
-                        integral, o educando é encorajado a assumir responsabilidades, a ter autonomia, a dialogar, a
-                        trabalhar em equipe e a ser, sobretudo, solidário.
-                    </p>
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-2.png" alt="#">
-                </div>
-
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Projeto Semear</h3>
-                    <p class="paragrafo">
-                        O Projeto Semear é um programa socioassistencial que atende pessoas a partir de 18 anos,
-                        oferecendo-lhes recursos e estratégias que visam à convivência, fortalecimento de vínculos,
-                        cuidados pessoais, aquisição e a manutenção de habilidades funcionais para a vida, além de
-                        atender às necessidades de apoio contínuos estimulando-os, de acordo com os seus interesses e
-                        potencialidades, assegurando-lhes aquisição de autonomia e independência nas habilidades básicas
-                        de maneira funcional, desenvolvimento de competências sociais e promoção de sua inclusão na
-                        comunidade.
-                    </p>
-                    <p class="paragrafo">
-                        O Projeto Semear traz como base os dois pilares que estabelecem os objetivos, princípios e
-                        diretrizes da legislação específica da assistência social brasileira, a Constituição Federal de
-                        1988 e a Lei Orgânica da Assistência Social. Atende os princípios legais de Proteção Social
-                        Básica por destinar os seus serviços, programas e proteções sociais de acolhimento, convivência
-                        e socialização aos adultos com deficiência intelectual, múltiplas deficiências, transtorno do
-                        espectro autista e suas respectivas famílias.
-                    </p>
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-3.png" alt="#">
-                </div>
-
             </div>
-        </div>
 
+            <!-- Seção de doação -->
+            <div class="container" id="caixa-doações">
+                <div class="accordion col-10" id="doações">
+                    <h2 class="text-center" id="titulo-doações">Consulte as formas de doar</h2>
+                    <div class="row justify-content-around">
+            
+                        <!-- Cartão Nota Fiscal Paulista -->
+                        <div class="accordion-item col-lg-8">
+                            <h2 class="accordion-header" id="headingNotaFiscal">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseNotaFiscal" aria-expanded="false"
+                                    aria-controls="collapseNotaFiscal">
+                                    Doação pela Nota Fiscal Paulista
+                                </button>
+                            </h2>
+                            <div id="collapseNotaFiscal" class="accordion-collapse collapse"
+                                aria-labelledby="headingNotaFiscal">
+                                <div class="accordion-body">
+                                    <p class="paragrafo">Veja como se cadastrar no site da Nota Fiscal Paulista e contribuir:</p>
+                                    <ol>
+                                        <li class="paragrafo">Acesse o site <a href="https://www.portal.fazenda.sp.gov.br"
+                                                target="_blank">Nota
+                                                Fiscal Paulista</a></li>
+                                        <li class="paragrafo">Na aba superior, clique em:
+                                            <ul>
+                                                <li>ENTIDADES</li>
+                                                <li>DOAÇÃO DE CUPONS COM CPF (AUTOMÁTICA)</li>
+                                                <li>PESQUISAR</li>
+                                            </ul>
+                                        </li>
+                                        <li>Digite o CNPJ da AMAS – SEMEADOR: <strong>48.569.263/0001-42</strong></li>
+                                        <li>Clique em PESQUISAR e CONCLUIR.</li>
+                                    </ol>
+                                    <p>Agora, sempre que pedir CPF na nota, parte do imposto será revertido para a
+                                        instituição!</p>
+                                    <!-- Vídeo -->
+                                    <div class="text-center mt-3">
+                                        <button type="button" class="btn btn-primary" onclick="abrirVideo()">Assista ao
+                                            vídeo
+                                            explicativo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Cartão Outras formas de doação -->
+                        <div class="accordion-item col-lg-8">
+                            <h2 class="accordion-header" id="headingOtherDonations">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOtherDonations" aria-expanded="false"
+                                    aria-controls="collapseOtherDonations">
+                                    Outras formas de doar
+                                </button>
+                            </h2>
+                            <div id="collapseOtherDonations" class="accordion-collapse collapse"
+                                aria-labelledby="headingOtherDonations">
+                                <div class="accordion-body">
+                                    <p>Você também pode doar através de depósito bancário ou via PIX:</p>
+                                    <ul>
+                                        <li><strong>Depósito Bancário</strong>
+                                            <ul>
+                                                <li>Associação Metodista de Ação Social (<strong>AMAS</strong>)</li>
+                                                <li>CNPJ: <strong>48.569.263/0001-42</strong></li>
+                                                <li>Banco do Brasil - Agência: 2898-3 - Conta Corrente: 260-7</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>PIX</strong>
+                                            <ul>
+                                                <li>Chave PIX:</li>                                                
+                                            </ul>
+                                            
+                                        </li>
+                                    </ul>
+                                    <div class="container">
+
+                                        <div class="qrcode">
+                                            <img src="../images/qrcode-pix.png" alt="">
+                                            <h2>Pix copia e cola:</h3>
+                                            <p>00020126360014BR.GOV.BCB.PIX0114485
+                                                692630001425204000053039865802
+                                                BR5901N6001C62070503***63042109</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer class="py-4">
@@ -349,21 +339,16 @@
 
                     </div>
                 </div>
-                <div class="col-12 text-end">
-                    <button onclick="window.scrollTo(0, 0);" class="btn btn-primary" id="voltar-ao-topo">
-                        <i class="bi bi-arrow-up"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </footer>
 
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../frontend.js"></script>
+    <script src="frontend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
 </body>
 
 </html>
