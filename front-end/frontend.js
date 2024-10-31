@@ -316,7 +316,7 @@ function adicionarParceiroPorArquivo() {
         const carouselInner = document.querySelector('.parceiros');
         const novoParceiroDiv = document.createElement('div');
         novoParceiroDiv.className = 'parceiro';
-        novoParceiroDiv.className = 'carousel-item'; 
+        novoParceiroDiv.className = 'carousel-item';
 
         novoParceiroDiv.innerHTML = `
             <img src="${parceiroURL}" class="d-block w-100"">
@@ -477,3 +477,18 @@ function lerSiteInteiro() {
         document.getElementById('btn-leitura'); // Altera o texto do botão
     }
 }
+
+
+document.getElementById('codigo-pix').addEventListener('click', function () {
+    // Cria um elemento temporário para ajudar na cópia
+    const el = document.createElement('textarea');
+    el.value = this.innerText; // Pega o texto do parágrafo
+    document.body.appendChild(el);
+    el.select(); // Seleciona o texto
+    document.execCommand('copy'); // Copia o texto selecionado
+    document.body.removeChild(el); // Remove o elemento temporário
+
+    // Opcional: Alerta ou mensagem para informar que o código foi copiado
+    alert('Código PIX copiado para a área de transferência!');
+});
+
