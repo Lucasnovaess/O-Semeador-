@@ -388,8 +388,6 @@ nav img {
     width: 50%;
 }
 
-
-
 #imagem2 {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */

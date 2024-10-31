@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/sobre_nos/segm_educa.css">
+    <link rel="stylesheet" href="../CSS/eventos/festa_familia.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,9 +119,8 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
-                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
-                                disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
+                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -149,8 +148,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
-                        Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
                 </div>
             </div>
         </div>
@@ -172,43 +170,40 @@
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="nossa_historia.html">Nossa História</a>
-                                </li>
-                                <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
-                                <li><a class="dropdown-item" href="nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
-                                <li><a class="dropdown-item" href="segm_educa.html" id="marcador">Segmentos Educacionais</a></li>
-                                <li><a class="dropdown-item" href="matricula.html">Matrícula</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa Infraestrutura</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos Educacionais</a></li>
+                                <li><a class="dropdown-item" href="../sobre_nos/matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../eventos/celebra_pascoa.html">Celebração de Páscoa </a>
+                                <li><a class="dropdown-item" href="celebra_pascoa.html">Celebração de Páscoa</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_familia.html">Festa da Família</a>
+                                <li><a class="dropdown-item" href="festa_familia.html" id="marcador">Festa da Família</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_caipira.html">Festa Caipira</a></li>
-                                <li><a class="dropdown-item" href="../eventos/semana_aprendiz.html">Semana do Aprendiz </a>
+                                <li><a class="dropdown-item" href="festa_caipira.html">Festa Caipira</a></li>
+                                <li><a class="dropdown-item" href="semana_aprendiz.html">Semana do Aprendiz</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_primavera.html">Festa da Primavera</a>
+                                <li><a class="dropdown-item" href="festa_primavera.html">Festa da Primavera</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/acao_gracas.html">Dia de Ação de Graças</a></li>
-                                <li><a class="dropdown-item" href="../eventos/celebra_natal.html">Celebração de Natal </a></li>
+                                <li><a class="dropdown-item" href="acao_gracas.html">Dia de Ação de Graças</a></li>
+                                <li><a class="dropdown-item" href="celebra_natal.html">Celebração de Natal</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
-                        </li>
+                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
                     </ul>
                 </div>
             </nav>
@@ -216,93 +211,28 @@
         </div>
     </header>
     <!-- Fim Header -->
-    <!-- Inicio Main -->
+     <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
-                Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
         </div>
-        <div class="text-center" id="nome-pagina">
-            <h1>Segmentos Educacionais</h1>
-        </div>
+        <div class="text-center" id="nome-pagina"><h1>Festa da Família</h1></div>
+
         <!-- Imagem e textos -->
-        <div class="container-fluid" id="principal">
+        <div class="container col-lg-7 col-md-10 principal">
             <div class="row">
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Educação Infantil</h3>
-                    <p class="paragrafo">
-                        O atendimento à Educação Infantil é ofertado a crianças de 4 e 5 anos.
+                <div class="texto-principal-3">
+                    <p class="paragrafo">A Escola Metodista de Educação Especial "O Semeador" é uma instituição beneficente, sem fins lucrativos, que se dedica, desde 1974, a oferecer suporte educacional e social a crianças, adolescentes, jovens e adultos com deficiência intelectual, múltiplas deficiências e Transtorno do Espectro Autista (TEA). Com um compromisso sólido com a inclusão e a valorização da diversidade, a escola atende alunos a partir dos 4 anos de idade, proporcionando um ambiente acolhedor e estimulante que respeita as individualidades de cada estudante.
                     </p>
-                    <p class="paragrafo">
-                        O currículo que rege a prática da Educação Infantil tem como base a BNCC - Base Nacional
-                        Comum Curricular cuja concepção vincula educar e cuidar, entendendo o cuidado como algo
-                        indissociável do processo educativo. A escola acolhe as vivências e os conhecimentos
-                        construídos pelas crianças no ambiente da família e no contexto de sua comunidade
-                        articulando-os à prática pedagógica, ampliando assim o universo de experiências,
-                        conhecimentos e habilidades dessas crianças, diversificando e consolidando novas
-                        aprendizagens, atuando de maneira complementar à educação familiar.
+                    <p class="paragrafo">Como uma organização da sociedade civil, a Escola "O Semeador" busca atender à população por meio de um contrato particular de prestação de serviço educacional especializado. A instituição se destaca por sua abordagem personalizada e centrada nas necessidades dos alunos, oferecendo adaptações curriculares e recursos que visam promover o desenvolvimento integral de cada um. Além disso, a escola tem a capacidade de conceder descontos financeiros, com base em um levantamento socioassistencial, garantindo que o acesso à educação de qualidade seja viável para famílias em situação de vulnerabilidade.    
                     </p>
-                    <p class="paragrafo">
-                        Os direitos de aprendizagem e desenvolvimento garantidos na BNCC por meio do conviver,
-                        brincar, participar, explorar, expressar e conhecer-se são respeitados e incentivados no dia
-                        a dia da prática escolar.
+                    <p class="paragrafo">A escola mantém ainda Termos de Colaboração com a Prefeitura Municipal de São Caetano do Sul e com a Secretaria de Educação do Estado de São Paulo. Essas parcerias fortalecem o compromisso da instituição com a comunidade e asseguram que os alunos tenham acesso a recursos e serviços adicionais, contribuindo para uma educação mais abrangente e inclusiva. Essas colaborações são fundamentais para promover um ambiente de aprendizado que respeita e valoriza as especificidades de cada aluno, além de facilitar a integração com outras políticas públicas.
                     </p>
+                    <p class="paragrafo">As matrículas na Escola "O Semeador" são realizadas presencialmente, mediante a apresentação da documentação necessária. Para garantir que as famílias conheçam melhor a proposta da instituição, o espaço, e a equipe pedagógica, visitas podem ser agendadas. Essas visitas são uma excelente oportunidade para os pais e responsáveis se familiarizarem com a abordagem educacional, as atividades desenvolvidas e a infraestrutura da escola, além de promover um diálogo aberto sobre as necessidades e expectativas de cada aluno.
+                    </p>
+                    
                 </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-1.png" alt="#">
-                </div>
-
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Ensino Fundamental</h3>
-                    <p class="paragrafo">
-                        Os anos iniciais do Ensino Fundamental são destinados a educandos em idade escolar. Constituem
-                        objetivos dessa modalidade de ensino, os específicos da Lei Federal nº 9394/96 que estabelece as
-                        Diretrizes e Bases da Educação Nacional para o Ensino Fundamental Brasileiro, bem como os
-                        descritos na BNCC. Objetiva ainda proporcionar ao educando a formação necessária ao
-                        desenvolvimento de suas potencialidades como elemento de autorrealização integrando-o à vida
-                        escolar e social.
-                    </p>
-                    <p class="paragrafo">
-                        Todo o Projeto Pedagógico para o Ensino Fundamental tem no aluno o centro do processo educativo.
-                        A reflexão, a criatividade, a análise crítica, as leituras, os debates bem como as atividades
-                        extracurriculares têm como ponto de partida o contexto onde o aluno está inserido, aquilo que
-                        ele conhece e sabe, suas experiências e necessidades. Na busca pelo conhecimento e crescimento
-                        integral, o educando é encorajado a assumir responsabilidades, a ter autonomia, a dialogar, a
-                        trabalhar em equipe e a ser, sobretudo, solidário.
-                    </p>
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-2.png" alt="#">
-                </div>
-
-                <div class="textos col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
-                    <h3 class="titulo_h3">Projeto Semear</h3>
-                    <p class="paragrafo">
-                        O Projeto Semear é um programa socioassistencial que atende pessoas a partir de 18 anos,
-                        oferecendo-lhes recursos e estratégias que visam à convivência, fortalecimento de vínculos,
-                        cuidados pessoais, aquisição e a manutenção de habilidades funcionais para a vida, além de
-                        atender às necessidades de apoio contínuos estimulando-os, de acordo com os seus interesses e
-                        potencialidades, assegurando-lhes aquisição de autonomia e independência nas habilidades básicas
-                        de maneira funcional, desenvolvimento de competências sociais e promoção de sua inclusão na
-                        comunidade.
-                    </p>
-                    <p class="paragrafo">
-                        O Projeto Semear traz como base os dois pilares que estabelecem os objetivos, princípios e
-                        diretrizes da legislação específica da assistência social brasileira, a Constituição Federal de
-                        1988 e a Lei Orgânica da Assistência Social. Atende os princípios legais de Proteção Social
-                        Básica por destinar os seus serviços, programas e proteções sociais de acolhimento, convivência
-                        e socialização aos adultos com deficiência intelectual, múltiplas deficiências, transtorno do
-                        espectro autista e suas respectivas famílias.
-                    </p>
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5" id="imagem1">
-                    <img src="../../images/segm_educa-3.png" alt="#">
-                </div>
-
             </div>
         </div>
 
