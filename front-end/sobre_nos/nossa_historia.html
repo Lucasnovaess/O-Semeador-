@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,8 +119,9 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
+                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
+                                disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -148,7 +149,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
+                        Imagem</button>
                 </div>
             </div>
         </div>
@@ -170,12 +172,14 @@
                         <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown"> 
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="nossa_historia.html" id="marcador">Nossa História</a></li>
+                                <li><a class="dropdown-item" href="nossa_historia.html" id="marcador">Nossa História</a>
+                                </li>
                                 <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
                                 <li><a class="dropdown-item" href="nossa_equipe.html">Nossa Equipe</a></li>
                                 <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
@@ -183,9 +187,33 @@
                                 <li><a class="dropdown-item" href="matricula.html">Matrícula</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Eventos</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Eventos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../eventos/celebra_pascoa.html">Celebração de Páscoa
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="../eventos/festa_familia.html">Festa da Família</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../eventos/festa_caipira.html">Festa Caipira</a></li>
+                                <li><a class="dropdown-item" href="../eventos/semana_aprendiz.html">Semana do Aprendiz
+                                    </a>
+                                </li>
+                                <li><a class="dropdown-item" href="../eventos/festa_primavera.html">Festa da
+                                        Primavera</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../eventos/acao_gracas.html">Dia de Ação de
+                                        Graças</a></li>
+                                <li><a class="dropdown-item" href="../eventos/celebra_natal.html">Celebração de Natal
+                                    </a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
+                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -193,38 +221,73 @@
         </div>
     </header>
     <!-- Fim Header -->
-     <!-- Inicio Main -->
+    <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
-        <div class="text-center" id="nome-pagina"><h1>Nossa História</h1></div>
+        <div class="text-center" id="nome-pagina">
+            <h1>Nossa História</h1>
+        </div>
         <!-- Imagem e textos -->
-        <div class="container col-lg-7 col-md-10 principal">
+        <div class="container-fluid col-md-10 principal">
             <div class="row">
-                <div class="texto-principal-4" data-id="4">
-                    <p class="paragrafo">
-                    </p>
+                <div class="container col-xl-7 col-lg-12">
+                    <div class="texto-principal-4" data-id="4">
+                        <p class="paragrafo">
+                        </p>
+                    </div>
+                    <div class="texto-principal-5" data-id="5">
+                        <p class="paragrafo">Movidos por um profundo senso de solidariedade e com a firme convicção de
+                            que o amor de Deus abrange todas as pessoas, independente de suas condições físicas ou
+                            mentais, pois foram criadas à Sua imagem e semelhança, seus irmãos e irmãs na fé, decidiram
+                            unir forças e concentrar todos os esforços disponíveis para melhorar a qualidade de vida e o
+                            bem-estar não apenas dos filhos dela, mas também de todas as pessoas que enfrentavam
+                            desafios de deficiência e que pudessem ser alcançadas.
+                        </p>
+                    </div>
+                    
                 </div>
-                <div class="texto-principal-5" data-id="5">
-                    <p class="paragrafo">Movidos por um profundo senso de solidariedade e com a firme convicção de que o amor de Deus abrange todas as pessoas, independente de suas condições físicas ou mentais, pois foram criadas à Sua imagem e semelhança, seus irmãos e irmãs na fé, decidiram unir forças e concentrar todos os esforços disponíveis para melhorar a qualidade de vida e o bem-estar não apenas dos filhos dela, mas também de todas as pessoas que enfrentavam desafios de deficiência e que pudessem ser alcançadas.
-                    </p>
+                <div class="col-xl-5 col-lg-12">
+                    <img src="../../images/imagem3.svg" alt="" class="imagem">
                 </div>
                 <div class="texto-principal-6" data-id="6">
-                    <p class="paragrafo">Em 15 de novembro de 1974, a AMAS - Associação Metodista de Ação Social de São Caetano, organização beneficente, sem fins lucrativos, decidiu, colocando em prática seu compromisso missionário, dedicar-se, exclusivamente, ao trabalho com pessoas atípicas atuando nas áreas de educação e assistência social primando pela garantia e defesa dos direitos das pessoas com deficiência e suas famílias.
+                    <p class="paragrafo">Em 15 de novembro de 1974, a AMAS - Associação Metodista de Ação Social de
+                        São Caetano, organização beneficente, sem fins lucrativos, decidiu, colocando em prática seu
+                        compromisso missionário, dedicar-se, exclusivamente, ao trabalho com pessoas atípicas
+                        atuando nas áreas de educação e assistência social primando pela garantia e defesa dos
+                        direitos das pessoas com deficiência e suas famílias.
                     </p>
                 </div>
+                    <div class="texto-principal-6" data-id="6">
+                        <p class="paragrafo">Em 15 de novembro de 1974, a AMAS - Associação Metodista de Ação Social de
+                            São Caetano, organização beneficente, sem fins lucrativos, decidiu, colocando em prática seu
+                            compromisso missionário, dedicar-se, exclusivamente, ao trabalho com pessoas atípicas
+                            atuando nas áreas de educação e assistência social primando pela garantia e defesa dos
+                            direitos das pessoas com deficiência e suas famílias.
+                        </p>
+                    </div>
                 <div class="texto-principal-7" data-id="7">
-                    <p class="paragrafo">Durante muitos anos, a Escola “O Semeador” funcionou nas dependências da Igreja Metodista. Em 1980, a Prefeitura Municipal de São Caetano do Sul cedeu, em regime de comodato, um terreno de 2.066 m2 à Rua dos Meninos, 555, Bairro Mauá, para construção da sede própria da escola que, com muito esforço, trabalho e dedicação em campanhas e com recursos advindos da Igreja Metodista em outros países, construiu o atual complexo tendo sido inaugurado em 1987.
+                    <p class="paragrafo">Durante muitos anos, a Escola “O Semeador” funcionou nas dependências da Igreja
+                        Metodista. Em 1980, a Prefeitura Municipal de São Caetano do Sul cedeu, em regime de comodato,
+                        um terreno de 2.066 m2 à Rua dos Meninos, 555, Bairro Mauá, para construção da sede própria da
+                        escola que, com muito esforço, trabalho e dedicação em campanhas e com recursos advindos da
+                        Igreja Metodista em outros países, construiu o atual complexo tendo sido inaugurado em 1987.
                     </p>
                 </div>
                 <div class="texto-principal-8" data-id="8">
-                    <p class="paragrafo">Atualmente, a escola oferece Atendimento Educacional Especializado para crianças de 4 e 5 anos na Educação Infantil, e de 6 a 18 anos no Ensino Fundamental (1º ao 5º ano). Oferece também um programa socioassistencial para pessoas a partir de 18 anos, denominado Projeto Semear que objetiva a convivência, fortalecimento de vínculos e autonomia. O atendimento é realizado a pessoas com deficiência intelectual, múltiplas deficiências e transtorno do espectro autista.
+                    <p class="paragrafo">Atualmente, a escola oferece Atendimento Educacional Especializado para
+                        crianças de 4 e 5 anos na Educação Infantil, e de 6 a 18 anos no Ensino Fundamental (1º ao 5º
+                        ano). Oferece também um programa socioassistencial para pessoas a partir de 18 anos, denominado
+                        Projeto Semear que objetiva a convivência, fortalecimento de vínculos e autonomia. O atendimento
+                        é realizado a pessoas com deficiência intelectual, múltiplas deficiências e transtorno do
+                        espectro autista.
                     </p>
                 </div>
-                    
-                
+
+
             </div>
         </div>
 

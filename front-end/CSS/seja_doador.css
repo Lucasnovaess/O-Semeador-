@@ -461,6 +461,22 @@ footer{
 #rodape {
     position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
 }
+#codigo-pix{
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color:rgba(33, 211, 110, 0.121);
+    cursor: pointer;
+    position: relative;
+    
+}
+#codigo-pix > i{
+    position: absolute;
+    color: green;
+    float: right;
+    bottom: 40%;
+    left: 90%;
+}
+
 
 /* ------------------------- Medias Queries ------------------------- */
 
