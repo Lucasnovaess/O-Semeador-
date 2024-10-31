@@ -247,15 +247,12 @@ nav img {
     padding: 0px;
 }
 
-#imagem1 {
+.imagem1 {
     display: flex; /* Mantém o comportamento flexível */
-    justify-content: right; /*Garante que a imagem permaneça centralizada */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
-}
-
-#imagem1 img {
     max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 50px hsl(0, 0%, 70%);

@@ -247,7 +247,7 @@ nav img {
     padding: 0px;
 }
 
-#imagem1 {
+.imagem1 {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
@@ -255,8 +255,8 @@ nav img {
     margin: 0 auto; /* Garante centralização no container */
 }
 
-#imagem1 img {
-    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+.imagem1 img {
+    width: 50%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
     margin: 16px;
@@ -302,25 +302,6 @@ nav img {
 
 .textos h3 {
     margin-left: 40px;
-}
-
-#imagem2 {
-    display: flex; /* Mantém o comportamento flexível */
-    justify-content: center; /* Garante que a imagem permaneça centralizada */
-    align-items: center; /* Centraliza verticalmente, se necessário */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
-    padding: 0; /* Remove padding extra que possa afetar o layout */
-    margin: 0 auto; /* Garante centralização no container */
-}
-
-#imagem2 img {
-    border: 3px solid #F57806;
-    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-    margin: 16px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .sub-titulo {
