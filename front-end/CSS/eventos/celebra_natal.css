@@ -249,7 +249,7 @@ nav img {
 
 #imagem1 {
     display: flex; /* Mantém o comportamento flexível */
-    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    justify-content: right; /*Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
