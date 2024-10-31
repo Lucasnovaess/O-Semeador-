@@ -1,0 +1,768 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Remover margens do corpo */
+body {
+    margin: 0;
+}
+
+
+/* IMPORTANTE */
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
+
+/* Estilo para o contêiner dos botões */
+#botao-container {
+    position: fixed;
+    bottom: 50%; /* Centraliza o container verticalmente */
+    right: 10px; /* Fixa à direita */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Espaçamento entre os botões */
+    z-index: 9999;
+}
+
+#nome-pagina{
+    background-color: #F57806;
+    opacity: 60%;
+    padding: 20px;
+    /* margin-top: 20px; */
+
+}
+#nome-pagina h1{
+    color: #ffffff;
+    opacity: 100% !important;
+}
+
+.principal{
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+/* Ajuste para o botão de leitura */
+#btn-leitura {
+    transform: translateY(50%); /* Faz o ajuste fino para garantir que ele se centralize conforme a tela */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+
+/* Ajuste para o ícone dentro do botão de leitura */
+#btn-leitura img {
+    position: fixed;
+    width: 100%;  /* A imagem ocupará toda a largura do botão */
+    height: auto; /* A imagem ocupará toda a altura do botão */
+    border-radius: 5px; /* Mantenha a borda arredondada */
+    bottom: 0%; /* Centraliza o container verticalmente */
+    right: 0px; /* Fixa à direita */
+}
+
+/* IMPORTANTE */
+/* carrosel */
+.carousel-item {
+    position: relative; /* Necessário para o posicionamento absoluto dos botões */
+}
+
+/* IMPORTANTE */
+.btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza os botões */
+    display: flex; /* Para alinhar os botões lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
+
+/* CSS para posicionar o botão VLibras */
+[vw-access-button] {
+    width: 100%; /* Para que o botão VLibras também ocupe 100% da largura */
+}
+
+/* Para garantir que o plugin VLibras fique na parte superior do botão de leitura */
+[vw-plugin-wrapper] {
+    width: 100%; /* Garante que o plugin ocupe toda a largura do contêiner */
+    margin-bottom: 5px; /* Espaçamento reduzido abaixo do plugin */
+    display: flex; /* Usar flexbox para alinhar o conteúdo, se necessário */
+}
+
+#marcador {
+    color: hsl(29, 95%, 60%) !important;
+    font-weight: bold;
+}
+
+.banner {
+    box-shadow: 0px 10px 20px hsl(0, 0%, 40%);
+}
+
+@keyframes saltar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Estilos para a barra de navegação */
+.cabecalho {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Estilos para a navbar */
+.navbar {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    background-color:#ffffff;
+    padding: 10px;
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* Muda a cor da borda do botão */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+
+.navbar-nav .nav-link, .dropdown-item {
+    color: #210348;
+    font-size: 18.5px;
+    padding: 10px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave */
+    text-decoration: none;
+}
+
+/* Efeito de hover nos links da navbar */
+.navbar-nav .nav-link:hover, .dropdown-item:hover, #loginLink:hover {
+    color: #F57806 !important; 
+    animation: saltar 0.5s ease; 
+}
+
+/* Efeito ativo para manter consistência visual */
+.navbar-nav .nav-link:active, .dropdown-item:active {
+    color: #F57806 !important;
+}
+.navbar-nav .dropdown-toggle:focus, .navbar-nav .dropdown-toggle:active {
+    color: #210348 !important; 
+}
+/* Estado hover e ativo para links principais */
+.navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
+    color:#210348 !important;
+}
+.dropdown-item:focus, .dropdown-item:active {
+    background-color: transparent !important;
+    color: #210348 !important; /* Mantém a cor original */
+}
+/* Ajustes para o link "Área Restrita" */
+#loginLink:active {
+    color: #210348 !important;
+    animation: saltar 0.3s ease;
+} 
+#loginLink{
+    color: #210348 !important;
+}
+
+@keyframes saltar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+#logo{
+    width: auto;
+    height: 100px;
+}
+
+/* .nav-brand{
+    margin-left: 20px;
+} */
+.navbar li {
+    padding: 0px 20px 0px;
+}
+
+/* Estilos para as imagens no menu */
+nav img {
+    width: 32px;
+    height: 32px;
+}
+
+#banner {
+    padding: 0px;
+}
+
+/* IMPORTANTE */
+.edicao{
+    margin: 10px;
+}
+
+/* Não sei */
+.margin {
+    margin: 16px;
+}
+
+/* IMPORTANTE */
+#botoesEdicao{
+    background-color: lightslategrey;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.titulo{
+    font-weight: bold;
+    font-size: 36px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #060031;
+    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#caixa-doações p, #caixa-doações li, #caixa-doações h1{
+    font-size: 15px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.qrcode{
+    text-align: center;
+    justify-content: center;
+}
+
+.qrcode img{
+    height: 200px;
+}
+
+.qrcode h2{
+    font-size: 25px;
+}
+
+#paragrafo-1{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    margin: 30px;
+    text-align: center;
+}
+
+#textos {
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    width: 100%;
+}
+
+#imagens {
+    width: 100%;
+    height: auto;
+    background-color: #210348; 
+    display: inline-block;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#imagens > img {
+    width: 250px;
+    height: 200px;
+    padding: 10px 5px 10px 5px;
+    border-radius: 15px;
+}
+
+#principal{
+    width: 100%;
+    margin: 0px;
+    margin-top: 40px;
+}
+
+#imagem3 {
+    display: flex; /* Mantém o comportamento flexível */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
+    padding: 0; /* Remove padding extra que possa afetar o layout */
+    margin: 0 auto; /* Garante centralização no container */
+}
+
+#imagem1 img {
+    border: 3px solid blue;
+    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
+    margin: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo{
+    font-weight: bold;
+    font-size: 36px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #060031;
+    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
+    margin: 16px;
+}
+
+.paragrafo{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    text-shadow: 0px 1px 3px rgba(69, 69, 70, 0.8);
+    margin: 16px;
+}
+
+#textos {
+    padding-right: 10px;
+    width: 50%;
+}
+
+
+
+#imagem2 {
+    display: flex; /* Mantém o comportamento flexível */
+    justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
+    padding: 0; /* Remove padding extra que possa afetar o layout */
+    margin: 0 auto; /* Garante centralização no container */
+}
+
+#imagem2 img {
+    border: 3px solid #F57806;
+    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+    margin: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#caixa-doações{
+    justify-content: center;
+    display: flex;
+}
+
+#titulo-doações{
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.accordion{
+    margin: 25px;
+    background-color:rgba(109, 102, 102, 0.451);
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.sub-titulo {
+    color: #F57806;
+    font-weight: bold;
+    margin: 16px;
+}
+
+.parceiro-container{
+    background-color:rgba(109, 102, 102, 0.451);
+    padding: 30px 0;
+    margin-top: 15px;
+    
+}
+
+#parceiros img {
+    height: 170px;
+    width: auto;
+    margin: auto; /* Centraliza a imagem dentro do slide */
+    object-fit: contain; /* Ajusta a imagem sem cortar ou distorcer */
+}
+#parcerias{
+    color:#0c0e83;
+    font-weight: bold;
+}
+#parceiros{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#convite-parcerias{
+    color:#0c0e83;
+}
+#contato-parcerias{
+    color:#0c0e83;
+}
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    flex-direction: column;
+    text-align: left;
+    float: left;
+  }
+
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #000000;
+    padding: 5px 8px;
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #24b12f;
+    color: #ffffff;
+  }
+.icones{
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+footer p{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+}
+
+footer{
+    background-color: #210348;
+}
+
+.content-area p{
+    padding: 10px;
+}
+
+.mapa iframe{
+    border-radius: 30px;
+    width: 50%;
+    height: auto;
+}
+
+.copyright p{
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: 70px;
+}
+
+
+/* Hover do Google Maps */
+.mapa iframe:hover {
+    animation-name: scale;
+    animation-duration: 2s; /* Duração da animação */
+    animation-fill-mode: forwards; /* Mantém a posição final */
+}
+
+/* Animação do Google Maps */
+@keyframes scale {
+    50% {
+        transform: scale(1.1); /* Aumenta e move para a direita */
+    }
+}
+
+/* Seção de login*/
+#selecaoLogin{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+
+#login{
+    margin-left: 14.5px;
+}
+
+/* Botão de voltar ao topo */
+#voltar-ao-topo {
+    position: absolute;
+    right: 20px; /* Ajusta a distância do botão à direita do rodapé */
+    bottom: 20px; /* Ajusta a distância do botão ao fundo do rodapé */
+    background-color: #007BFF; /* Cor do botão */
+    color: white; /* Cor do texto no botão */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro */
+    padding: 10px 15px; /* Ajuste de espaçamento */
+    transition: background-color 0.3s; /* Transição suave */
+}
+
+#voltar-ao-topo:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse */
+}
+#rodape {
+    position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
+}
+
+/* ------------------------- Medias Queries ------------------------- */
+
+/* medias queries para centralizar imagem e texto */
+@media(max-width: 1199px){
+    #imagem3 img {
+        border: 3px solid #F57806;
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #imagem3 img { 
+        display: block; 
+        margin-left: auto; /* Centraliza a imagem */
+        margin-right: auto; /* Centraliza a imagem */
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    }
+}
+
+@media(max-width: 1199px){
+    #textos-2 {
+        padding-right: 0px;
+        text-align: center; /* Garante que o texto fique alinhado à esquerda */
+        width: 100%;
+    }
+}
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 600px) {
+    #botao-container {
+        bottom: 41%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 500px) {
+    #botao-container {
+        bottom: 31%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajuste para telas menores usando media queries */
+@media (max-height: 250px) {
+    #botao-container {
+        bottom: 21%; /* Ajuste para centralização em telas com altura pequena */
+    }
+}
+
+/* Ajustes adicionais para monitores maiores */
+@media (min-height: 601px) {
+    #botao-container {
+        bottom: 41%; /* Mantém uma distância adequada da parte inferior */
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link::after {
+        content: none;
+      }
+}
+
+
+@media(max-width: 1199px){
+    #imagem2 img {
+        border: 3px solid #F57806;
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 1400px) {
+    #imagem1 img, #imagem2 img { 
+        display: block; 
+        margin-left: auto; /* Centraliza a imagem */
+        margin-right: auto; /* Centraliza a imagem */
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    }
+}
+
+
+@media (min-width: 993px){
+    #rodape{
+        flex-direction: row-reverse;
+    }
+}
+
+@media (max-width: 991px) {
+    #padding-navbar {
+        padding: 00px 0px 16px 0px;
+        margin: 0px;
+    }
+    #imagem1 img, #imagem2 img { 
+        display: block; 
+        margin-left: auto; /* Centraliza a imagem */
+        margin-right: auto; /* Centraliza a imagem */
+        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+    .copyright p{
+        text-align: center;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    .wrapper{
+        padding: 0;
+    }
+}
+
+@media(max-width: 1199px){
+    #textos {
+        padding-right: 0px;
+        text-align: center; /* Garante que o texto fique alinhado à esquerda */
+        width: 100%;
+    }
+}
+
+@media(max-width: 430px){
+    #textos {
+        padding-right: 0px;
+        text-align: left; /* Garante que o texto fique alinhado à esquerda */
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    #textos {
+        padding-right: 0px;
+        text-align: left; /* Garante que o texto fique alinhado à esquerda */
+        width: 100%;
+    }
+}
