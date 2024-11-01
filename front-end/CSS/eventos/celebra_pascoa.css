@@ -256,7 +256,7 @@ nav img {
 }
 
 .imagem1 img {
-    width: 50%; /* Faz a imagem não ultrapassar a largura do contêiner */
+    width: 40%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
     box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
     margin: 16px;
