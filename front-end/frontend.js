@@ -57,6 +57,13 @@ const fazerLogin = async () => {
             if (token) {
                 localStorage.setItem('authToken', token); // Salva o token no localStorage
             }
+            const loginButton = document.getElementById('loginButton');
+            const divLogin = document.getElementById('login');
+            loginButton.textContent = 'Logout';
+            loginButton.removeAttribute('data-bs-toggle');
+            loginButton.removeAttribute('data-bs-target');
+            loginButton.onclick = fazerLogout;
+            divLogin.style.marginLeft = '8px';
             exibirAlerta('.alert-modal-login', "Login efetuado com sucesso!",
                 ['show', 'alert-success'], ['d-none', 'alert-danger'], 2000)
             ocultarModal('#modalLogin', 2000)
@@ -97,12 +104,31 @@ function habilitarAcoesPosLogin() {
         });
     });
 }
+function atualizarBotaoLogin() {
+    const loginButton = document.getElementById('loginButton');
+    const divLogin = document.getElementById('login');
+    const token = localStorage.getItem('authToken');
+
+    if (token) {
+        loginButton.textContent = 'Logout';
+        loginButton.removeAttribute('data-bs-toggle');
+        loginButton.removeAttribute('data-bs-target');
+        loginButton.onclick = fazerLogout;
+        divLogin.style.marginLeft = '8px';
+    } else {
+        loginButton.textContent = 'Login';
+        loginButton.setAttribute('data-bs-toggle', 'modal');
+        loginButton.setAttribute('data-bs-target', '#modalLogin');
+        loginButton.onclick = null; // Remove a função de logout
+    }
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('authToken');
     if (token) {
         habilitarAcoesPosLogin(); // Habilita as ações para o usuário logado
     }
+    atualizarBotaoLogin();
 });
 
 function fazerLogout() {
