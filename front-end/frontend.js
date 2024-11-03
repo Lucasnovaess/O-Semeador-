@@ -493,13 +493,18 @@ document.getElementById('codigo-pix').addEventListener('click', function () {
 });
 
 
-var msgCookies = document.getElementById('cookies-msg');
+
 
 function aceitarCookies() {
+    const msgCookies = document.getElementById('cookies-msg');
     localStorage.lgpd = "sim";
-    msgCookies.classList.add('d-none');
+    if (localStorage.lgpd == 'sim') {
+        msgCookies.classList.add('d-none');
+    }
+    else{
+        msgCookies.classList.remove('d-none');
+
+    }
 }
 
-if (localStorage.lgpd != 'sim') {
-    msgCookies.classList.remove('d-none');
-}
+
