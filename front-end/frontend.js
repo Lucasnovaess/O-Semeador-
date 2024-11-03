@@ -492,3 +492,14 @@ document.getElementById('codigo-pix').addEventListener('click', function () {
     alert('Código PIX copiado para a área de transferência!');
 });
 
+
+var msgCookies = document.getElementById('cookies-msg');
+
+function aceitarCookies() {
+    localStorage.lgpd = "sim";
+    msgCookies.classList.add('d-none');
+}
+
+if (localStorage.lgpd != 'sim') {
+    msgCookies.classList.remove('d-none');
+}

@@ -543,6 +543,40 @@ footer{
     position: relative; /* Define o rodapé como referência para o posicionamento absoluto */
 }
 
+.cookies-msg{
+    width: 80%;
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 15px;
+}
+
+.cookies-msg .cookies-txt{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.cookies-msg .cookies-btn{
+    margin-left: 30px;
+}
+.cookies-msg .cookies-btn button{
+    background-color: #060031;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cookies-msg .cookies-btn button:hover{
+    transform: scale(0.9);
+}
 /* ------------------------- Medias Queries ------------------------- */
 
 /* Ajuste para telas menores usando media queries */

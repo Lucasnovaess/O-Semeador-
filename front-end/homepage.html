@@ -195,7 +195,8 @@
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="eventos/celebra_pascoa.html">Celebração de Páscoa </a>
+                                <li><a class="dropdown-item" href="eventos/celebra_pascoa.html">Celebração de Páscoa
+                                    </a>
                                 </li>
                                 <li><a class="dropdown-item" href="eventos/festa_familia.html">Festa da Família</a>
                                 </li>
@@ -204,8 +205,10 @@
                                 </li>
                                 <li><a class="dropdown-item" href="eventos/festa_primavera.html">Festa da Primavera</a>
                                 </li>
-                                <li><a class="dropdown-item" href="eventos/acao_gracas.html">Dia de Ação de Graças</a></li>
-                                <li><a class="dropdown-item" href="eventos/celebra_natal.html">Celebração de Natal </a></li>
+                                <li><a class="dropdown-item" href="eventos/acao_gracas.html">Dia de Ação de Graças</a>
+                                </li>
+                                <li><a class="dropdown-item" href="eventos/celebra_natal.html">Celebração de Natal </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
@@ -237,7 +240,8 @@
         <!-- EDIÇÃO DE TEXTO -->
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
 
         <!-- Imagem e textos -->
@@ -280,7 +284,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar Parceiro</button>
+                        <button type="button" class="btn btn-primary" onclick="adicionarParceiroPorArquivo()">Adicionar
+                            Parceiro</button>
                     </div>
                 </div>
             </div>
@@ -362,6 +367,15 @@
             </div>
         </div>
     </footer>
+
+    <div class="cookies-msg" id="cookies-msg">
+        <div class="cookies-txt">
+            <p>Este site usa cookies e tecnologia afins, que são pequenos arquivos ou pedaços de textos baixados para um aparelho quando o visitante acessa um website ou aplicativo. Ao utilizar nosso site você está de acordo com a utilização dos cookies para te proporcionar uma melhor experiência.</p>
+            <div class="cookies-btn">
+                <button onclick="aceitarCookies()">Aceito</button>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="frontend.js"></script>
