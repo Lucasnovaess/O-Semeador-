@@ -53,30 +53,15 @@ const fazerLogin = async () => {
             console.log(response.data)
             usuarioLoginInput.value = ""
             passwordLoginInput.value = ""
+            const token = response.data.token;
+            if (token) {
+                localStorage.setItem('authToken', token); // Salva o token no localStorage
+            }
             exibirAlerta('.alert-modal-login', "Login efetuado com sucesso!",
                 ['show', 'alert-success'], ['d-none', 'alert-danger'], 2000)
             ocultarModal('#modalLogin', 2000)
-            const cadastrarButton =
-                document.querySelector('#cadastroButton')
-            cadastrarButton.disabled = false
-            const salvar = document.querySelector('#salvar-alteracoes');
-            document.querySelectorAll('.btn-adicionar-imagem, .btn-remover-imagem').forEach(botao => {
-                botao.classList.remove('d-none');
-            })
-            const editarTexto = document.querySelector('#editar-texto');
-            editarTexto.classList.remove('d-none');
-            salvar.classList.remove('d-none');
-            document.getElementById('botoesEdicao').classList.remove('d-none');
-            const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
-            botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
 
-
-            document.querySelector('#editar-texto').addEventListener('click', () => {
-                const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
-                textosEditaveis.forEach(texto => {
-                    texto.contentEditable = texto.isContentEditable ? false : true; // Alterna entre editável e não editável
-                });
-            });
+            habilitarAcoesPosLogin();
         }
         catch (error) {
         }
@@ -85,6 +70,44 @@ const fazerLogin = async () => {
         exibirAlerta('.alert-modal-login', 'Preencha todos os campos', ['show',
             'alert-danger'], ['d-none', 'alert-success'], 2000)
     }
+}
+
+function habilitarAcoesPosLogin() {
+    const cadastrarButton =
+        document.querySelector('#cadastroButton')
+    cadastrarButton.disabled = false
+    const salvar = document.querySelector('#salvar-alteracoes');
+    setTimeout(() => {
+        document.querySelectorAll('.btn-adicionar-imagem, .btn-remover-imagem').forEach(botao => {
+            botao.classList.remove('d-none');
+        });
+    }, 500);
+    const editarTexto = document.querySelector('#editar-texto');
+    editarTexto.classList.remove('d-none');
+    salvar.classList.remove('d-none');
+    document.getElementById('botoesEdicao').classList.remove('d-none');
+    const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
+    botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
+
+
+    document.querySelector('#editar-texto').addEventListener('click', () => {
+        const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
+        textosEditaveis.forEach(texto => {
+            texto.contentEditable = texto.isContentEditable ? false : true; // Alterna entre editável e não editável
+        });
+    });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+        habilitarAcoesPosLogin(); // Habilita as ações para o usuário logado
+    }
+});
+
+function fazerLogout() {
+    localStorage.removeItem('authToken');
+    location.reload(); // Recarrega a página para desabilitar as funcionalidades de usuário logado
 }
 
 
@@ -286,7 +309,7 @@ async function carregarParceiros() {
                         <div class="carousel-item ${isActive} parceiro" data-id="${parceiro._id}">
                             <img src="${parceiro.src}" class="d-block w-100">
                             <div class="btn-container">
-                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#parceiroModal">Adicionar parceiro/button>
+                                <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#parceiroModal">Adicionar parceiro</button>
                                 <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerParceiro('${parceiro._id}')">Remover Parceiro</button>
                             </div>
                         </div>`;
@@ -321,7 +344,7 @@ function adicionarParceiroPorArquivo() {
         novoParceiroDiv.innerHTML = `
             <img src="${parceiroURL}" class="d-block w-100"">
             <div class="btn-container">
-                <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro</button>
+                <button class="btn btn-primary d-none btn-adicionar-parceiro" data-bs-toggle="modal" data-bs-target="#parceiroModal"">Adicionar Parceiro </button>
                 <button class="btn btn-danger d-none btn-remover-parceiro" onclick="removerParceiro()">Remover Parceiro</button>
             </div>
         `;
@@ -501,7 +524,7 @@ function aceitarCookies() {
     if (localStorage.lgpd == 'sim') {
         msgCookies.classList.add('d-none');
     }
-    else{
+    else {
         msgCookies.classList.remove('d-none');
 
     }
