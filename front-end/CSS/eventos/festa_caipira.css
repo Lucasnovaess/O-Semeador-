@@ -439,7 +439,21 @@ nav img {
     background: #24b12f;
     color: #ffffff;
   }
+  .wrapper .icon a {
+    display: flex; /* Usando flex para centralizar o conteúdo (ícone e tooltip) */
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;  /* Remove o sublinhado do link */
+    color: inherit;         /* Garante que a cor do link seja a mesma que a do ícone */
+    outline: none;          /* Remove o contorno ao clicar no link */
+    position: relative;     /* Para que o tooltip seja posicionado dentro do link */
+    width: 100%;            /* Garante que o link ocupe todo o espaço do contêiner */
+    height: 100%;        
+    padding: 22px;   /* Garante que o link ocupe toda a altura do contêiner */
+  }
+  
 .icones{
+    text-decoration: none;
     flex-direction: row;
     text-align: center;
     align-items: center;
