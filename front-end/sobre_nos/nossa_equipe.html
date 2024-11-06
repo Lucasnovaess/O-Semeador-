@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros();">
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros(); carregarImagensEstaticas();">
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -181,7 +181,8 @@
                                 <li><a class="dropdown-item" href="nossa_historia.html">Nossa História</a>
                                 </li>
                                 <li><a class="dropdown-item" href="nossa_infra.html">Nossa Infraestrutura</a></li>
-                                <li><a class="dropdown-item" href="nossa_equipe.html" id="marcador">Nossa Equipe</a></li>
+                                <li><a class="dropdown-item" href="nossa_equipe.html" id="marcador">Nossa Equipe</a>
+                                </li>
                                 <li><a class="dropdown-item" href="fazer_pedago.html">Fazer Pedagógico</a></li>
                                 <li><a class="dropdown-item" href="segm_educa.html">Segmentos Educacionais</a></li>
                                 <li><a class="dropdown-item" href="matricula.html">Matrícula</a></li>
@@ -193,17 +194,22 @@
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../eventos/celebra_pascoa.html">Celebração de Páscoa </a>
+                                <li><a class="dropdown-item" href="../eventos/celebra_pascoa.html">Celebração de Páscoa
+                                    </a>
                                 </li>
                                 <li><a class="dropdown-item" href="../eventos/festa_familia.html">Festa da Família</a>
                                 </li>
                                 <li><a class="dropdown-item" href="../eventos/festa_caipira.html">Festa Caipira</a></li>
-                                <li><a class="dropdown-item" href="../eventos/semana_aprendiz.html">Semana do Aprendiz </a>
+                                <li><a class="dropdown-item" href="../eventos/semana_aprendiz.html">Semana do Aprendiz
+                                    </a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/festa_primavera.html">Festa da Primavera</a>
+                                <li><a class="dropdown-item" href="../eventos/festa_primavera.html">Festa da
+                                        Primavera</a>
                                 </li>
-                                <li><a class="dropdown-item" href="../eventos/acao_gracas.html">Dia de Ação de Graças</a></li>
-                                <li><a class="dropdown-item" href="../eventos/celebra_natal.html">Celebração de Natal </a></li>
+                                <li><a class="dropdown-item" href="../eventos/acao_gracas.html">Dia de Ação de
+                                        Graças</a></li>
+                                <li><a class="dropdown-item" href="../eventos/celebra_natal.html">Celebração de Natal
+                                    </a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
@@ -220,7 +226,8 @@
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
+                Alterações</button>
         </div>
         <div class="text-center" id="nome-pagina">
             <h1>Nossa Equipe</h1>
@@ -229,31 +236,50 @@
         <div class="container col-lg-7 col-md-10 principal">
             <div class="row">
                 <div class="texto-principal-3">
-                    <p class="paragrafo">A equipe é composta por profissionais qualificados e aptos para receber diariamente os alunos e assistidos da instituição.</p>
-                    <p class="paragrafo">É organizada nas áreas: </p>
-                    <ul type="disc" class="paragrafo">
-                        <li><strong>Administativa:</strong> direção e secretaria
-                        <li><strong>Pedagógica:</strong> coordenação e docentes
-                        <li><strong>Multiprofissional:</strong> assistente social, fonoaudióloga, psicólogo e terapeuta ocupacional
-                        <li><strong>Oficineira:</strong> facilitadores de oficinas (arte, atividades da vida diária e prática, atividades físicas, cinoterapia, circo, construindo valores, dança e karatê)
-                        <li><strong>Apoio:</strong> auxiliares de sala, limpeza, cozinha e zeladoria
-                        <li><strong>Voluntários:</strong> todos(as) que dispõem de seu tempo e carinho para contribuir para o bem do outro
+                    <div data-id="10">
+                    <p class="paragrafo"></p>
+                    </div>
+                    <div data-id="11">
+                        <p class="paragrafo"> </p>
+                    </div>
+                    <ul type="disc">
+                        <li><strong>Administativa:</strong> <div data-id="12"><p class="paragrafo"></p></div>
+                        <li><strong>Pedagógica:</strong> <div data-id="13"><p class="paragrafo"></div>
+                        <li><strong>Multiprofissional:</strong> <div data-id="14">  <p class="paragrafo"></p></div>
+                        <li><strong>Oficineira:</strong> <div data-id="15"><p class="paragrafo"></p></div>
+                        <li><strong>Apoio:</strong> <div data-id="16"><p class="paragrafo"></div>
+                        <li><strong>Voluntários:</strong> <div data-id="17"><p class="paragrafo"></p></div>
                     </ul>
-                    <p class="paragrafo">A escola possui também uma Diretoria Executiva que acompanha diariamente sua caminhada.</p>
-                </div>
-            </div>
-                <div class="row mb-5">
-                    <div class="col-md col-lg-6 col-xl-6 col-xxl-6" id="imagens">
-                        <img src="../../images/ImagemEQ1.jpg" alt="#">
-                        <img src="../../images/ImagemEQ2.jpg" alt="#">
-                        <img src="../../images/ImagemEQ3.jpg" alt="#">
-                        <img src="../../images/ImagemEQ4.jpg" alt="#">
-                        <img src="../../images/ImagemEQ5.jpg" alt="#">
-                        <img src="../../images/ImagemEQ6.jpg" alt="#">
+                    <div data-id="18">
+                    <p class="paragrafo"></p>
                     </div>
                 </div>
             </div>
 
+            <div class="row">
+                <div class="quadrado-azul col-12" id="imagens">
+                    
+                    <div class="row row-cols-xl-3 row-cols-lg-2">
+                        <div class="imagens-classe" id="imagem3">
+  
+                        </div>
+                        <div class="imagens-classe" id="imagem4">
+
+                        </div>
+                        <div class="imagens-classe" id="imagem5">
+
+                        </div>
+                        <div class="imagens-classe" id="imagem6">
+                        </div>
+                        <div class="imagens-classe" id="imagem7">
+
+                        </div>
+                        <div class="imagens-classe" id="imagem8">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
     </main>
 
     <footer class="py-4">

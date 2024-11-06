@@ -282,6 +282,13 @@ nav img {
     text-align: center;
 }
 
+.imagem-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 #caixa-doações p, #caixa-doações li, #caixa-doações h1{
     font-size: 15px;
     font-family: "M PLUS Rounded 1c", sans-serif;
@@ -324,11 +331,20 @@ nav img {
     border-radius: 15px;
 }
 
-#imagens > img {
-    width: 250px;
+.imagens-classe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.imagens-classe img {
     height: 200px;
-    padding: 10px 5px 10px 5px;
+    width: 250px; /* Limite de largura para garantir que as imagens não fiquem grandes demais */
     border-radius: 15px;
+    object-fit:cover;
 }
 
 #principal{
@@ -337,14 +353,6 @@ nav img {
     margin-top: 40px;
 }
 
-#imagem3 {
-    display: flex; /* Mantém o comportamento flexível */
-    justify-content: center; /* Garante que a imagem permaneça centralizada */
-    align-items: center; /* Centraliza verticalmente, se necessário */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
-    padding: 0; /* Remove padding extra que possa afetar o layout */
-    margin: 0 auto; /* Garante centralização no container */
-}
 
 #imagem1 img {
     border: 3px solid blue;
@@ -365,11 +373,10 @@ nav img {
     margin: 16px;
 }
 
-.paragrafo{
-    font-size: 20px;
+.paragrafo, li{
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
-    margin: 16px;
+    font-size: 20px;
 }
 
 #textos {
@@ -625,26 +632,7 @@ footer{
 /* ------------------------- Medias Queries ------------------------- */
 
 /* medias queries para centralizar imagem e texto */
-@media(max-width: 1199px){
-    #imagem3 img {
-        border: 3px solid #F57806;
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
-    }
-}
 
-@media (max-width: 1400px) {
-    #imagem3 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    }
-}
 
 @media(max-width: 1199px){
     #textos-2 {
@@ -682,36 +670,8 @@ footer{
     }
 }
 
-@media (max-width: 992px) {
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .nav-link::after {
-        content: none;
-      }
-}
 
 
-@media(max-width: 1199px){
-    #imagem2 img {
-        border: 3px solid #F57806;
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
-    }
-}
-
-@media (max-width: 1400px) {
-    #imagem1 img, #imagem2 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    }
-}
 
 
 @media (min-width: 993px){
