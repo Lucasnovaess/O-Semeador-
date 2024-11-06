@@ -85,6 +85,30 @@ body {
     box-shadow: 2px 2px 10px black;
 }
 
+.imagem-container img {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0; 
+    margin: 0 auto; 
+    max-width: 100%;
+    width: 450px; 
+    height: auto;
+    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
+    margin: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.imagem-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
 
 /* Ajuste para o botão de leitura */
 #btn-leitura {
@@ -364,24 +388,6 @@ nav img {
     margin-top: 40px;
 }
 
-#imagem3 {
-    display: flex; /* Mantém o comportamento flexível */
-    justify-content: center; /* Garante que a imagem permaneça centralizada */
-    align-items: center; /* Centraliza verticalmente, se necessário */
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
-    padding: 0; /* Remove padding extra que possa afetar o layout */
-    margin: 0 auto; /* Garante centralização no container */
-}
-
-#imagem1 img {
-    border: 3px solid blue;
-    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
-    margin: 16px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .titulo{
     font-weight: bold;
@@ -704,26 +710,6 @@ footer{
 }
 
 
-@media(max-width: 1199px){
-    #imagem2 img {
-        border: 3px solid #F57806;
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
-    }
-}
-
-@media (max-width: 1400px) {
-    #imagem1 img, #imagem2 img { 
-        display: block; 
-        margin-left: auto; /* Centraliza a imagem */
-        margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-    }
-}
 
 
 @media (min-width: 993px){

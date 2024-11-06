@@ -93,9 +93,12 @@ function habilitarAcoesPosLogin() {
     editarTexto.classList.remove('d-none');
     salvar.classList.remove('d-none');
     document.getElementById('botoesEdicao').classList.remove('d-none');
-    const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
-    botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
-
+    setTimeout(() => {
+        const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
+        botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
+    }, 1000); // Ajuste o tempo conforme necessário
+        document.getElementById('botoesEdicao').classList.remove('d-none');
+    500
 
     document.querySelector('#editar-texto').addEventListener('click', () => {
         const textosEditaveis = Array.from(document.querySelectorAll('.titulo, .paragrafo, .sub-titulo'));
@@ -146,12 +149,12 @@ const buscarTextos = async () => {
 
         textos.forEach((texto) => {
             // Seleciona a row usando o idTexto
-            const row = document.querySelector(`[data-id='${texto.idTexto}']`); // Seleciona a linha com o data-id correspondente
+            const div = document.querySelector(`[data-id='${texto.idTexto}']`); // Seleciona a linha com o data-id correspondente
 
-            if (row) {
-                const tituloElement = row.querySelector('.titulo');
-                const subtituloElement = row.querySelector('.sub-titulo');
-                const paragrafoElement = row.querySelector('.paragrafo');
+            if (div) {
+                const tituloElement = div.querySelector('.titulo');
+                const subtituloElement = div.querySelector('.sub-titulo');
+                const paragrafoElement = div.querySelector('.paragrafo');
 
                 if (tituloElement) {
                     tituloElement.innerText = texto.titulo;
@@ -177,11 +180,11 @@ const salvarAlteracoes = async () => {
     const atualizarEndpoint = '/textos-atualizar';
     const URLCompleta = `${protocolo}${baseURL}${atualizarEndpoint}`;
     try {
-        const textos = Array.from(document.querySelectorAll('.row')).map((row) => {
-            const tituloElement = row.querySelector('.titulo');
-            const subtituloElement = row.querySelector('.sub-titulo');
-            const paragrafoElement = row.querySelector('.paragrafo');
-            const idTexto = row.getAttribute('data-id'); // Renomeia para idTexto
+        const textos = Array.from(document.querySelectorAll('div[data-id]')).map((div) => {
+            const tituloElement = div.querySelector('.titulo');
+            const subtituloElement = div.querySelector('.sub-titulo');
+            const paragrafoElement = div.querySelector('.paragrafo');
+            const idTexto = div.getAttribute('data-id'); 
 
             return {
                 idTexto, // Usa idTexto no corpo da requisição
