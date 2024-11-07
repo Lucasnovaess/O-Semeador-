@@ -492,7 +492,6 @@ function ocultarModal(seletor, timeout) {
 }
 
 
-
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 
 let isSpeaking = false; // Variável para rastrear o estado da leitura
