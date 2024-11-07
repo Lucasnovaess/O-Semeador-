@@ -275,11 +275,7 @@ nav img {
 
 
 .titulo{
-    font-weight: bold;
-    font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #060031;
-    margin: 16px;
 }
 
 #principal{
@@ -288,13 +284,6 @@ nav img {
     margin-top: 40px;
 }
 
-.titulo_h3 {
-    font-style: italic;
-    text-decoration: underline;
-    color: #060031;   
-    width: 50%;
-    margin-left: 50px;
-}
 
 .paragrafo{
     font-size: 20px;

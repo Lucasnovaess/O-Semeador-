@@ -271,13 +271,7 @@ nav img {
 div > .textos{
     margin-top: 50px;
 }
-.titulo{
-    font-weight: bold;
-    font-size: 36px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #060031;
-    margin: 16px;
-}
+
 
 #principal{
     width: 100%;
@@ -285,13 +279,7 @@ div > .textos{
     margin-top: 40px;
 }
 
-.titulo_h3 {
-    font-style: italic;
-    text-decoration: underline;
-    color: #060031;   
-    width: 50%;
-    margin-left: 50px;
-}
+
 
 .paragrafo{
     font-size: 20px;
@@ -312,6 +300,10 @@ div > .textos{
     color: #F57806;
     font-weight: bold;
     margin: 16px;
+}
+
+.titulo{
+    font-family:"M PLUS Rounded 1c", sans-serif;
 }
 
 .parceiro-container{
