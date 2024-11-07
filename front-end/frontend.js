@@ -107,6 +107,7 @@ function habilitarAcoesPosLogin() {
         });
     });
 }
+
 function atualizarBotaoLogin() {
     const loginButton = document.getElementById('loginButton');
     const divLogin = document.getElementById('login');
@@ -203,6 +204,7 @@ const salvarAlteracoes = async () => {
         console.error('Erro ao salvar textos:', error);
     }
 };
+
 async function carregarImagens() {
     const puxarImagemEndpoint = '/imagens-puxar'
     const URLCompleta = `${protocolo}${baseURL}${puxarImagemEndpoint}`
