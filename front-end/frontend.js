@@ -287,17 +287,6 @@ function adicionarImagemPorArquivo() {
     reader.readAsDataURL(file);
 }
 
-app.post('/imagens-adicionar2', upload.single('image'), async (req, res) => {
-    try {
-        const novaImagem = new Imagem({
-            src: req.file.buffer.toString('base64') // Salva em base64, ajuste conforme necessário
-        });
-        await novaImagem.save();
-        res.status(201).send(novaImagem);
-    } catch (error) {
-        res.status(400).send(error);
-    }
-});
 
 
 function removerImagem(idImagem) {
