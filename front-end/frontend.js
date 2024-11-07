@@ -219,7 +219,9 @@ async function carregarImagens() {
             const isActive = index === 0 ? 'active' : '';
             const carouselItem = `
                         <div class="carousel-item ${isActive} imagem" data-id="${imagem._id}">
-                            <img src="${imagem.src}" class="img d-block w-100" alt="Imagem">
+                            <div class= "imagem-div d-flex justify-content-center">
+                                <img src="${imagem.src}" class="img d-block rounded" alt="Imagem">
+                            </div>
                             <div class="btn-container">
                                 <button class="btn btn-primary d-none btn-adicionar-imagem" data-bs-toggle="modal" data-bs-target="#imagemModal">Adicionar Imagem</button>
                                 <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem('${imagem._id}')">Remover Imagem</button>
@@ -293,8 +295,17 @@ function adicionarImagemPorArquivo() {
 
 function removerImagem(idImagem) {
     const carouselItem = document.querySelector(`.imagem[data-id='${idImagem}']`);
+    const parent = carouselItem ? carouselItem.parentElement : null;
 
-    if (carouselItem) {
+    if (carouselItem && parent) {
+        // Verifica se há mais de uma imagem no carrossel
+        const totalImagens = parent.querySelectorAll('.imagem').length;
+        if (totalImagens <= 1) {
+            console.error("Não é possível remover a última imagem do carrossel");
+            alert('não é possivel remover a ultima imagem, adicione uma nova para remove-la')
+            return;
+        }
+
         // Fazer a requisição para remover a imagem no back-end
         fetch(`http://localhost:3000/imagens-remover/${idImagem}`, {
             method: 'DELETE'
@@ -306,7 +317,6 @@ function removerImagem(idImagem) {
                 return response.json();
             })
             .then(() => {
-                const parent = carouselItem.parentElement;
                 parent.removeChild(carouselItem);
                 imagemIndex--;
 
@@ -443,23 +453,31 @@ async function atualizarImagemEstatica(divId) {
 
 function removerParceiro(idParceiro) {
     const carouselItem = document.querySelector(`.parceiro[data-id='${idParceiro}']`);
+    const parent = carouselItem ? carouselItem.parentElement : null;
 
-    if (carouselItem) {
-        // Fazer a requisição para remover a imagem no back-end
+    if (carouselItem && parent) {
+        // Verifica se há mais de um parceiro no carrossel
+        const totalParceiros = parent.querySelectorAll('.parceiro').length;
+        if (totalParceiros <= 1) {
+            console.error("Não é possível remover o último parceiro do carrossel");
+            alert('não é possivel remover o último parceiro, adicione um novo para remove-lo')
+            return;
+        }
+
+        // Fazer a requisição para remover o parceiro no back-end
         fetch(`http://localhost:3000/parceiros-remover/${idParceiro}`, {
             method: 'DELETE'
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Erro ao remover a imagem');
+                    throw new Error('Erro ao remover o parceiro');
                 }
                 return response.json();
             })
             .then(() => {
-                const parent = carouselItem.parentElement;
                 parent.removeChild(carouselItem);
 
-                // Se a imagem removida for a ativa, tornar a próxima ativa
+                // Se o parceiro removido for o ativo, tornar o próximo ativo
                 if (carouselItem.classList.contains('active')) {
                     const nextItem = parent.querySelector('.parceiro');
                     if (nextItem) {
@@ -471,9 +489,10 @@ function removerParceiro(idParceiro) {
                 console.error(error);
             });
     } else {
-        console.error("Parceiro não encontrado ou já removida");
+        console.error("Parceiro não encontrado ou já removido");
     }
 }
+
 
 
 function exibirAlerta(seletor, innerHTML, classesToAdd, classesToRemove,

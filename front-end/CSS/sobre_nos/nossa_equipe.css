@@ -30,7 +30,7 @@ body {
 
 /* IMPORTANTE */
 #botoesEdicao{
-    background-color: lightslategrey;
+    background-color: rgba(109, 102, 102, 0.451);
     justify-content: center;
     align-items: center;
     display:flex;
@@ -337,7 +337,6 @@ nav img {
     align-items: center;
     padding: 10px;
     flex-direction: column;
-    margin-bottom: 15px;
 }
 
 .imagens-classe img {
