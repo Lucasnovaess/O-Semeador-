@@ -289,6 +289,8 @@ function adicionarImagemPorArquivo() {
     reader.readAsDataURL(file);
 }
 
+
+
 function removerImagem(idImagem) {
     const carouselItem = document.querySelector(`.imagem[data-id='${idImagem}']`);
 

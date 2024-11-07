@@ -270,16 +270,7 @@ nav img {
 }
 
 .titulo{
-    font-weight: bold;
-    font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #060031;
-    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
-    margin-top: 30px;
-    margin-right: 30px;
-    margin-left: 30px;
-    margin-bottom: 40px;
-    text-align: center;
 }
 #caixa-doações p, #caixa-doações li, #caixa-doações h1{
     font-size: 15px;
@@ -368,14 +359,6 @@ nav img {
     margin-right: auto;
 }
 
-.titulo{
-    font-weight: bold;
-    font-size: 36px;
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    color: #060031;
-    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
-    margin: 16px;
-}
 
 .paragrafo{
     font-size: 20px;
@@ -420,10 +403,7 @@ nav img {
     display: flex;
 }
 
-#titulo-doações{
-    color: #ffffff;
-    margin-bottom: 20px;
-}
+
 
 .accordion{
     margin: 25px;
