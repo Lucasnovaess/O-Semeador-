@@ -252,6 +252,9 @@ nav img {
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .imagem1 img {
@@ -265,17 +268,23 @@ nav img {
     box-shadow: 2px 2px 10px black;
 }
 
-#festa_caipira-2 img {
-    height: 65%;
+#imagem16 img {
+    height: 70%;
+}
+
+
+.textos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 @media(max-width: 991px) {
-    .imagem1 img, #festa_caipira-2 img {
+    .imagem1 img, #imagem16 img {
         width: 70%;
         margin-top: 45px;
     }
 }
-
 .titulo{
     font-weight: bold;
     font-size: 36px;

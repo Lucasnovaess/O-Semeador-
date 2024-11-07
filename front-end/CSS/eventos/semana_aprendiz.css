@@ -392,6 +392,9 @@ nav img {
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .imagem1 img {

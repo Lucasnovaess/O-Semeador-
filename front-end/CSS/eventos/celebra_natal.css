@@ -247,7 +247,7 @@ nav img {
     padding: 0px;
 }
 
-.imagem1 {
+.imagem1 img {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
@@ -261,6 +261,12 @@ nav img {
     margin-right: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px black;
+}
+.imagem1{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-direction: column;
 }
 
 .titulo{
