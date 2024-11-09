@@ -479,6 +479,23 @@ footer p{
     color: #ffffff;
 }
 
+footer a{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-container {
+    user-select: none;
+    margin-bottom: 5%;
+}
+
+.link-container p{
+    display: inline;
+    text-decoration: none;
+}
+
 footer{
     background-color: #210348;
 }

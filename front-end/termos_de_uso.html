@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/eventos/acao_gracas.css">
+    <link rel="stylesheet" href="../front-end/CSS/termos_de_uso.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Scripts -->
@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="buscarTextos(); carregarImagens(); carregarParceiros(); carregarImagensEstaticas();">
+<body onload="buscarTextos(); carregarImagens(); carregarParceiros();" >
 
     <!-- Container para os botões -->
     <div id="botao-container">
@@ -37,7 +37,7 @@
 
         <!-- Botão para ler o site inteiro -->
         <button id="btn-leitura" onclick="lerSiteInteiro();">
-            <img src="../../images/audicao_acessibilidade.png" alt="">
+            <img src="../images/audicao_acessibilidade.png" alt="">
         </button>
     </div>
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-bs-dismiss="modal">Cancelar</button>
-                    <button onclick="fazerLogin()" type="button" class="btn btn-warning">
+                    <button onclick="fazerLogin()"  type="button" class="btn btn-warning">
                         Login
                     </button>
                 </div>
@@ -119,9 +119,8 @@
                     </div>
                     <form>
                         <div class="mb-3" id="cadastro">
-                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
-                                data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
-                                disabled>Cadastro</button>
+                            <button id="cadastroButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
+                                data-bs-target="#modalCadastro" href="#" disabled>Cadastro</button>
 
                         </div>
                         <div class="mb-3" id="login">
@@ -149,8 +148,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar
-                        Imagem</button>
+                    <button type="button" class="btn btn-primary" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
                 </div>
             </div>
         </div>
@@ -160,8 +158,8 @@
         <div class="container-fluid">
             <!-- Inicio Nav -->
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="nav-brand" id="padding-navbar" href="../homepage.html">
-                    <img src="../../images/logo-branco.png" alt="" id="logo">
+                <a class="nav-brand" id="padding-navbar" href="homepage.html">
+                    <img src="../images/logo-branco.png" alt="" id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,50 +167,43 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="../homepage.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../seja_doador.html">Seja Doador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="seja_doador.html">Seja Doador</a></li>
                         <!-- Adiciona a classe 'dropdown' -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Sobre nós
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_historia.html">Nossa História</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_infra.html">Nossa
-                                        Infraestrutura</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/fazer_pedago.html">Fazer Pedagógico</a>
-                                </li>
-                                <li><a class="dropdown-item" href="../sobre_nos/segm_educa.html">Segmentos
-                                        Educacionais</a></li>
-                                <li><a class="dropdown-item" href="../sobre_nos/matricula.html">Matrícula</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_historia.html">Nossa História</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_infra.html">Nossa Infraestrutura</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/nossa_equipe.html">Nossa Equipe</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/fazer_pedago.html">Fazer Pedagógico</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/segm_educa.html">Segmentos Educacionais</a></li>
+                                <li><a class="dropdown-item" href="sobre_nos/matricula.html" id="marcador">Matrícula</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="marcador" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Eventos
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="celebra_pascoa.html">Celebração de Páscoa</a>
+                                <li><a class="dropdown-item" href="eventos/celebra_pascoa.html">Celebração de Páscoa </a>
                                 </li>
-                                <li><a class="dropdown-item" href="festa_familia.html">Festa da Família</a>
+                                <li><a class="dropdown-item" href="eventos/festa_familia.html">Festa da Família</a>
                                 </li>
-                                <li><a class="dropdown-item" href="festa_caipira.html">Festa Caipira</a></li>
-                                <li><a class="dropdown-item" href="semana_aprendiz.html">Semana do Aprendiz</a>
+                                <li><a class="dropdown-item" href="eventos/festa_caipira.html">Festa Caipira</a></li>
+                                <li><a class="dropdown-item" href="eventos/semana_aprendiz.html">Semana do Aprendiz </a>
                                 </li>
-                                <li><a class="dropdown-item" href="festa_primavera.html">Festa da Primavera</a>
+                                <li><a class="dropdown-item" href="eventos/festa_primavera.html">Festa da Primavera</a>
                                 </li>
-                                <li><a class="dropdown-item" href="acao_gracas.html" id="marcador">Dia de Ação de
-                                        Graças</a></li>
-                                <li><a class="dropdown-item" href="celebra_natal.html">Celebração de Natal</a></li>
+                                <li><a class="dropdown-item" href="eventos/acao_gracas.html">Dia de Ação de Graças</a></li>
+                                <li><a class="dropdown-item" href="eventos/celebra_natal.html">Celebração de Natal </a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a id="loginLink" class="nav-link active me-2" aria-current="page"
-                                data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a>
-                        </li>
+                        data-bs-toggle="modal" data-bs-target="#modalSelecaoLogin" href="#">Área Restrita</a></li>
                     </ul>
                 </div>
             </nav>
@@ -220,70 +211,35 @@
         </div>
     </header>
     <!-- Fim Header -->
-    <!-- Inicio Main -->
+     <!-- Inicio Main -->
     <main>
         <div id="botoesEdicao" class="d-none">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
-            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
-                Alterações</button>
+            <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar Alterações</button>
         </div>
-        <section>
-            <div class="text-center" id="nome-pagina" data-id="50">
-                <h1 class="titulo">Dia Nacional de Ação de Graças - Aniversário da Escola</h1>
-            </div>
+        <div class="text-center" id="nome-pagina"><h1>Termos de Uso</h1></div>
 
-            <!-- Imagem e textos -->
-            <div class="container-fluid" id="principal">
-                <div class="row mb-5">
-                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 textos">
-                        <div data-id="52">
-                            <p class="paragrafo">
-                                O Dia Nacional de Ação de Graças teve início em 1621, quando os ingleses chegaram à América
-                                do
-                                Norte e, em meio à grande fome, os indígenas da região ensinaram a eles a cultivar o milho.
-                                Na
-                                primeira colheita fizeram uma grande festa para agradecer a Deus e, a partir daí, esse dia
-                                passou a ser celebrado todos os anos se expandindo pelo mundo. No Brasil, a celebração é
-                                feita
-                                na quarta quinta-feira de novembro. As datas de Ação de Graças e Aniversário da Escola são
-                                muito
-                                próximas o que propicia uma única celebração. Comemorar o aniversário é uma forma de
-                                celebrar a
-                                vida. É um momento para expressar gratidão a Deus pela existência e pela oportunidade de
-                                compartilhar momentos especiais com
-                                pessoas queridas.
-                            </p>
-                        </div>
+        <!-- Imagem e textos -->
+        <div class="container col-lg-7 col-md-10 principal">
+            <div class="row">
+                <div class="texto-principal-3">
+                    <div data-id="30">
+                        <p class="paragrafo"></p>
                     </div>
-                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 textos">
-                        <div data-id="53">
-                            <p class="paragrafo">
-                                A AMAS - O SEMEADOR, desde 1974, está em São Caetano do Sul trabalhando para acolhimento e
-                                atendimento de qualidade a crianças, adolescentes, jovens e adultos com deficiência.
-                                Sua missão é promover e articular ações de defesa de direitos, prevenção, orientação e apoio
-                                à
-                                família de cidadãos que requerem cuidados educativos especiais, promovendo uma educação
-                                pautada
-                                em valores éticos e cristãos, de respeito à diversidade e comprometimento com o exercício da
-                                cidadania.
-                            </p>
-                        </div>
+                    
+                    <div data-id="31">
+                        <p class="paragrafo"></p> 
                     </div>
-                </div>
-        </section>
-
-        <section>
-            <div class="row mb-5">
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 imagem1" id="imagem22">
-                </div>
-
-                <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-6 imagem1" id="imagem23">
+                    
+                    <div data-id="32">
+                        <p class="paragrafo"></p>
+                    </div>
+                    <div data-id="33">
+                        <p class="paragrafo"></p>
+                    </div>
+                    
                 </div>
             </div>
-        </section>
-
-
-        </div>
         </div>
 
     </main>
@@ -306,9 +262,9 @@
                         </div>
                         <p>&copy; Todos direitos reservados - O Semeador</p>
                         <div class="link-container">
-                            <a href="../termos_de_uso.html">Termos de Uso</a>
+                            <a href="termos_de_uso.html">Termos de Uso</a>
                             <p>|</p>
-                            <a href="../termos_de_uso.html">Política de Privacidade</a>
+                            <a href="politica_privacidade.html">Política de Privacidade</a>
                         </div>
                     </div>
                 </div>
@@ -344,7 +300,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../frontend.js"></script>
+    <script src="frontend.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
