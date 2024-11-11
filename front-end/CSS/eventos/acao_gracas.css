@@ -5,6 +5,7 @@
 /* Remover margens do corpo */
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
