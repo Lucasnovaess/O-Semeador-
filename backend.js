@@ -23,6 +23,57 @@ async function conectarAoMongoDB() {
         mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`)
 }
 
+// --------------------------------------- Alteração ---------------------------------------
+// Definindo uma variável para armazenar a conexão
+let isConnected = false;
+
+// Função para conectar ao MongoDB com Mongoose
+const connectToDatabase = async () => {
+  if (isConnected) {
+    console.log('Usando conexão existente');
+    return;
+  }
+
+  try {
+    const db = await mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    isConnected = db.connection.readyState === 1;
+    console.log('Conectado ao banco de dados');
+  } catch (error) {
+    console.error('Erro ao conectar ao banco de dados:', error);
+    throw new Error('Não foi possível conectar ao MongoDB');
+  }
+};
+
+// Definindo um modelo de exemplo (ajuste conforme necessário)
+const Item = mongoose.model('Item', new mongoose.Schema({
+  name: String,
+  description: String,
+}));
+
+exports.handler = async (event, context) => {
+  await connectToDatabase();  // Garantir que a conexão ao DB está estabelecida
+
+  try {
+    // Exemplo de consulta ao banco de dados usando o Mongoose
+    const items = await Item.find({}); // Alterar conforme seu modelo
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(items),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Erro ao acessar os dados' }),
+    };
+  }
+};
+
+// --------------------------------------- Alteração ---------------------------------------
 
 const usuarioSchema = mongoose.Schema({
     login: { type: String, required: true, unique: true },
