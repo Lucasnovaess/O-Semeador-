@@ -113,6 +113,26 @@ app.post('/login', async (req, res) => {
 
 })
 
+app.get('/puxar-usuarios', async (req, res) => {
+    try {
+        const usuarios = await Usuario.find();
+        res.json(usuarios);
+    } catch (error) {
+        res.status(500).send('Erro ao buscar usuários');
+    }
+});
+
+// Remover um usuário do banco
+app.delete('/remover-usuarios/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        await Usuario.findByIdAndDelete(id);
+        res.status(200).send({ message: 'Usuário removido com sucesso!' });
+    } catch (error) {
+        res.status(500).send('Erro ao remover usuário');
+    }
+});
+
 app.post('/new-text', async (req, res) => {
     try {
         const idTexto = req.body.idTexto; // Usa o campo idTexto enviado
