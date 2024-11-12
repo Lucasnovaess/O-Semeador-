@@ -464,24 +464,22 @@ footer{
     padding: 10px;
 }
 
-.mapa iframe{
-    border-radius: 30px;
-    width: 50%;
-    height: auto;
-}
-
 .copyright p{
     text-align: left;
     margin-bottom: 0;
     margin-left: 70px;
 }
+.mapa iframe{
+    border-radius: 15px;
+}
+
 
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
     animation-name: scale;
-    animation-duration: 2s; /* Duração da animação */
-    animation-fill-mode: forwards; /* Mantém a posição final */
+    animation-duration: 0.8s; 
+    animation-fill-mode: forwards; 
 }
 
 /* Animação do Google Maps */

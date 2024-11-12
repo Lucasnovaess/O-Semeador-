@@ -470,24 +470,22 @@ footer{
     padding: 10px;
 }
 
-.mapa iframe{
-    border-radius: 30px;
-    width: 50%;
-    height: auto;
-}
-
 .copyright p{
     text-align: left;
     margin-bottom: 0;
     margin-left: 70px;
 }
+.mapa iframe{
+    border-radius: 15px;
+}
+
 
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
     animation-name: scale;
-    animation-duration: 2s; /* Duração da animação */
-    animation-fill-mode: forwards; /* Mantém a posição final */
+    animation-duration: 0.8s; 
+    animation-fill-mode: forwards; 
 }
 
 /* Animação do Google Maps */
@@ -643,3 +641,13 @@ footer{
         width: 100%;
     }
 }
+
+.fade-in-up-e, .fade-in-down-e, .fade-in-left-e, .fade-in-right-e {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in-up-e { transform: translateY(40px); }
+.fade-in-down-e { transform: translateY(-40px); }
+.fade-in-left-e { transform: translateX(-40px); }
+.fade-in-right-e { transform: translateX(40px); }
+.show { opacity: 1; transform: translate(0, 0); }

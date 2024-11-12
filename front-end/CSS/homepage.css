@@ -7,23 +7,44 @@ body {
 }
 
 
-.imagem-div{
+/* Div que envolve a imagem */
+.imagem-div {
+    justify-content: center;
     width: 100%;
-    height: 400px;
+    height: auto;
 }
 
-.carousel-item > img {
-    width: 100%;
+/* Configuração da imagem no carrossel */
+.carousel-item > .imagem-div img {
+    width: auto;             /* Ocupa a largura total do container */         /* Limite de tamanho para telas grandes */
     height: 400px;
-    object-fit: contain; /* Ajusta a imagem ao container sem distorção */
-    max-height: 100%; /* Limita a altura máxima para não exceder o container */
-    border-radius: 15px;
+    object-fit:cover;        /* Corta a imagem centralizando sem distorção */
+    border-radius: 20px;       /* Deixa a imagem redonda */
 }
-#carouselExample{
+
+#carouselExample {
     background-color: #210348;
     padding: 20px;
-    
 }
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .carousel-item > .imagem-div img {
+        width: 100%;
+        height: 80%;
+        max-height: 350px;
+        border-radius: 20px; 
+    }
+    #carouselExample {
+        background-color: #210348;
+        padding: 20px;
+        width: auto;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
 /* IMPORTANTE */
 .btn-container {
     position: absolute;
@@ -283,7 +304,6 @@ nav img {
 .btn-atualizar {
     margin-top: 10px; /* Espaçamento entre a imagem e o botão */
 }
-
 .titulo{
     font-weight: bold;
     font-size: 36px;
@@ -490,31 +510,29 @@ footer{
 .content-area p{
     padding: 10px;
 }
-
-.mapa iframe{
-    border-radius: 30px;
-    width: 50%;
-    height: auto;
-}
-
 .copyright p{
     text-align: left;
     margin-bottom: 0;
     margin-left: 70px;
 }
 
+.mapa iframe{
+    border-radius: 15px;
+}
+
+
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
     animation-name: scale;
-    animation-duration: 2s; /* Duração da animação */
-    animation-fill-mode: forwards; /* Mantém a posição final */
+    animation-duration: 0.8s; 
+    animation-fill-mode: forwards; 
 }
 
 /* Animação do Google Maps */
 @keyframes scale {
     50% {
-        transform: scale(1.1); /* Aumenta e move para a direita */
+        transform: scale(1.05); /* Aumenta e move para a direita */
     }
 }
 
@@ -622,17 +640,8 @@ footer{
         display: flex;
         flex-direction: column-reverse;
     }
-}
-
-@media(max-width: 1199px){
-    #imagem2 img {
-        border: 3px solid #F57806;
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
-        height: auto; /* Mantém a proporção da imagem */
-        box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 24px;
+    #row1{
+        flex-direction: column-reverse ;
     }
 }
 
@@ -660,7 +669,7 @@ footer{
         display: block; 
         margin-left: auto; /* Centraliza a imagem */
         margin-right: auto; /* Centraliza a imagem */
-        max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
+        max-width: 80%; /* Faz a imagem não ultrapassar a largura do contêiner */
         height: auto; /* Mantém a proporção da imagem */
     }
     .copyright p{
@@ -680,19 +689,54 @@ footer{
         width: 100%;
     }
 }
-
+@media(max-width:650px){
+    .carousel-item > .imagem-div img {
+        width: 100%;
+        height: 80%;
+        max-height: 300px;
+        border-radius: 20px; 
+    }
+}
 @media(max-width: 430px){
     #textos {
         padding-right: 0px;
         text-align: left; /* Garante que o texto fique alinhado à esquerda */
         width: 100%;
     }
+    #carouselExample {
+        background-color: #210348;
+        padding: 20px;
+        height: 259px ;
+        width: auto;
+        display: flex;
+        align-items: center;
+    }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     #textos {
         padding-right: 0px;
         text-align: left; /* Garante que o texto fique alinhado à esquerda */
         width: 100%;
     }
+    #carouselExample {
+        background-color: #210348;
+        padding: 20px;
+        height: 200px ;
+        width: auto;
+        display: flex;
+        align-items: center;
+    }
 }
+
+
+
+.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up { transform: translateY(40px); }
+.fade-in-down { transform: translateY(-40px); }
+.fade-in-left { transform: translateX(-40px); }
+.fade-in-right { transform: translateX(40px); }
+.show { opacity: 1; transform: translate(0, 0); }
