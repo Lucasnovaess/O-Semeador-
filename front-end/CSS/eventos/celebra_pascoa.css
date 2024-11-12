@@ -268,10 +268,10 @@ nav img {
     border-radius: 10px;
     box-shadow: 2px 2px 10px black;
 }
+
 div > .textos{
     margin-top: 50px;
 }
-
 
 #principal{
     width: 100%;
@@ -450,6 +450,23 @@ footer p{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffffff;
+}
+
+footer a{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-container {
+    user-select: none;
+    margin-bottom: 5%;
+}
+
+.link-container p{
+    display: inline;
+    text-decoration: none;
 }
 
 footer{

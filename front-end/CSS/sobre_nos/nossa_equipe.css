@@ -374,6 +374,13 @@ nav img {
     margin: 16px;
 }
 
+.paragrafo{
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #000000;
+    margin: 16px;
+    font-size:  20px;;
+}
+
 .paragrafo, li{
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #000000;
@@ -573,6 +580,23 @@ footer p{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffffff;
+}
+
+footer a{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-container {
+    user-select: none;
+    margin-bottom: 5%;
+}
+
+.link-container p{
+    display: inline;
+    text-decoration: none;
 }
 
 footer{

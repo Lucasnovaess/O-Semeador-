@@ -270,8 +270,16 @@ nav img {
 }
 
 .titulo{
+    font-weight: bold;
+    font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
- 
+    color: #060031;
+    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 #caixa-doações p, #caixa-doações li, #caixa-doações h1{
     font-size: 15px;
@@ -341,16 +349,13 @@ nav img {
     margin-top: 40px;
 }
 
-.imagem1 {
+#imagem3 {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */
     align-items: center; /* Centraliza verticalmente, se necessário */
     max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
 #imagem1 img {
@@ -364,7 +369,12 @@ nav img {
 }
 
 .titulo{
+    font-weight: bold;
+    font-size: 36px;
     font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #060031;
+    /* text-shadow: 0px 0px 10px hsl(0, 0%, 55%); */
+    margin: 16px;
 }
 
 .paragrafo{
@@ -379,32 +389,36 @@ nav img {
     width: 50%;
 }
 
-.imagem1 {
+
+
+#imagem2 {
     display: flex; /* Mantém o comportamento flexível */
     justify-content: center; /* Garante que a imagem permaneça centralizada */
+    align-items: center; /* Centraliza verticalmente, se necessário */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura disponível */
     padding: 0; /* Remove padding extra que possa afetar o layout */
     margin: 0 auto; /* Garante centralização no container */
 }
 
-.imagem1 img {
-    width: 90%; /* Faz a imagem não ultrapassar a largura do contêiner */
+#imagem2 img {
+    border: 3px solid #F57806;
+    max-width: 100%; /* Faz a imagem não ultrapassar a largura do contêiner */
     height: auto; /* Mantém a proporção da imagem */
-    box-shadow: 0px 0px 50px hsl(0, 0%, 70%);
+    box-shadow: 0px 0px 30px hsl(0, 0%, 70%);
     margin: 16px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px black;
-    height: 80%;
 }
-
-
 
 #caixa-doações{
     justify-content: center;
     display: flex;
 }
 
+#titulo-doações{
+    color: #ffffff;
+    margin-bottom: 20px;
+}
 
 .accordion{
     margin: 25px;
@@ -590,22 +604,24 @@ footer{
     padding: 10px;
 }
 
+.mapa iframe{
+    border-radius: 30px;
+    width: 50%;
+    height: auto;
+}
+
 .copyright p{
     text-align: left;
     margin-bottom: 0;
     margin-left: 70px;
 }
-.mapa iframe{
-    border-radius: 15px;
-}
-
 
 
 /* Hover do Google Maps */
 .mapa iframe:hover {
     animation-name: scale;
-    animation-duration: 0.8s; 
-    animation-fill-mode: forwards; 
+    animation-duration: 2s; /* Duração da animação */
+    animation-fill-mode: forwards; /* Mantém a posição final */
 }
 
 /* Animação do Google Maps */
@@ -762,23 +778,3 @@ footer{
         width: 100%;
     }
 }
-
-.fade-in-up-e, .fade-in-down-e, .fade-in-left-e, .fade-in-right-e {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 1s ease-out;
-}
-.fade-in-up-e { transform: translateY(40px); }
-.fade-in-down-e { transform: translateY(-40px); }
-.fade-in-left-e { transform: translateX(-40px); }
-.fade-in-right-e { transform: translateX(40px); }
-.show { opacity: 1; transform: translate(0, 0); }
-
-.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right {
-    opacity: 0;
-    transition: opacity 1s ease-out, transform 0.8s ease-out;
-}
-.fade-in-up { transform: translateY(40px); }
-.fade-in-down { transform: translateY(-40px); }
-.fade-in-left { transform: translateX(-40px); }
-.fade-in-right { transform: translateX(40px); }
-.show { opacity: 1; transform: translate(0, 0); }

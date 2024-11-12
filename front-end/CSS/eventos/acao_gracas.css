@@ -5,6 +5,7 @@
 /* Remover margens do corpo */
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -459,6 +460,23 @@ footer p{
     font-size: 20px;
     font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffffff;
+}
+
+footer a{
+    font-size: 20px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link-container {
+    user-select: none;
+    margin-bottom: 5%;
+}
+
+.link-container p{
+    display: inline;
+    text-decoration: none;
 }
 
 footer{
