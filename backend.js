@@ -23,6 +23,11 @@ async function conectarAoMongoDB() {
         mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`)
 }
 
+// --------------------------------------- Alteração ---------------------------------------
+
+
+
+// --------------------------------------- Alteração ---------------------------------------
 
 const usuarioSchema = mongoose.Schema({
     login: { type: String, required: true, unique: true },
