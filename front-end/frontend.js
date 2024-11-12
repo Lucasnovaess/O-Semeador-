@@ -63,7 +63,7 @@ const fazerLogin = async () => {
             loginButton.removeAttribute('data-bs-toggle');
             loginButton.removeAttribute('data-bs-target');
             loginButton.onclick = fazerLogout;
-            divLogin.style.marginLeft = '8px';
+            divLogin.style.marginLeft = '42px';
             exibirAlerta('.alert-modal-login', "Login efetuado com sucesso!",
                 ['show', 'alert-success'], ['d-none', 'alert-danger'], 2000)
             ocultarModal('#modalLogin', 2000)
@@ -78,6 +78,60 @@ const fazerLogin = async () => {
             'alert-danger'], ['d-none', 'alert-success'], 2000)
     }
 }
+
+const carregarUsuarios = async () => {
+    try {
+        const URLCompleta = `${protocolo}${baseURL}/puxar-usuarios`;
+        const response = await axios.get(URLCompleta, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            }
+        });
+        const usuarios = response.data;
+        
+        const listaUsuariosDiv = document.getElementById('listaUsuarios');
+        listaUsuariosDiv.innerHTML = ''; // Limpar lista
+
+        // Criar uma linha para cada usuário na tabela
+        usuarios.forEach(usuario => {
+            const tr = document.createElement('tr');
+            
+            const tdNome = document.createElement('td');
+            tdNome.textContent = usuario.login;
+            
+            const tdAcoes = document.createElement('td');
+            const removerButton = document.createElement('button');
+            removerButton.textContent = 'Remover';
+            removerButton.onclick = () => removerUsuario(usuario._id);
+            tdAcoes.appendChild(removerButton);
+            
+            tr.appendChild(tdNome);
+            tr.appendChild(tdAcoes);
+            listaUsuariosDiv.appendChild(tr);
+        });
+    } catch (error) {
+        console.error("Erro ao carregar usuários:", error);
+    }
+};
+
+
+const removerUsuario = async (userId) => {
+    try {
+        const URLCompleta = `${protocolo}${baseURL}/remover-usuarios/${userId}`;
+        await axios.delete(URLCompleta, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            }
+        });
+        
+        // Atualizar a lista de usuários após a remoção
+        carregarUsuarios();
+        alert('Usuário removido com sucesso!');
+    } catch (error) {
+        console.error("Erro ao remover usuário:", error);
+    }
+};
+
 
 function habilitarAcoesPosLogin() {
     const cadastrarButton =
@@ -106,6 +160,10 @@ function habilitarAcoesPosLogin() {
             texto.contentEditable = texto.isContentEditable ? false : true; // Alterna entre editável e não editável
         });
     });
+    const gerenciarButton = document.getElementById("gerenciarButton");
+    gerenciarButton.classList.remove("disabled-link");
+    
+
 }
 
 function atualizarBotaoLogin() {
@@ -118,7 +176,7 @@ function atualizarBotaoLogin() {
         loginButton.removeAttribute('data-bs-toggle');
         loginButton.removeAttribute('data-bs-target');
         loginButton.onclick = fazerLogout;
-        divLogin.style.marginLeft = '8px';
+        divLogin.style.marginLeft = '42px';
     } else {
         loginButton.textContent = 'Login';
         loginButton.setAttribute('data-bs-toggle', 'modal');

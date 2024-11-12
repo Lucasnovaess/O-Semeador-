@@ -118,17 +118,22 @@
                     <div class="d-none alert alert-dismissible fade alert-modal-login" role="alert">
                     </div>
                     <form>
+                        <div class="mb-3" id="login">
+                            <button id="loginButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
+                                data-bs-target="#modalLogin" href="#">
+                                Login
+                            </button>
+                        </div>
                         <div class="mb-3" id="cadastro">
                             <button id="cadastroButton" type="button" class="btn btn-warning btn-lg"
                                 data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#"
                                 disabled>Cadastro</button>
 
                         </div>
-                        <div class="mb-3" id="login">
-                            <button id="loginButton" type="button" class="btn btn-warning btn-lg" data-bs-toggle="modal"
-                                data-bs-target="#modalLogin" href="#">
-                                Login
-                            </button>
+                        <div class="mb-3" id="gerenciar">
+                            <a href="gerenciar.html" id="gerenciarButton" class="btn btn-warning btn-lg disabled-link" >
+                                Gerenciar usuários
+                            </a>
                         </div>
 
                     </form>
@@ -239,7 +244,7 @@
             </button>
         </div>
         <!-- EDIÇÃO DE TEXTO -->
-        <div id="botoesEdicao" class="d-none">
+        <div id="botoesEdicao" class="d-none d-flex">
             <button id="editar-texto" class="btn btn-warning d-none edicao">Editar Texto</button>
             <button onclick="salvarAlteracoes()" id="salvar-alteracoes" class="btn btn-success d-none edicao">Salvar
                 Alterações</button>

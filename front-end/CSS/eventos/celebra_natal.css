@@ -37,6 +37,9 @@ body {
     flex-direction: column;
     padding: 30px;
 }
+#editar-texto, #salvar-alteracoes{
+    width: 10%;
+}
 
 /* IMPORTANTE */
 
@@ -111,15 +114,7 @@ body {
     gap: 10px; /* Espaçamento entre os botões */
 }
 
-/* IMPORTANTE */
-#botoesEdicao{
-    background-color: lightslategrey;
-    justify-content: center;
-    align-items: center;
-    display:flex;
-    flex-direction: column;
-    padding: 30px;
-}
+
 
 /* IMPORTANTE */
 .edicao{
@@ -524,9 +519,19 @@ footer{
     padding: 40px;
 }
 
-
+.enabled-link {
+    pointer-events: auto; /* Permite interações com o link */
+    opacity: 1; /* Deixa o link totalmente visível */
+}
+.disabled-link {
+    pointer-events: none; /* Impede interações com o link */
+    opacity: 0.8; /* Torna o link visualmente desabilitado */
+}
 #login{
-    margin-left: 14.5px;
+    margin-left: 51px;
+}
+#cadastro{
+    margin-left: 35px;
 }
 
 /* Botão de voltar ao topo */
