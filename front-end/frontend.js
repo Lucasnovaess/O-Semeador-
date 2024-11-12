@@ -97,7 +97,7 @@ function habilitarAcoesPosLogin() {
         const botoesAtualizar = document.querySelectorAll(".btn-atualizar");
         botoesAtualizar.forEach(botao => botao.classList.remove("d-none"));
     }, 1000); // Ajuste o tempo conforme necessário
-        document.getElementById('botoesEdicao').classList.remove('d-none');
+    document.getElementById('botoesEdicao').classList.remove('d-none');
     500
 
     document.querySelector('#editar-texto').addEventListener('click', () => {
@@ -185,7 +185,7 @@ const salvarAlteracoes = async () => {
             const tituloElement = div.querySelector('.titulo');
             const subtituloElement = div.querySelector('.sub-titulo');
             const paragrafoElement = div.querySelector('.paragrafo');
-            const idTexto = div.getAttribute('data-id'); 
+            const idTexto = div.getAttribute('data-id');
 
             return {
                 idTexto, // Usa idTexto no corpo da requisição
@@ -260,7 +260,9 @@ function adicionarImagemPorArquivo() {
         novaImagemDiv.className = 'carousel-item imagem';
 
         novaImagemDiv.innerHTML = `
-            <img src="${imagemURL}" class="d-block w-100" alt="Imagem ${imagemIndex + 1}">
+            <div class= "imagem-div d-flex justify-content-center">
+                <img src="${imagemURL}" class="d-block rounded" alt="Imagem ${imagemIndex + 1}">
+            </div>
             <button class="btn btn-primary d-none btn-adicionar-imagem" onclick="adicionarImagemPorArquivo()">Adicionar Imagem</button>
             <button class="btn btn-danger d-none btn-remover-imagem" onclick="removerImagem()">Remover Imagem</button>
         `;
@@ -492,6 +494,52 @@ function removerParceiro(idParceiro) {
         console.error("Parceiro não encontrado ou já removido");
     }
 }
+
+window.addEventListener("scroll", () => {
+    document.querySelectorAll('.fade-in-up, .fade-in-down, .fade-in-left, .fade-in-right').forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if (position < window.innerHeight - 50) {
+            el.classList.add('show');
+        }
+    });
+});
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); // Para evitar múltiplas ativações
+        }
+    });
+}, { threshold: 0.2 }); // Define 20% da área do elemento visível
+
+document.querySelectorAll('.fade-in-up-e, .fade-in-down-e, .fade-in-left-e, .fade-in-right-e').forEach(element => {
+    observer.observe(element);
+});
+function updateFadeClass() {
+    const elements = document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-left-e, .fade-in-right-e');
+    elements.forEach(el => {
+        if (window.innerWidth <= 1400) {
+            // Remove as classes de animação existentes
+            el.classList.remove('fade-in-left', 'fade-in-right', 'fade-in-left-e', 'fade-in-right-e');
+        } else {
+        }
+    });
+}
+
+
+// Executa a função imediatamente no carregamento do script
+updateFadeClass();
+
+// Executa no carregamento completo da página
+window.addEventListener('load', updateFadeClass);
+
+// Executa sempre que há redimensionamento da tela
+window.addEventListener('resize', updateFadeClass);
+
+
+
+
 
 
 
