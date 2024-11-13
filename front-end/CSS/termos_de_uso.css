@@ -628,13 +628,9 @@ footer{
     padding: 40px;
 }
 
-.enabled-link {
-    pointer-events: auto; /* Permite interações com o link */
-    opacity: 1; /* Deixa o link totalmente visível */
-}
 .disabled-link {
     pointer-events: none; /* Impede interações com o link */
-    opacity: 0.8; /* Torna o link visualmente desabilitado */
+    opacity: 0.7; /* Torna o link visualmente desabilitado */
 }
 #login{
     margin-left: 51px;
