@@ -11,14 +11,14 @@ Sejam bem-vindo ao repositório do projeto da Escola Metodista O Semeador! Este 
 | HTML                                                                                                       | CSS                                                                                                        | JavaScript                                                                                                   | Bootstrap                                                                                                    |  Node JS                                                                                                     | MongoDB                                                                                                      | Figma                                                                                                     |
 
 ## 👨‍💻 Participantes
-| Nome                                         | RA          |
-|----------------------------------------------|-------------|
-| Alvaro Nogueira Junqueira Souza              | 24.01402-8  |
-| Antônio Vítor Bozzo de Napoli                | 24.00086-8  |
-| Felipe Brito Moulin Rodrigues                | 24.01680-2  |
-| Guilherme Viana Fim                          | 24.00689-0  |
-| Lucas Novaes de Sá Ferreira                  | 24.00721-8  |
-| Wolf Meijome Piszezman                       | 24.95008-4  |
+| Nome                                         | RA          | Função                                          |
+|----------------------------------------------|-------------|-------------------------------------------------|
+| Alvaro Nogueira Junqueira Souza              | 24.01402-8  | Programador frontend                            |  
+| Antônio Vítor Bozzo de Napoli                | 24.00086-8  | Programador frontend/chefe do backend           |
+| Felipe Brito Moulin Rodrigues                | 24.01680-2  | Documentação / prototipagem (figma)             |
+| Guilherme Viana Fim                          | 24.00689-0  | Programador frontend/Prototipador chefe (figma) |
+| Lucas Novaes de Sá Ferreira                  | 24.00721-8  | chefe do frontend/programador backend           |
+| Wolf Meijome Piszezman                       | 24.95008-4  | prototipagem(figma)                             |
 
 ## 🚀 Como Utilizar
 
