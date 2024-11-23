@@ -258,8 +258,10 @@ const salvarAlteracoes = async () => {
         ));
 
         console.log('Textos atualizados com sucesso!');
+        alert('Textos atualizados com sucesso!');
     } catch (error) {
         console.error('Erro ao salvar textos:', error);
+        alert('Erro ao atualizar textos');
     }
 };
 
@@ -337,6 +339,7 @@ function adicionarImagemPorArquivo() {
                 },
                 body: JSON.stringify({ src: imagemURL })
             });
+            alert('imagem carregada com sucesso!');
         } catch (error) {
             alert('arquivo muito pesado');
             console.error('Erro ao salvar a imagem no banco de dados:', error);
@@ -387,12 +390,15 @@ function removerImagem(idImagem) {
                         nextItem.classList.add('active');
                     }
                 }
+                alert('Imagem removida com sucesso!');
             })
             .catch(error => {
                 console.error(error);
+
             });
     } else {
         console.error("Imagem não encontrada ou já removida");
+        alert('Erro ao remover imagem');
     }
 }
 
@@ -463,8 +469,10 @@ function adicionarParceiroPorArquivo() {
                 },
                 body: JSON.stringify({ src: parceiroURL })
             });
+            alert('Parceiro adicionado com sucesso!');
         } catch (error) {
             console.error('Erro ao salvar a imagem no banco de dados:', error);
+            alert('Erro ao aicionar parceiro');
         }
 
         // Limpa o input e fecha o modal
@@ -493,19 +501,27 @@ async function carregarImagensEstaticas() {
 async function atualizarImagemEstatica(divId) {
     const fileInput = document.getElementById(`uploadImagem${divId}`);
     const file = fileInput.files[0];
-    if (!file) return;
+    if (!file) {
+        alert('Por favor, selecione uma imagem.');
+        return;
+    }
 
     const reader = new FileReader();
     reader.onload = async function (e) {
         const src = e.target.result;
-
-        await fetch('http://localhost:3000/imagem-estatica-atualizar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ divId, src })
-        });
-
-        document.getElementById(divId).querySelector('img').src = src;
+        try{
+            await fetch('http://localhost:3000/imagem-estatica-atualizar', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ divId, src })
+            });
+    
+            document.getElementById(divId).querySelector('img').src = src;
+            alert('Imagem atualizada com sucesso!');
+        }
+        catch(error){
+            alert('Erro ao atualizar imagem');
+        }
     };
     reader.readAsDataURL(file);
 }
@@ -544,12 +560,14 @@ function removerParceiro(idParceiro) {
                         nextItem.classList.add('active');
                     }
                 }
+                alert('Parceiro removido com sucesso!');
             })
             .catch(error => {
                 console.error(error);
             });
     } else {
         console.error("Parceiro não encontrado ou já removido");
+        alert('Erro ao remover parceiro');
     }
 }
 
