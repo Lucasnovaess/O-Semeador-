@@ -1,5 +1,5 @@
 // mongodb+srv://antonionapoli394:<password>@o-semeador-site.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador-site
-
+require('dotenv').config();
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -15,19 +15,11 @@ app.use(cors())
 app.use(bodyParser.json());
 
 
-const multer = require('multer');
-const upload = multer({ limits: { fileSize: 50 * 1024 * 1024 } }); // Limite de 50MB
-
 async function conectarAoMongoDB() {
-    await
-        mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`)
+    await mongoose.connect(process.env.MONGO_URL);
 }
 
-// --------------------------------------- Alteração ---------------------------------------
 
-
-
-// --------------------------------------- Alteração ---------------------------------------
 
 const usuarioSchema = mongoose.Schema({
     login: { type: String, required: true, unique: true },
@@ -133,7 +125,7 @@ app.delete('/remover-usuarios/:id', async (req, res) => {
     }
 });
 
-app.post('/new-text', async (req, res) => {
+app.post('/novo-texto', async (req, res) => {
     try {
         const idTexto = req.body.idTexto; // Usa o campo idTexto enviado
         const titulo = req.body.titulo;
