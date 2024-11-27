@@ -142,7 +142,7 @@ function habilitarAcoesPosLogin() {
         document.querySelectorAll('.btn-adicionar-imagem, .btn-remover-imagem').forEach(botao => {
             botao.classList.remove('d-none');
         });
-    }, 500);
+    }, 1500);
     const editarTexto = document.querySelector('#editar-texto');
     editarTexto.classList.remove('d-none');
     salvar.classList.remove('d-none');
