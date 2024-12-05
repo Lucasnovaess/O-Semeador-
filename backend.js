@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 
 async function conectarAoMongoDB() {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(`mongodb+srv://antonionapoli394:mHtIGoS6FIU6YxiS@o-semeador.s0mxq.mongodb.net/?retryWrites=true&w=majority&appName=O-Semeador`);
 }
 
 

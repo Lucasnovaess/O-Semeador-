@@ -117,13 +117,29 @@ const carregarUsuarios = async () => {
 
 const removerUsuario = async (userId) => {
     try {
+        // Verificar a quantidade de usuários
+        const URLUsuarios = `${protocolo}${baseURL}/puxar-usuarios`;
+        const resposta = await axios.get(URLUsuarios, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+            }
+        });
+
+        const usuarios = resposta.data;
+
+        if (usuarios.length === 1) {
+            alert('Não é possível remover o último usuário!');
+            return; // Encerrar a função sem tentar remover
+        }
+
+        // Realizar a remoção do usuário
         const URLCompleta = `${protocolo}${baseURL}/remover-usuarios/${userId}`;
         await axios.delete(URLCompleta, {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('authToken')}`
             }
         });
-        
+
         // Atualizar a lista de usuários após a remoção
         carregarUsuarios();
         alert('Usuário removido com sucesso!');
@@ -131,6 +147,7 @@ const removerUsuario = async (userId) => {
         console.error("Erro ao remover usuário:", error);
     }
 };
+
 
 
 function habilitarAcoesPosLogin() {
@@ -252,16 +269,14 @@ const salvarAlteracoes = async () => {
                 conteudo: paragrafoElement && paragrafoElement.innerText.trim() !== '' ? paragrafoElement.innerText : '', // Verifica se o conteúdo não está vazio
             };
         });
-
+        alert('Textos atualizados com sucesso!');
         await Promise.all(textos.map(texto =>
             axios.put(URLCompleta, texto) // Envia o texto com idTexto
         ));
 
         console.log('Textos atualizados com sucesso!');
-        alert('Textos atualizados com sucesso!');
     } catch (error) {
         console.error('Erro ao salvar textos:', error);
-        alert('Erro ao atualizar textos');
     }
 };
 
