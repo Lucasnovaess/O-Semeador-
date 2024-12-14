@@ -94,6 +94,11 @@ body {
     text-decoration: none;
 }
 
+#botao-video a {
+    color: white;
+    text-decoration: none;
+}
+
 /* Efeito de hover nos links da navbar */
 .navbar-nav .nav-link:hover, .dropdown-item:hover, #loginLink:hover {
     color: #F57806 !important; 
